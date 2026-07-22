@@ -1,1 +1,133 @@
-/* style.css */
+* { box-sizing: border-box; }
+body { margin: 0; background: #FBFAF7; font-family: 'Golos Text', -apple-system, BlinkMacSystemFont, sans-serif; }
+
+@media (max-width: 1000px) {
+  .ab-header-city, .ab-header-nav { display: none !important; }
+}
+
+@media (max-width: 600px) {
+  .ab-header-inner { flex-wrap: wrap !important; justify-content: center !important; row-gap: 12px; padding: 14px 20px !important; }
+  .ab-header-inner > div:first-child { flex: 1 1 100%; justify-content: center; text-align: center; }
+  .ab-header-inner > div:first-child > div { text-align: center; }
+  .ab-header-actions { flex-wrap: wrap !important; justify-content: center !important; flex: 1 1 100%; }
+}
+
+section a[href="#materials"] { transition: color 0.15s; }
+section a[href="#materials"]:hover { color: #FF5A1F !important; }
+
+@media (max-width: 1024px) {
+  .ab-hero-grid, .ab-about-grid, .ab-audit-grid, .ab-request-grid { grid-template-columns: 1fr !important; }
+  .ab-pain-row, .ab-cases-row, .ab-materials-row, .ab-reviews-row, .ab-certs-row { flex-wrap: wrap !important; }
+  .ab-pain-row > div, .ab-cases-row > div, .ab-materials-row > div, .ab-reviews-row > div, .ab-certs-row > div { flex: 1 1 45% !important; min-width: 280px !important; }
+  .ab-process-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+@media (max-width: 480px) {
+  [style*="padding:0 32px"] { padding-left: 20px !important; padding-right: 20px !important; }
+}
+
+@media (max-width: 500px) {
+  .ab-hero-certs-grid { grid-template-columns: 1fr !important; }
+}
+
+@media (max-width: 760px) {
+  .ab-hero-title { font-size: 34px !important; }
+  .ab-hero-badge { width: auto !important; max-width: 100% !important; }
+  .ab-numbers-row { flex-direction: column !important; gap: 24px; }
+  .ab-numbers-col { border-left: none !important; padding-left: 0 !important; padding-right: 0 !important; }
+  .ab-pain-row { flex-direction: column !important; }
+  .ab-cases-row { flex-direction: column !important; }
+  .ab-process-grid { grid-template-columns: 1fr !important; }
+  .ab-about-grid { grid-template-columns: 1fr !important; }
+  .ab-pricing-row { flex-direction: column !important; }
+  .ab-materials-row { flex-direction: column !important; }
+  .ab-reviews-row { flex-direction: column !important; }
+  .ab-certs-row { flex-direction: column !important; }
+  .ab-request-grid { grid-template-columns: 1fr !important; }
+  .ab-request-row { flex-direction: column !important; }
+  .ab-audit-grid { grid-template-columns: 1fr !important; }
+  .ab-hero-grid { grid-template-columns: 1fr !important; }
+  .ab-numbers-col { padding: 0 !important; }
+  .ab-compare-row { flex-direction: column !important; }
+  .ab-compare-col { width: 100% !important; }
+  .ab-compare-title { font-size: 25px !important; }
+  .ab-compare-wrap { padding: 0 20px !important; }
+  .ab-pain-row > div, .ab-cases-row > div, .ab-materials-row > div, .ab-reviews-row > div, .ab-certs-row > div { flex: 1 1 100% !important; min-width: 0 !important; }
+  .ab-process-grid { grid-template-columns: 1fr !important; }
+}
+
+.ab-faq-item {
+  background: #fff;
+  border: 1px solid #ECE7DE;
+  border-radius: 16px;
+}
+
+.ab-faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  padding: 22px 24px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #171512;
+  transition: color 0.15s;
+}
+
+.ab-faq-question:hover {
+  color: #FF5A1F;
+}
+
+.ab-faq-icon {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  position: relative;
+  transition: transform 0.25s ease;
+}
+
+.ab-faq-icon::before,
+.ab-faq-icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #FF5A1F;
+  transform: translate(-50%, -50%);
+}
+
+.ab-faq-icon::before { width: 14px; height: 2px; }
+.ab-faq-icon::after   { width: 2px; height: 14px; }
+
+.ab-faq-item.is-open .ab-faq-icon {
+  transform: rotate(45deg);
+}
+
+.ab-faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+
+.ab-faq-answer-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.ab-faq-item.is-open .ab-faq-answer {
+  grid-template-rows: 1fr;
+}
+
+.ab-faq-answer-content {
+  padding: 0 24px 22px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #5C574E;
+}
