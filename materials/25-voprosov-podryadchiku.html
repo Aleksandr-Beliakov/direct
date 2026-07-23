@@ -266,7 +266,7 @@
 <div class="ab-popup-overlay" id="popup-audit">
   <div class="ab-popup-card">
     <button type="button" class="ab-popup-close" aria-label="Закрыть" onclick="abClosePopup('audit')">×</button>
-    <form id="form-audit" data-redirect="../thanks.html" style="width:100%;background:#fff;border:1px solid #ECE7DE;border-radius:20px;padding:32px;display:flex;flex-direction:column;gap:18px;">
+    <form id="form-audit" data-redirect="../thanks.html" novalidate style="width:100%;background:#fff;border:1px solid #ECE7DE;border-radius:20px;padding:32px;display:flex;flex-direction:column;gap:18px;">
       <input type="hidden" name="subject" value="Заявка с сайта — попап «Получить аудит» (гайд: 25 вопросов, чтобы проверить подрядчика)">
       <input type="checkbox" name="botcheck" class="ab-hp" style="display:none;" tabindex="-1" autocomplete="off">
       <h2 style="font-size:24px;line-height:1.3;letter-spacing:-0.01em;font-weight:700;color:#171512;margin:0;">Получите бесплатный разбор рекламы</h2>
@@ -276,6 +276,7 @@
         <input type="checkbox" name="consent" class="ab-consent-checkbox" style="flex:none;width:18px;height:18px;margin-top:1px;accent-color:#FF5A1F;">
         <span style="font-size:13px;color:#897F73;line-height:1.5;">Даю согласие на обработку персональных данных в соответствии с <a href="../privacy.html" style="color:#FF5A1F;text-decoration:none;">политикой конфиденциальности</a></span>
       </label>
+      <div class="ab-required-hint">Укажите телефон или мессенджер, чтобы отправить форму.</div>
       <div class="ab-consent-hint">Отметьте согласие на обработку персональных данных, чтобы отправить форму.</div>
       <button type="submit" style="background:#FF5A1F;color:#fff;font-weight:600;font-size:16px;padding:16px;border-radius:12px;border:none;text-decoration:none;box-shadow:0 8px 20px rgba(255,90,31,0.26);font-family:inherit;cursor:pointer;">Заказать аудит</button>
       <div class="ab-form-error">Не получилось отправить, напишите мне напрямую в <a href="https://t.me/+79890473181" target="_blank" rel="noopener noreferrer">Telegram</a>.</div>

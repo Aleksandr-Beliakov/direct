@@ -4,9 +4,24 @@ function abInitWeb3Form(form) {
   var redirectUrl = form.getAttribute('data-redirect');
   var consentBox = form.querySelector('.ab-consent-checkbox');
   var consentHint = form.querySelector('.ab-consent-hint');
+  var requiredHint = form.querySelector('.ab-required-hint');
   var errorBox = form.querySelector('.ab-form-error');
   var submitBtn = form.querySelector('button[type="submit"]');
   var submitLabel = submitBtn ? submitBtn.textContent : '';
+  var requiredFields = form.querySelectorAll('input[required], textarea[required]');
+
+  function firstEmptyRequiredField() {
+    for (var i = 0; i < requiredFields.length; i++) {
+      if (!requiredFields[i].value.trim()) return requiredFields[i];
+    }
+    return null;
+  }
+
+  requiredFields.forEach(function (field) {
+    field.addEventListener('input', function () {
+      if (requiredHint && !firstEmptyRequiredField()) requiredHint.style.display = 'none';
+    });
+  });
 
   if (consentBox) {
     consentBox.addEventListener('change', function () {
@@ -18,6 +33,14 @@ function abInitWeb3Form(form) {
     e.preventDefault();
 
     if (errorBox) errorBox.style.display = 'none';
+
+    var emptyField = firstEmptyRequiredField();
+    if (emptyField) {
+      if (requiredHint) requiredHint.style.display = 'block';
+      emptyField.focus();
+      return;
+    }
+    if (requiredHint) requiredHint.style.display = 'none';
 
     if (consentBox && !consentBox.checked) {
       if (consentHint) consentHint.style.display = 'block';

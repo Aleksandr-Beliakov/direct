@@ -185,6 +185,18 @@ section a[href="#materials"]:hover { color: #FF5A1F !important; }
   color: #FF9A73;
 }
 
+.ab-required-hint {
+  display: none;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #CF3E0A;
+  margin: -6px 0 0;
+}
+
+.ab-required-hint--dark {
+  color: #FF9A73;
+}
+
 .ab-form-error {
   display: none;
   font-size: 13px;
