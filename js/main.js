@@ -5,6 +5,28 @@ function abFaqToggle(btn) {
   if (!isOpen) item.classList.add('is-open');
 }
 
+function abOpenPopup(name) {
+  var el = document.getElementById('popup-' + name);
+  if (el) el.classList.add('is-open');
+}
+
+function abClosePopup(name) {
+  var el = document.getElementById('popup-' + name);
+  if (el) el.classList.remove('is-open');
+}
+
+document.addEventListener('click', function (e) {
+  var trigger = e.target.closest('[data-popup]');
+  if (trigger) {
+    e.preventDefault();
+    abOpenPopup(trigger.getAttribute('data-popup'));
+    return;
+  }
+  if (e.target.classList.contains('ab-popup-overlay')) {
+    e.target.classList.remove('is-open');
+  }
+});
+
 function abOpenLightbox(imgEl) {
   var src = imgEl.currentSrc || imgEl.src;
   if (!src) return;
