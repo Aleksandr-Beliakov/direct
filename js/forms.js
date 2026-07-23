@@ -64,6 +64,8 @@ function abInitWeb3Form(form) {
       .then(function (res) { return res.json(); })
       .then(function (data) {
         if (data && data.success) {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({ event: 'form_sent', form_id: form.id });
           window.location.href = redirectUrl;
         } else {
           throw new Error('web3forms error');
