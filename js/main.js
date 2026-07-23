@@ -27,6 +27,13 @@ document.addEventListener('click', function (e) {
   }
 });
 
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') {
+    var open = document.querySelector('.ab-popup-overlay.is-open');
+    if (open) open.classList.remove('is-open');
+  }
+});
+
 function abOpenLightbox(imgEl) {
   var src = imgEl.currentSrc || imgEl.src;
   if (!src) return;
