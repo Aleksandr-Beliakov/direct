@@ -725,30 +725,34 @@
       <p style="font-size:13.5px;color:#8B8479;margin:0;">Все мессенджеры: +7 (989) 047-31-81</p>
     </div>
 
-    <form style="display:flex;flex-direction:column;gap:18px;">
+    <form id="form-request" data-redirect="thanks.html" style="display:flex;flex-direction:column;gap:18px;">
+      <input type="hidden" name="subject" value="Заявка с сайта — форма внизу главной страницы">
+      <input type="checkbox" name="botcheck" class="ab-hp" style="display:none;" tabindex="-1" autocomplete="off">
       <div class="ab-request-row" style="display:flex;gap:18px;">
         <div style="flex:1;min-width:0;">
           <label style="display:block;font-size:13px;color:#B7B0A4;margin:0 0 8px;">Ваше имя *</label>
-          <input type="text" placeholder="Как к вам обращаться" style="width:100%;background:#23201A;border:1px solid #36322A;border-radius:10px;padding:13px 14px;font-size:15px;color:#fff;font-family:inherit;">
+          <input type="text" name="Имя" placeholder="Как к вам обращаться" style="width:100%;background:#23201A;border:1px solid #36322A;border-radius:10px;padding:13px 14px;font-size:15px;color:#fff;font-family:inherit;">
         </div>
         <div style="flex:1;min-width:0;">
           <label style="display:block;font-size:13px;color:#B7B0A4;margin:0 0 8px;">Мессенджер для связи *</label>
-          <input type="text" placeholder="Telegram, WhatsApp или телефон" style="width:100%;background:#23201A;border:1px solid #36322A;border-radius:10px;padding:13px 14px;font-size:15px;color:#fff;font-family:inherit;">
+          <input type="text" name="Мессенджер" placeholder="Telegram, WhatsApp или телефон" style="width:100%;background:#23201A;border:1px solid #36322A;border-radius:10px;padding:13px 14px;font-size:15px;color:#fff;font-family:inherit;">
         </div>
       </div>
       <div>
         <label style="display:block;font-size:13px;color:#B7B0A4;margin:0 0 8px;">Ссылка на сайт или рекламный аккаунт *</label>
-        <input type="text" placeholder="https://" style="width:100%;background:#23201A;border:1px solid #36322A;border-radius:10px;padding:13px 14px;font-size:15px;color:#fff;font-family:inherit;">
+        <input type="text" name="Ссылка" placeholder="https://" style="width:100%;background:#23201A;border:1px solid #36322A;border-radius:10px;padding:13px 14px;font-size:15px;color:#fff;font-family:inherit;">
       </div>
       <div>
         <label style="display:block;font-size:13px;color:#B7B0A4;margin:0 0 8px;">Комментарий (необязательно)</label>
-        <textarea placeholder="Коротко о задаче" rows="3" style="width:100%;background:#23201A;border:1px solid #36322A;border-radius:10px;padding:13px 14px;font-size:15px;color:#fff;font-family:inherit;resize:vertical;"></textarea>
+        <textarea name="Комментарий" placeholder="Коротко о задаче" rows="3" style="width:100%;background:#23201A;border:1px solid #36322A;border-radius:10px;padding:13px 14px;font-size:15px;color:#fff;font-family:inherit;resize:vertical;"></textarea>
       </div>
       <button type="submit" style="background:#FF5A1F;color:#fff;font-weight:600;font-size:16px;padding:16px;border-radius:12px;border:none;text-decoration:none;box-shadow:0 8px 20px rgba(255,90,31,0.26);cursor:pointer;font-family:inherit;">Отправить — получу ответ в течение 2 часов</button>
       <label style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;">
-        <input type="checkbox" style="flex:none;width:18px;height:18px;margin-top:1px;accent-color:#FF5A1F;">
+        <input type="checkbox" name="Согласие на обработку ПД" class="ab-consent-checkbox" style="flex:none;width:18px;height:18px;margin-top:1px;accent-color:#FF5A1F;">
         <span style="font-size:13px;color:#B7B0A4;line-height:1.5;">Ваше согласие на обработку персональных данных в соответствии с <a href="privacy.html" style="color:#FF5A1F;text-decoration:none;">политикой конфиденциальности</a></span>
       </label>
+      <div class="ab-consent-hint ab-consent-hint--dark">Отметьте согласие на обработку персональных данных, чтобы отправить форму.</div>
+      <div class="ab-form-error ab-form-error--dark">Не получилось отправить, напишите мне напрямую в <a href="https://t.me/+79890473181" target="_blank" rel="noopener noreferrer">Telegram</a>.</div>
     </form>
 
   </div>
@@ -759,15 +763,19 @@
 <div class="ab-popup-overlay" id="popup-audit">
   <div class="ab-popup-card">
     <button type="button" class="ab-popup-close" aria-label="Закрыть" onclick="abClosePopup('audit')">×</button>
-    <form style="width:100%;background:#fff;border:1px solid #ECE7DE;border-radius:20px;padding:32px;display:flex;flex-direction:column;gap:18px;">
+    <form id="form-audit" data-redirect="thanks.html" style="width:100%;background:#fff;border:1px solid #ECE7DE;border-radius:20px;padding:32px;display:flex;flex-direction:column;gap:18px;">
+      <input type="hidden" name="subject" value="Заявка с сайта — попап «Получить аудит»">
+      <input type="checkbox" name="botcheck" class="ab-hp" style="display:none;" tabindex="-1" autocomplete="off">
       <h2 style="font-size:24px;line-height:1.3;letter-spacing:-0.01em;font-weight:700;color:#171512;margin:0;">Получите бесплатный разбор рекламы</h2>
       <p style="font-size:15px;line-height:1.55;color:#5C574E;margin:0;">За 24 часа пришлю 3–5 главных ошибок вашего Директа. Без звонков.</p>
-      <input type="text" placeholder="Телефон или мессенджер" style="width:100%;background:#FBFAF7;border:1px solid #ECE7DE;border-radius:12px;padding:15px 16px;font-size:15px;color:#171512;font-family:inherit;">
+      <input type="text" name="Телефон или мессенджер" placeholder="Телефон или мессенджер" style="width:100%;background:#FBFAF7;border:1px solid #ECE7DE;border-radius:12px;padding:15px 16px;font-size:15px;color:#171512;font-family:inherit;">
       <label style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;">
-        <input type="checkbox" style="flex:none;width:18px;height:18px;margin-top:1px;accent-color:#FF5A1F;">
+        <input type="checkbox" name="Согласие на обработку ПД" class="ab-consent-checkbox" style="flex:none;width:18px;height:18px;margin-top:1px;accent-color:#FF5A1F;">
         <span style="font-size:13px;color:#897F73;line-height:1.5;">Даю согласие на обработку персональных данных в соответствии с <a href="privacy.html" style="color:#FF5A1F;text-decoration:none;">политикой конфиденциальности</a></span>
       </label>
+      <div class="ab-consent-hint">Отметьте согласие на обработку персональных данных, чтобы отправить форму.</div>
       <button type="submit" style="background:#FF5A1F;color:#fff;font-weight:600;font-size:16px;padding:16px;border-radius:12px;border:none;text-decoration:none;box-shadow:0 8px 20px rgba(255,90,31,0.26);font-family:inherit;cursor:pointer;">Заказать аудит</button>
+      <div class="ab-form-error">Не получилось отправить, напишите мне напрямую в <a href="https://t.me/+79890473181" target="_blank" rel="noopener noreferrer">Telegram</a>.</div>
     </form>
   </div>
 </div>
@@ -775,15 +783,19 @@
 <div class="ab-popup-overlay" id="popup-gaidy">
   <div class="ab-popup-card">
     <button type="button" class="ab-popup-close" aria-label="Закрыть" onclick="abClosePopup('gaidy')">×</button>
-    <form style="width:100%;background:#fff;border:1px solid #ECE7DE;border-radius:20px;padding:32px;display:flex;flex-direction:column;gap:18px;">
+    <form id="form-gaidy" data-redirect="thanks-materials.html" style="width:100%;background:#fff;border:1px solid #ECE7DE;border-radius:20px;padding:32px;display:flex;flex-direction:column;gap:18px;">
+      <input type="hidden" name="subject" value="Заявка с сайта — попап «Бесплатные материалы»">
+      <input type="checkbox" name="botcheck" class="ab-hp" style="display:none;" tabindex="-1" autocomplete="off">
       <h2 style="font-size:24px;line-height:1.3;letter-spacing:-0.01em;font-weight:700;color:#171512;margin:0;">Оставьте Email, чтобы открыть материалы</h2>
       <p style="font-size:15px;line-height:1.55;color:#5C574E;margin:0;">Никакого спама. Внутри рассылки только реальная польза. Отписаться можно будет в любой момент, если не понравится</p>
-      <input type="email" placeholder="Почта" style="width:100%;background:#FBFAF7;border:1px solid #ECE7DE;border-radius:12px;padding:15px 16px;font-size:15px;color:#171512;font-family:inherit;">
+      <input type="email" name="Почта" placeholder="Почта" style="width:100%;background:#FBFAF7;border:1px solid #ECE7DE;border-radius:12px;padding:15px 16px;font-size:15px;color:#171512;font-family:inherit;">
       <label style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;">
-        <input type="checkbox" style="flex:none;width:18px;height:18px;margin-top:1px;accent-color:#FF5A1F;">
+        <input type="checkbox" name="Согласие на обработку ПД" class="ab-consent-checkbox" style="flex:none;width:18px;height:18px;margin-top:1px;accent-color:#FF5A1F;">
         <span style="font-size:13px;color:#897F73;line-height:1.5;">Даю согласие на обработку персональных данных в соответствии с <a href="privacy.html" style="color:#FF5A1F;text-decoration:none;">политикой конфиденциальности</a></span>
       </label>
+      <div class="ab-consent-hint">Отметьте согласие на обработку персональных данных, чтобы отправить форму.</div>
       <button type="submit" style="background:#FF5A1F;color:#fff;font-weight:600;font-size:16px;padding:16px;border-radius:12px;border:none;text-decoration:none;box-shadow:0 8px 20px rgba(255,90,31,0.26);font-family:inherit;cursor:pointer;">Подписаться и открыть гайды</button>
+      <div class="ab-form-error">Не получилось отправить, напишите мне напрямую в <a href="https://t.me/+79890473181" target="_blank" rel="noopener noreferrer">Telegram</a>.</div>
     </form>
   </div>
 </div>
@@ -791,15 +803,19 @@
 <div class="ab-popup-overlay" id="popup-zakazat">
   <div class="ab-popup-card">
     <button type="button" class="ab-popup-close" aria-label="Закрыть" onclick="abClosePopup('zakazat')">×</button>
-    <form style="width:100%;background:#fff;border:1px solid #ECE7DE;border-radius:20px;padding:32px;display:flex;flex-direction:column;gap:18px;">
+    <form id="form-zakazat" data-redirect="thanks.html" style="width:100%;background:#fff;border:1px solid #ECE7DE;border-radius:20px;padding:32px;display:flex;flex-direction:column;gap:18px;">
+      <input type="hidden" name="subject" value="Заявка с сайта — попап «Заказать настройку»">
+      <input type="checkbox" name="botcheck" class="ab-hp" style="display:none;" tabindex="-1" autocomplete="off">
       <h2 style="font-size:24px;line-height:1.3;letter-spacing:-0.01em;font-weight:700;color:#171512;margin:0;">Заказать настройку</h2>
       <p style="font-size:15px;line-height:1.55;color:#5C574E;margin:0;">Прогноз бюджета, количества и цены заявок на базе статистики Яндекса и реальных цен на рынке</p>
-      <input type="text" placeholder="Телефон или мессенджер" style="width:100%;background:#FBFAF7;border:1px solid #ECE7DE;border-radius:12px;padding:15px 16px;font-size:15px;color:#171512;font-family:inherit;">
+      <input type="text" name="Телефон или мессенджер" placeholder="Телефон или мессенджер" style="width:100%;background:#FBFAF7;border:1px solid #ECE7DE;border-radius:12px;padding:15px 16px;font-size:15px;color:#171512;font-family:inherit;">
       <label style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;">
-        <input type="checkbox" style="flex:none;width:18px;height:18px;margin-top:1px;accent-color:#FF5A1F;">
+        <input type="checkbox" name="Согласие на обработку ПД" class="ab-consent-checkbox" style="flex:none;width:18px;height:18px;margin-top:1px;accent-color:#FF5A1F;">
         <span style="font-size:13px;color:#897F73;line-height:1.5;">Даю согласие на обработку персональных данных в соответствии с <a href="privacy.html" style="color:#FF5A1F;text-decoration:none;">политикой конфиденциальности</a></span>
       </label>
+      <div class="ab-consent-hint">Отметьте согласие на обработку персональных данных, чтобы отправить форму.</div>
       <button type="submit" style="background:#FF5A1F;color:#fff;font-weight:600;font-size:16px;padding:16px;border-radius:12px;border:none;text-decoration:none;box-shadow:0 8px 20px rgba(255,90,31,0.26);font-family:inherit;cursor:pointer;">Заказать</button>
+      <div class="ab-form-error">Не получилось отправить, напишите мне напрямую в <a href="https://t.me/+79890473181" target="_blank" rel="noopener noreferrer">Telegram</a>.</div>
     </form>
   </div>
 </div>
@@ -807,15 +823,19 @@
 <div class="ab-popup-overlay" id="popup-obsudit">
   <div class="ab-popup-card">
     <button type="button" class="ab-popup-close" aria-label="Закрыть" onclick="abClosePopup('obsudit')">×</button>
-    <form style="width:100%;background:#fff;border:1px solid #ECE7DE;border-radius:20px;padding:32px;display:flex;flex-direction:column;gap:18px;">
+    <form id="form-obsudit" data-redirect="thanks.html" style="width:100%;background:#fff;border:1px solid #ECE7DE;border-radius:20px;padding:32px;display:flex;flex-direction:column;gap:18px;">
+      <input type="hidden" name="subject" value="Заявка с сайта — попап «Обсудить проект»">
+      <input type="checkbox" name="botcheck" class="ab-hp" style="display:none;" tabindex="-1" autocomplete="off">
       <h2 style="font-size:24px;line-height:1.3;letter-spacing:-0.01em;font-weight:700;color:#171512;margin:0;">Обсудить проект</h2>
       <p style="font-size:15px;line-height:1.55;color:#5C574E;margin:0;">Прогноз бюджета, количества и цены заявок на базе статистики Яндекса и реальных цен на рынке</p>
-      <input type="text" placeholder="Телефон или мессенджер" style="width:100%;background:#FBFAF7;border:1px solid #ECE7DE;border-radius:12px;padding:15px 16px;font-size:15px;color:#171512;font-family:inherit;">
+      <input type="text" name="Телефон или мессенджер" placeholder="Телефон или мессенджер" style="width:100%;background:#FBFAF7;border:1px solid #ECE7DE;border-radius:12px;padding:15px 16px;font-size:15px;color:#171512;font-family:inherit;">
       <label style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;">
-        <input type="checkbox" style="flex:none;width:18px;height:18px;margin-top:1px;accent-color:#FF5A1F;">
+        <input type="checkbox" name="Согласие на обработку ПД" class="ab-consent-checkbox" style="flex:none;width:18px;height:18px;margin-top:1px;accent-color:#FF5A1F;">
         <span style="font-size:13px;color:#897F73;line-height:1.5;">Даю согласие на обработку персональных данных в соответствии с <a href="privacy.html" style="color:#FF5A1F;text-decoration:none;">политикой конфиденциальности</a></span>
       </label>
+      <div class="ab-consent-hint">Отметьте согласие на обработку персональных данных, чтобы отправить форму.</div>
       <button type="submit" style="background:#FF5A1F;color:#fff;font-weight:600;font-size:16px;padding:16px;border-radius:12px;border:none;text-decoration:none;box-shadow:0 8px 20px rgba(255,90,31,0.26);font-family:inherit;cursor:pointer;">Обсудить</button>
+      <div class="ab-form-error">Не получилось отправить, напишите мне напрямую в <a href="https://t.me/+79890473181" target="_blank" rel="noopener noreferrer">Telegram</a>.</div>
     </form>
   </div>
 </div>
@@ -823,15 +843,19 @@
 <div class="ab-popup-overlay" id="popup-mediaplan">
   <div class="ab-popup-card">
     <button type="button" class="ab-popup-close" aria-label="Закрыть" onclick="abClosePopup('mediaplan')">×</button>
-    <form style="width:100%;background:#fff;border:1px solid #ECE7DE;border-radius:20px;padding:32px;display:flex;flex-direction:column;gap:18px;">
+    <form id="form-mediaplan" data-redirect="thanks.html" style="width:100%;background:#fff;border:1px solid #ECE7DE;border-radius:20px;padding:32px;display:flex;flex-direction:column;gap:18px;">
+      <input type="hidden" name="subject" value="Заявка с сайта — попап «Получить медиаплан»">
+      <input type="checkbox" name="botcheck" class="ab-hp" style="display:none;" tabindex="-1" autocomplete="off">
       <h2 style="font-size:24px;line-height:1.3;letter-spacing:-0.01em;font-weight:700;color:#171512;margin:0;">Получить медиаплан</h2>
       <p style="font-size:15px;line-height:1.55;color:#5C574E;margin:0;">Прогноз бюджета, количества и цены заявок на базе статистики Яндекса и реальных цен на рынке</p>
-      <input type="text" placeholder="Телефон или мессенджер" style="width:100%;background:#FBFAF7;border:1px solid #ECE7DE;border-radius:12px;padding:15px 16px;font-size:15px;color:#171512;font-family:inherit;">
+      <input type="text" name="Телефон или мессенджер" placeholder="Телефон или мессенджер" style="width:100%;background:#FBFAF7;border:1px solid #ECE7DE;border-radius:12px;padding:15px 16px;font-size:15px;color:#171512;font-family:inherit;">
       <label style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;">
-        <input type="checkbox" style="flex:none;width:18px;height:18px;margin-top:1px;accent-color:#FF5A1F;">
+        <input type="checkbox" name="Согласие на обработку ПД" class="ab-consent-checkbox" style="flex:none;width:18px;height:18px;margin-top:1px;accent-color:#FF5A1F;">
         <span style="font-size:13px;color:#897F73;line-height:1.5;">Даю согласие на обработку персональных данных в соответствии с <a href="privacy.html" style="color:#FF5A1F;text-decoration:none;">политикой конфиденциальности</a></span>
       </label>
+      <div class="ab-consent-hint">Отметьте согласие на обработку персональных данных, чтобы отправить форму.</div>
       <button type="submit" style="background:#FF5A1F;color:#fff;font-weight:600;font-size:16px;padding:16px;border-radius:12px;border:none;text-decoration:none;box-shadow:0 8px 20px rgba(255,90,31,0.26);font-family:inherit;cursor:pointer;">Заказать медиаплан</button>
+      <div class="ab-form-error">Не получилось отправить, напишите мне напрямую в <a href="https://t.me/+79890473181" target="_blank" rel="noopener noreferrer">Telegram</a>.</div>
     </form>
   </div>
 </div>

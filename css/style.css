@@ -172,3 +172,41 @@ section a[href="#materials"]:hover { color: #FF5A1F !important; }
   justify-content: center;
   z-index: 1;
 }
+
+.ab-consent-hint {
+  display: none;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #CF3E0A;
+  margin: -6px 0 0;
+}
+
+.ab-consent-hint--dark {
+  color: #FF9A73;
+}
+
+.ab-form-error {
+  display: none;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #7A3A16;
+  background: #FFF0EA;
+  border: 1px solid #FCD6C3;
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+.ab-form-error a {
+  color: #CF3E0A;
+  font-weight: 600;
+}
+
+.ab-form-error--dark {
+  color: #F4C7B4;
+  background: #2A1712;
+  border: 1px solid #4A2A20;
+}
+
+.ab-form-error--dark a {
+  color: #FF9A73;
+}
