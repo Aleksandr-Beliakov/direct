@@ -9,6 +9,33 @@ body { margin: 0; background: #FBFAF7; font-family: 'Golos Text', -apple-system,
   display: none;
 }
 
+.ab-messenger-icon {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #171512;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.ab-messenger-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: #fff;
+  transition: fill 0.3s ease;
+}
+
+.ab-messenger-icon:hover {
+  transform: translateY(-3px);
+}
+
+.ab-icon-telegram:hover { background-color: #229ED9; }
+.ab-icon-whatsapp:hover { background-color: #25D366; }
+.ab-icon-max:hover { background-color: #471AFF; }
+
 @media (max-width: 600px) {
   header { background: transparent !important; border-bottom: none !important; padding: 14px 16px !important; }
 
