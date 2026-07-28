@@ -5,11 +5,111 @@ body { margin: 0; background: #FBFAF7; font-family: 'Golos Text', -apple-system,
   .ab-header-city, .ab-header-nav { display: none !important; }
 }
 
+.ab-header-burger {
+  display: none;
+}
+
 @media (max-width: 600px) {
-  .ab-header-inner { flex-wrap: wrap !important; justify-content: center !important; row-gap: 12px; padding: 14px 20px !important; }
-  .ab-header-inner > div:first-child { flex: 1 1 100%; justify-content: center; text-align: center; }
-  .ab-header-inner > div:first-child > div { text-align: center; }
-  .ab-header-actions { flex-wrap: wrap !important; justify-content: center !important; flex: 1 1 100%; }
+  header { background: transparent !important; border-bottom: none !important; padding: 14px 16px !important; }
+
+  .ab-header-inner {
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 18px !important;
+    row-gap: 18px !important;
+    padding: 24px 20px !important;
+    max-width: 100% !important;
+    position: relative;
+    background: #fff !important;
+    border: 1px solid #ECE7DE !important;
+    border-radius: 20px !important;
+    box-shadow: 0 10px 30px rgba(23,21,18,0.08) !important;
+  }
+
+  .ab-header-brand-wrap { position: relative; }
+  .ab-header-brand { text-align: center !important; justify-content: center !important; }
+  .ab-header-name { font-size: 19px !important; }
+
+  .ab-header-burger {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    width: 32px;
+    height: 32px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    z-index: 21;
+  }
+
+  .ab-header-burger span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    border-radius: 2px;
+    background: #171512;
+  }
+
+  .ab-header-nav.is-open {
+    display: flex !important;
+    position: absolute;
+    top: 100%;
+    left: 16px;
+    right: 16px;
+    margin-top: 8px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    background: #fff;
+    border: 1px solid #ECE7DE;
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(23,21,18,0.12);
+    padding: 8px;
+    z-index: 20;
+  }
+
+  .ab-header-nav.is-open a {
+    padding: 10px 14px;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .ab-header-nav.is-open a:hover {
+    background: #FBFAF7;
+  }
+
+  .ab-header-actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100%;
+    gap: 14px !important;
+  }
+
+  .ab-header-phone {
+    text-align: center;
+    font-size: 22px !important;
+  }
+
+  .ab-header-messengers {
+    justify-content: center !important;
+    gap: 16px !important;
+  }
+
+  .ab-header-cta {
+    width: 100%;
+    justify-content: center !important;
+    padding: 16px !important;
+    font-size: 16px !important;
+  }
 }
 
 section a[href="#materials"] { transition: color 0.15s; }

@@ -5,6 +5,13 @@ function abFaqToggle(btn) {
   if (!isOpen) item.classList.add('is-open');
 }
 
+function abToggleMobileNav(btn) {
+  var nav = document.querySelector('.ab-header-nav');
+  if (!nav) return;
+  var isOpen = nav.classList.toggle('is-open');
+  btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+}
+
 function abOpenPopup(name) {
   var el = document.getElementById('popup-' + name);
   if (el) el.classList.add('is-open');
@@ -25,12 +32,21 @@ document.addEventListener('click', function (e) {
   if (e.target.classList.contains('ab-popup-overlay')) {
     e.target.classList.remove('is-open');
   }
+
+  var openNav = document.querySelector('.ab-header-nav.is-open');
+  if (openNav && !e.target.closest('.ab-header-nav') && !e.target.closest('.ab-header-burger')) {
+    openNav.classList.remove('is-open');
+  } else if (openNav && e.target.closest('.ab-header-nav a')) {
+    openNav.classList.remove('is-open');
+  }
 });
 
 document.addEventListener('keydown', function (e) {
   if (e.key === 'Escape') {
     var open = document.querySelector('.ab-popup-overlay.is-open');
     if (open) open.classList.remove('is-open');
+    var openNav = document.querySelector('.ab-header-nav.is-open');
+    if (openNav) openNav.classList.remove('is-open');
   }
 });
 
