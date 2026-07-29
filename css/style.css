@@ -13,11 +13,21 @@ body { margin: 0; background: #FBFAF7; font-family: 'Golos Text', -apple-system,
 }
 
 .ab-certs-row > .ab-reveal:nth-child(2),
-.ab-cases-row > .ab-reveal:nth-child(2) {
+.ab-cases-row > .ab-reveal:nth-child(2),
+.ab-pain-row > .ab-reveal:nth-child(2),
+.ab-pricing-row > .ab-reveal:nth-child(2),
+.ab-materials-row > .ab-reveal:nth-child(2),
+.ab-reviews-row > .ab-reveal:nth-child(2),
+.ab-compare-row > .ab-reveal:nth-child(2),
+.ab-process-grid > .ab-reveal:nth-child(3n+2) {
   transition-delay: 0.15s;
 }
 
-.ab-cases-row > .ab-reveal:nth-child(3) {
+.ab-cases-row > .ab-reveal:nth-child(3),
+.ab-pain-row > .ab-reveal:nth-child(3),
+.ab-materials-row > .ab-reveal:nth-child(3),
+.ab-reviews-row > .ab-reveal:nth-child(3),
+.ab-process-grid > .ab-reveal:nth-child(3n) {
   transition-delay: 0.3s;
 }
 
