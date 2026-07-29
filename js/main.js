@@ -62,3 +62,19 @@ function abOpenLightbox(imgEl) {
   overlay.addEventListener('click', function () { overlay.remove(); });
   document.body.appendChild(overlay);
 }
+
+var abRevealEls = document.querySelectorAll('.ab-reveal');
+if (abRevealEls.length && 'IntersectionObserver' in window) {
+  var abRevealObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        abRevealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  abRevealEls.forEach(function (el) { abRevealObserver.observe(el); });
+} else {
+  abRevealEls.forEach(function (el) { el.classList.add('is-visible'); });
+}

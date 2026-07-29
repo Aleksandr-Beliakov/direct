@@ -1,6 +1,26 @@
 * { box-sizing: border-box; }
 body { margin: 0; background: #FBFAF7; font-family: 'Golos Text', -apple-system, BlinkMacSystemFont, sans-serif; }
 
+.ab-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.ab-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ab-certs-row > .ab-reveal:nth-child(2),
+.ab-cases-row > .ab-reveal:nth-child(2) {
+  transition-delay: 0.15s;
+}
+
+.ab-cases-row > .ab-reveal:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
 @media (max-width: 1000px) {
   .ab-header-city, .ab-header-nav { display: none !important; }
 }
