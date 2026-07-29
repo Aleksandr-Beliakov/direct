@@ -287,7 +287,8 @@ section a[href="#materials"]:hover { color: #FF5A1F !important; }
 .ab-popup-card {
   position: relative;
   width: 100%;
-  max-width: 500px;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .ab-popup-close {
