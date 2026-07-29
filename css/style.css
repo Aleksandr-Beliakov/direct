@@ -211,6 +211,10 @@ button[style*="background:#FF5A1F"]:hover {
   .ab-header-actions {
     display: none !important;
   }
+
+  section[style*="padding:32px 0 64px"] {
+    padding-top: 16px !important;
+  }
 }
 
 section a[href="#materials"] { transition: color 0.15s; }
