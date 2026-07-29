@@ -360,3 +360,70 @@ section a[href="#materials"]:hover { color: #FF5A1F !important; }
 .ab-form-error--dark a {
   color: #FF9A73;
 }
+
+.ab-cookie-banner {
+  position: fixed;
+  left: 24px;
+  bottom: 24px;
+  z-index: 9999;
+  max-width: 460px;
+  background: #181410;
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(23,21,18,0.28);
+  padding: 22px 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-family: 'Golos Text', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.ab-cookie-banner-text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #B7B0A4;
+  flex: 1;
+}
+
+.ab-cookie-banner-link {
+  color: #fff;
+  text-decoration: underline;
+  white-space: nowrap;
+}
+
+.ab-cookie-banner-accept {
+  flex: none;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 12px;
+  padding: 12px 22px;
+  min-height: 44px;
+  cursor: pointer;
+  white-space: nowrap;
+  background: #FF5A1F;
+  color: #fff;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.ab-cookie-banner-accept:hover {
+  background-color: #EA4E16;
+}
+
+@media (max-width: 600px) {
+  .ab-cookie-banner {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    max-width: none;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px;
+    gap: 14px;
+  }
+  .ab-cookie-banner-accept {
+    width: 100%;
+    text-align: center;
+  }
+}
