@@ -36,6 +36,16 @@ body { margin: 0; background: #FBFAF7; font-family: 'Golos Text', -apple-system,
 .ab-icon-whatsapp:hover { background-color: #25D366; }
 .ab-icon-max:hover { background-color: #471AFF; }
 
+a[style*="background:#FF5A1F"],
+button[style*="background:#FF5A1F"] {
+  transition: background-color 0.3s ease;
+}
+
+a[style*="background:#FF5A1F"]:hover,
+button[style*="background:#FF5A1F"]:hover {
+  background-color: #E8480F !important;
+}
+
 @media (max-width: 600px) {
   header { background: transparent !important; border-bottom: none !important; padding: 14px 16px !important; }
 
