@@ -1,25 +1,30 @@
 var AB_WEB3FORMS_ACCESS_KEY = 'c0f9589b-17fa-40d7-adff-84f53ee8996a';
+var AB_EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function abInitWeb3Form(form) {
   var redirectUrl = form.getAttribute('data-redirect');
   var consentBox = form.querySelector('.ab-consent-checkbox');
   var consentHint = form.querySelector('.ab-consent-hint');
   var requiredHint = form.querySelector('.ab-required-hint');
+  var requiredHintDefaultText = requiredHint ? requiredHint.textContent : '';
   var errorBox = form.querySelector('.ab-form-error');
   var submitBtn = form.querySelector('button[type="submit"]');
   var submitLabel = submitBtn ? submitBtn.textContent : '';
   var requiredFields = form.querySelectorAll('input[required], textarea[required]');
 
-  function firstEmptyRequiredField() {
+  function firstInvalidRequiredField() {
     for (var i = 0; i < requiredFields.length; i++) {
-      if (!requiredFields[i].value.trim()) return requiredFields[i];
+      var field = requiredFields[i];
+      var value = field.value.trim();
+      if (!value) return { field: field, reason: 'empty' };
+      if (field.type === 'email' && !AB_EMAIL_REGEX.test(value)) return { field: field, reason: 'format' };
     }
     return null;
   }
 
   requiredFields.forEach(function (field) {
     field.addEventListener('input', function () {
-      if (requiredHint && !firstEmptyRequiredField()) requiredHint.style.display = 'none';
+      if (requiredHint && !firstInvalidRequiredField()) requiredHint.style.display = 'none';
     });
   });
 
@@ -34,13 +39,21 @@ function abInitWeb3Form(form) {
 
     if (errorBox) errorBox.style.display = 'none';
 
-    var emptyField = firstEmptyRequiredField();
-    if (emptyField) {
-      if (requiredHint) requiredHint.style.display = 'block';
-      emptyField.focus();
+    var invalid = firstInvalidRequiredField();
+    if (invalid) {
+      if (requiredHint) {
+        requiredHint.textContent = invalid.reason === 'format'
+          ? 'Введите настоящий email, например name@mail.ru'
+          : requiredHintDefaultText;
+        requiredHint.style.display = 'block';
+      }
+      invalid.field.focus();
       return;
     }
-    if (requiredHint) requiredHint.style.display = 'none';
+    if (requiredHint) {
+      requiredHint.textContent = requiredHintDefaultText;
+      requiredHint.style.display = 'none';
+    }
 
     if (consentBox && !consentBox.checked) {
       if (consentHint) consentHint.style.display = 'block';
