@@ -255,6 +255,7 @@ section a[href="#materials"]:hover { color: #FF5A1F !important; }
   .ab-certs-row { flex-direction: column !important; }
   .ab-request-grid { grid-template-columns: 1fr !important; }
   .ab-request-row { flex-direction: column !important; }
+  .ab-footer-bottom { flex-direction: column !important; align-items: flex-start !important; gap: 12px !important; }
   .ab-audit-grid { grid-template-columns: 1fr !important; }
   .ab-hero-grid { grid-template-columns: 1fr !important; }
   .ab-numbers-col { padding: 0 !important; }
