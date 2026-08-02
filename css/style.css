@@ -22,7 +22,8 @@ body { margin: 0; background: #FBFAF7; font-family: 'Golos Text', -apple-system,
 .ab-hero-badge-short,
 .ab-header-avatar-mobile,
 .ab-hero-certs-combined,
-.ab-header-badge-mobile {
+.ab-header-badge-mobile,
+.ab-header-tag-break {
   display: none;
 }
 
@@ -124,6 +125,7 @@ button[style*="background:#FF5A1F"]:hover {
 
   .ab-header-brand { text-align: left !important; justify-content: flex-start !important; }
   .ab-header-name { font-size: 17px !important; }
+  .ab-header-tag-break { display: block; }
 
   .ab-header-mobile-icons {
     display: flex;
