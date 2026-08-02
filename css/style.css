@@ -332,11 +332,11 @@ section a[href="#materials"]:hover { color: #FF5A1F !important; }
   }
 
   .ab-hero-badge-full {
-    display: none;
+    display: inline;
   }
 
   .ab-hero-badge-short {
-    display: inline;
+    display: none;
   }
 
   .ab-hero-certs-grid {
