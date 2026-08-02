@@ -318,14 +318,20 @@ section a[href="#materials"]:hover { color: #FF5A1F !important; }
     text-overflow: ellipsis;
   }
 
-  .ab-hero-title-full,
   .ab-hero-subtitle-full {
     display: none;
   }
 
-  .ab-hero-title-short,
   .ab-hero-subtitle-short {
     display: inline;
+  }
+
+  .ab-hero-title-full {
+    display: inline;
+  }
+
+  .ab-hero-title-short {
+    display: none;
   }
 
   .ab-hero-cta-row {
