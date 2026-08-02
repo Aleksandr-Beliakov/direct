@@ -98,3 +98,17 @@ if (abRevealEls.length && 'IntersectionObserver' in window) {
 } else {
   abRevealEls.forEach(function (el) { el.classList.add('is-visible'); });
 }
+
+document.querySelectorAll('.ab-compare-tab').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var list = btn.closest('.ab-compare-list');
+    if (!list) return;
+    var tab = btn.getAttribute('data-tab');
+    list.setAttribute('data-active-tab', tab);
+    list.querySelectorAll('.ab-compare-tab').forEach(function (b) {
+      var active = b === btn;
+      b.classList.toggle('is-active', active);
+      b.setAttribute('aria-selected', active ? 'true' : 'false');
+    });
+  });
+});

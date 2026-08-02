@@ -398,75 +398,75 @@
     <div style="text-align:left;color:#E8480F;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin:0 0 12px;">Сравнение</div>
     <h2 class="ab-compare-title" style="text-align:left;font-size:34px;line-height:1.15;letter-spacing:-0.02em;font-weight:700;color:#171512;margin:0 0 32px;">Частный специалист работает для вас в отличие от агентства</h2>
 
-    <div style="display:flex;flex-direction:column;gap:14px;">
+    <div class="ab-compare-list" data-active-tab="specialist" style="display:flex;flex-direction:column;gap:14px;">
 
-      <div style="display:flex;background:#F1ECE3;border:1px solid #ECE7DE;border-radius:16px;box-shadow:0 1px 3px rgba(23,21,18,0.05);position:relative;">
-        <div style="flex:1;display:flex;align-items:center;justify-content:center;text-align:center;font-size:13px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#5C574E;padding:16px 28px;">Агентство</div>
-        <div style="position:absolute;top:12px;bottom:12px;left:50%;width:2px;background:#D8D2C7;"></div>
-        <div style="flex:1;display:flex;align-items:center;justify-content:center;text-align:center;font-size:13px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#CF3E0A;padding:16px 28px;">ЧАСТНЫЙ СПЕЦИАЛИСТ</div>
+      <div class="ab-compare-tabs" style="display:flex;background:#F1ECE3;border:1px solid #ECE7DE;border-radius:16px;box-shadow:0 1px 3px rgba(23,21,18,0.05);position:relative;">
+        <button type="button" class="ab-compare-tab" data-tab="agency" aria-selected="false" style="flex:1;display:flex;align-items:center;justify-content:center;text-align:center;font-size:13px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#5C574E;padding:16px 28px;border:none;background:transparent;font-family:inherit;cursor:default;">Агентство</button>
+        <div class="ab-compare-tabs-divider" style="position:absolute;top:12px;bottom:12px;left:50%;width:2px;background:#D8D2C7;"></div>
+        <button type="button" class="ab-compare-tab is-active" data-tab="specialist" aria-selected="true" style="flex:1;display:flex;align-items:center;justify-content:center;text-align:center;font-size:13px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#CF3E0A;padding:16px 28px;border:none;background:transparent;font-family:inherit;cursor:default;">ЧАСТНЫЙ СПЕЦИАЛИСТ</button>
       </div>
 
       <div class="ab-compare-row" style="display:flex;gap:20px;">
-        <div class="ab-compare-col ab-reveal" style="flex:1;display:flex;gap:12px;align-items:center;background:#fff;border:1px solid #ECE7DE;border-radius:16px;box-shadow:0 1px 3px rgba(23,21,18,0.05);padding:24px 28px;">
+        <div class="ab-compare-col ab-compare-agency ab-reveal" style="flex:1;display:flex;gap:12px;align-items:center;background:#fff;border:1px solid #ECE7DE;border-radius:16px;box-shadow:0 1px 3px rgba(23,21,18,0.05);padding:24px 28px;">
           <span style="flex:none;width:8px;height:8px;border-radius:50%;background:#FF5A1F;"></span>
           <p style="margin:0;text-align:left;font-size:16px;line-height:1.5;color:#46413A;text-wrap:pretty;">Менеджер продаёт, и через испорченный телефон передаёт работу помощнику без значительного опыта и понимания реальной ситуации у клиента.</p>
         </div>
-        <div class="ab-compare-col ab-reveal" style="flex:1;display:flex;gap:12px;align-items:center;background:#fff;border:1px solid #ECE7DE;border-radius:16px;box-shadow:0 1px 3px rgba(23,21,18,0.05);padding:24px 28px;">
+        <div class="ab-compare-col ab-compare-specialist ab-reveal" style="flex:1;display:flex;gap:12px;align-items:center;background:#fff;border:1px solid #ECE7DE;border-radius:16px;box-shadow:0 1px 3px rgba(23,21,18,0.05);padding:24px 28px;">
           <span style="flex:none;width:8px;height:8px;border-radius:50%;background:#FF5A1F;"></span>
           <p style="margin:0;text-align:left;font-size:16px;line-height:1.5;color:#171512;text-wrap:pretty;">Всю рекламу делает один человек с полным погружением в проект, от первого звонка до последнего отчёта, всегда на прямой связи.</p>
         </div>
       </div>
 
       <div class="ab-compare-row" style="display:flex;gap:20px;">
-        <div class="ab-compare-col ab-reveal" style="flex:1;display:flex;gap:12px;align-items:center;background:#fff;border:1px solid #ECE7DE;border-radius:16px;box-shadow:0 1px 3px rgba(23,21,18,0.05);padding:24px 28px;">
+        <div class="ab-compare-col ab-compare-agency ab-reveal" style="flex:1;display:flex;gap:12px;align-items:center;background:#fff;border:1px solid #ECE7DE;border-radius:16px;box-shadow:0 1px 3px rgba(23,21,18,0.05);padding:24px 28px;">
           <span style="flex:none;width:8px;height:8px;border-radius:50%;background:#FF5A1F;"></span>
           <p style="margin:0;text-align:left;font-size:16px;line-height:1.5;color:#46413A;text-wrap:pretty;">Оплата % от бюджета — чем больше тратите, тем больше стоимость услуг</p>
         </div>
-        <div class="ab-compare-col ab-reveal" style="flex:1;display:flex;gap:12px;align-items:center;background:#fff;border:1px solid #ECE7DE;border-radius:16px;box-shadow:0 1px 3px rgba(23,21,18,0.05);padding:24px 28px;">
+        <div class="ab-compare-col ab-compare-specialist ab-reveal" style="flex:1;display:flex;gap:12px;align-items:center;background:#fff;border:1px solid #ECE7DE;border-radius:16px;box-shadow:0 1px 3px rgba(23,21,18,0.05);padding:24px 28px;">
           <span style="flex:none;width:8px;height:8px;border-radius:50%;background:#FF5A1F;"></span>
           <p style="margin:0;text-align:left;font-size:16px;line-height:1.5;color:#171512;text-wrap:pretty;">Фиксированная сумма, нет цели раздувать бюджет</p>
         </div>
       </div>
 
       <div class="ab-compare-row" style="display:flex;gap:20px;">
-        <div class="ab-compare-col ab-reveal" style="flex:1;display:flex;gap:12px;align-items:center;background:#fff;border:1px solid #ECE7DE;border-radius:16px;box-shadow:0 1px 3px rgba(23,21,18,0.05);padding:24px 28px;">
+        <div class="ab-compare-col ab-compare-agency ab-reveal" style="flex:1;display:flex;gap:12px;align-items:center;background:#fff;border:1px solid #ECE7DE;border-radius:16px;box-shadow:0 1px 3px rgba(23,21,18,0.05);padding:24px 28px;">
           <span style="flex:none;width:8px;height:8px;border-radius:50%;background:#FF5A1F;"></span>
           <p style="margin:0;text-align:left;font-size:16px;line-height:1.5;color:#46413A;text-wrap:pretty;">Рекламный аккаунт часто остаётся у агентства вместе со всей ценной статистикой</p>
         </div>
-        <div class="ab-compare-col ab-reveal" style="flex:1;display:flex;gap:12px;align-items:center;background:#fff;border:1px solid #ECE7DE;border-radius:16px;box-shadow:0 1px 3px rgba(23,21,18,0.05);padding:24px 28px;">
+        <div class="ab-compare-col ab-compare-specialist ab-reveal" style="flex:1;display:flex;gap:12px;align-items:center;background:#fff;border:1px solid #ECE7DE;border-radius:16px;box-shadow:0 1px 3px rgba(23,21,18,0.05);padding:24px 28px;">
           <span style="flex:none;width:8px;height:8px;border-radius:50%;background:#FF5A1F;"></span>
           <p style="margin:0;text-align:left;font-size:16px;line-height:1.5;color:#171512;text-wrap:pretty;">Аккаунт принадлежит только Вам с первого дня навсегда</p>
         </div>
       </div>
 
       <div class="ab-compare-row" style="display:flex;gap:20px;">
-        <div class="ab-compare-col ab-reveal" style="flex:1;display:flex;gap:12px;align-items:center;background:#fff;border:1px solid #ECE7DE;border-radius:16px;box-shadow:0 1px 3px rgba(23,21,18,0.05);padding:24px 28px;">
+        <div class="ab-compare-col ab-compare-agency ab-reveal" style="flex:1;display:flex;gap:12px;align-items:center;background:#fff;border:1px solid #ECE7DE;border-radius:16px;box-shadow:0 1px 3px rgba(23,21,18,0.05);padding:24px 28px;">
           <span style="flex:none;width:8px;height:8px;border-radius:50%;background:#FF5A1F;"></span>
           <p style="margin:0;text-align:left;font-size:16px;line-height:1.5;color:#46413A;text-wrap:pretty;">Бюджет часто должен идти через агентство с комиссией, банковскими проволочками, сложностями с маркировкой рекламы для регуляторов</p>
         </div>
-        <div class="ab-compare-col ab-reveal" style="flex:1;display:flex;gap:12px;align-items:center;background:#fff;border:1px solid #ECE7DE;border-radius:16px;box-shadow:0 1px 3px rgba(23,21,18,0.05);padding:24px 28px;">
+        <div class="ab-compare-col ab-compare-specialist ab-reveal" style="flex:1;display:flex;gap:12px;align-items:center;background:#fff;border:1px solid #ECE7DE;border-radius:16px;box-shadow:0 1px 3px rgba(23,21,18,0.05);padding:24px 28px;">
           <span style="flex:none;width:8px;height:8px;border-radius:50%;background:#FF5A1F;"></span>
           <p style="margin:0;text-align:left;font-size:16px;line-height:1.5;color:#171512;text-wrap:pretty;">Пополняете Яндекс напрямую со своего счёта или карты за 5 минут, чётко видите движение денег в моменте</p>
         </div>
       </div>
 
       <div class="ab-compare-row" style="display:flex;gap:20px;">
-        <div class="ab-compare-col ab-reveal" style="flex:1;display:flex;gap:12px;align-items:center;background:#fff;border:1px solid #ECE7DE;border-radius:16px;box-shadow:0 1px 3px rgba(23,21,18,0.05);padding:24px 28px;">
+        <div class="ab-compare-col ab-compare-agency ab-reveal" style="flex:1;display:flex;gap:12px;align-items:center;background:#fff;border:1px solid #ECE7DE;border-radius:16px;box-shadow:0 1px 3px rgba(23,21,18,0.05);padding:24px 28px;">
           <span style="flex:none;width:8px;height:8px;border-radius:50%;background:#FF5A1F;"></span>
           <p style="margin:0;text-align:left;font-size:16px;line-height:1.5;color:#46413A;text-wrap:pretty;">Есть вопросы — менеджер постарается уточнить у специалиста в течение дня и расскажет своими словами</p>
         </div>
-        <div class="ab-compare-col ab-reveal" style="flex:1;display:flex;gap:12px;align-items:center;background:#fff;border:1px solid #ECE7DE;border-radius:16px;box-shadow:0 1px 3px rgba(23,21,18,0.05);padding:24px 28px;">
+        <div class="ab-compare-col ab-compare-specialist ab-reveal" style="flex:1;display:flex;gap:12px;align-items:center;background:#fff;border:1px solid #ECE7DE;border-radius:16px;box-shadow:0 1px 3px rgba(23,21,18,0.05);padding:24px 28px;">
           <span style="flex:none;width:8px;height:8px;border-radius:50%;background:#FF5A1F;"></span>
           <p style="margin:0;text-align:left;font-size:16px;line-height:1.5;color:#171512;text-wrap:pretty;">Пишите или звоните прямо мне — отвечаю лично в течение 2 часов или быстрее</p>
         </div>
       </div>
 
       <div class="ab-compare-row" style="display:flex;gap:20px;">
-        <div class="ab-compare-col ab-reveal" style="flex:1;display:flex;gap:12px;align-items:center;background:#fff;border:1px solid #ECE7DE;border-radius:16px;box-shadow:0 1px 3px rgba(23,21,18,0.05);padding:24px 28px;">
+        <div class="ab-compare-col ab-compare-agency ab-reveal" style="flex:1;display:flex;gap:12px;align-items:center;background:#fff;border:1px solid #ECE7DE;border-radius:16px;box-shadow:0 1px 3px rgba(23,21,18,0.05);padding:24px 28px;">
           <span style="flex:none;width:8px;height:8px;border-radius:50%;background:#FF5A1F;"></span>
           <p style="margin:0;text-align:left;font-size:16px;line-height:1.5;color:#46413A;text-wrap:pretty;">Отчёт раз в месяц, много графиков и терминов без сути</p>
         </div>
-        <div class="ab-compare-col ab-reveal" style="flex:1;display:flex;gap:12px;align-items:center;background:#fff;border:1px solid #ECE7DE;border-radius:16px;box-shadow:0 1px 3px rgba(23,21,18,0.05);padding:24px 28px;">
+        <div class="ab-compare-col ab-compare-specialist ab-reveal" style="flex:1;display:flex;gap:12px;align-items:center;background:#fff;border:1px solid #ECE7DE;border-radius:16px;box-shadow:0 1px 3px rgba(23,21,18,0.05);padding:24px 28px;">
           <span style="flex:none;width:8px;height:8px;border-radius:50%;background:#FF5A1F;"></span>
           <p style="margin:0;text-align:left;font-size:16px;line-height:1.5;color:#171512;text-wrap:pretty;">Еженедельно короткий апдейт (вложили, получили, цена заявки), ежемесячно — полный отчёт. С цифрами, которые реально важны для бизнеса.</p>
         </div>

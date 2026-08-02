@@ -12,6 +12,11 @@ body { margin: 0; background: #FBFAF7; font-family: 'Golos Text', -apple-system,
   transform: translateY(0);
 }
 
+@keyframes abCompareFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 .ab-certs-row > .ab-reveal:nth-child(2),
 .ab-cases-row > .ab-reveal:nth-child(2),
 .ab-pain-row > .ab-reveal:nth-child(2),
@@ -263,6 +268,30 @@ section a[href="#materials"]:hover { color: #FF5A1F !important; }
   .ab-compare-row { flex-direction: column !important; }
   .ab-compare-col { width: 100% !important; }
   .ab-compare-title { font-size: 25px !important; }
+
+  .ab-compare-tabs-divider { display: none !important; }
+
+  .ab-compare-tab {
+    cursor: pointer !important;
+    min-height: 44px !important;
+  }
+
+  .ab-compare-tab.is-active {
+    color: #fff !important;
+    background: #FF5A1F !important;
+    border-radius: 14px !important;
+  }
+
+  .ab-compare-col.ab-compare-agency,
+  .ab-compare-col.ab-compare-specialist {
+    display: none !important;
+  }
+
+  .ab-compare-list[data-active-tab="agency"] .ab-compare-col.ab-compare-agency,
+  .ab-compare-list[data-active-tab="specialist"] .ab-compare-col.ab-compare-specialist {
+    display: flex !important;
+    animation: abCompareFade 0.25s ease;
+  }
   h2[style*="font-size:34px"]:not(.ab-compare-title) { font-size: 28px !important; }
   .ab-pain-cta {
     background: #FF5A1F !important;
