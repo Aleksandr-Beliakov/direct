@@ -263,6 +263,13 @@ section a[href="#materials"]:hover { color: #FF5A1F !important; }
   .ab-compare-row { flex-direction: column !important; }
   .ab-compare-col { width: 100% !important; }
   .ab-compare-title { font-size: 25px !important; }
+  h2[style*="font-size:34px"]:not(.ab-compare-title) { font-size: 28px !important; }
+  .ab-pain-cta {
+    background: #FF5A1F !important;
+    color: #fff !important;
+    border: none !important;
+    box-shadow: 0 8px 20px rgba(255,90,31,0.26) !important;
+  }
   .ab-compare-wrap { padding: 0 20px !important; }
   .ab-pain-row > div, .ab-cases-row > div, .ab-materials-row > div, .ab-reviews-row > div, .ab-certs-row > div { flex: 1 1 100% !important; min-width: 0 !important; }
   .ab-process-grid { grid-template-columns: 1fr !important; }
