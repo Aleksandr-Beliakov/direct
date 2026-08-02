@@ -128,7 +128,7 @@ button[style*="background:#FF5A1F"]:hover {
   .ab-header-mobile-icons {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 16px;
     flex: none;
     position: relative;
   }
@@ -263,7 +263,7 @@ button[style*="background:#FF5A1F"]:hover {
   }
 
   section[style*="padding:32px 0 64px"] {
-    padding-top: 112px !important;
+    padding-top: 132px !important;
     padding-bottom: 32px !important;
   }
 
