@@ -269,6 +269,10 @@ button[style*="background:#FF5A1F"]:hover {
     padding-bottom: 32px !important;
   }
 
+  .ab-header-home + .ab-page-first-section {
+    padding-top: 132px !important;
+  }
+
   section[style*="background:#fff;padding:48px 0;"] {
     padding-top: 24px !important;
   }
