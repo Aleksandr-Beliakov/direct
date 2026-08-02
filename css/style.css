@@ -21,7 +21,8 @@ body { margin: 0; background: #FBFAF7; font-family: 'Golos Text', -apple-system,
 .ab-hero-subtitle-short,
 .ab-hero-badge-short,
 .ab-hero-trust,
-.ab-hero-certs-combined {
+.ab-hero-certs-combined,
+.ab-header-badge-mobile {
   display: none;
 }
 
@@ -257,11 +258,22 @@ section a[href="#materials"]:hover { color: #FF5A1F !important; }
 @media (max-width: 760px) {
   .ab-hero-title { font-size: 34px !important; }
   .ab-hero-badge {
-    width: auto !important;
-    max-width: 100% !important;
-    font-size: 12px !important;
-    padding: 7px 12px !important;
-    white-space: nowrap !important;
+    display: none !important;
+  }
+
+  .ab-header-badge-mobile {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    background: #FFEDE3;
+    color: #CF3E0A;
+    font-weight: 600;
+    font-size: 12px;
+    padding: 7px 12px;
+    border-radius: 999px;
+    border: 1px solid #FCD6C3;
+    white-space: nowrap;
+    margin: 0 20px 14px;
   }
 
   .ab-hero-title-full,
