@@ -20,7 +20,7 @@ body { margin: 0; background: #FBFAF7; font-family: 'Golos Text', -apple-system,
 .ab-hero-title-short,
 .ab-hero-subtitle-short,
 .ab-hero-badge-short,
-.ab-hero-trust,
+.ab-header-avatar-mobile,
 .ab-hero-certs-combined,
 .ab-header-badge-mobile {
   display: none;
@@ -227,8 +227,43 @@ button[style*="background:#FF5A1F"]:hover {
     display: none !important;
   }
 
+  .ab-header-home {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 40;
+  }
+
+  .ab-header-avatar-mobile {
+    display: block;
+    position: relative;
+    flex: none;
+    width: 38px;
+    height: 38px;
+  }
+
+  .ab-header-avatar-mobile img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .ab-header-avatar-status {
+    position: absolute;
+    right: -1px;
+    bottom: -1px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #2FAE5E;
+    border: 2px solid #FBFAF7;
+  }
+
   section[style*="padding:32px 0 64px"] {
-    padding-top: 16px !important;
+    padding-top: 112px !important;
     padding-bottom: 32px !important;
   }
 
@@ -262,7 +297,8 @@ section a[href="#materials"]:hover { color: #FF5A1F !important; }
   }
 
   .ab-header-badge-mobile {
-    display: inline-flex;
+    display: flex;
+    justify-content: center;
     align-items: center;
     gap: 8px;
     background: #FFEDE3;
@@ -311,40 +347,13 @@ section a[href="#materials"]:hover { color: #FF5A1F !important; }
     text-decoration: underline !important;
   }
 
-  .ab-hero-trust {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 14px;
-    line-height: 1.4;
-    color: #5C574E;
-    margin: 0 0 20px;
+  .ab-hero-cta-row {
+    margin-bottom: 20px !important;
   }
 
-  .ab-hero-trust-avatar {
-    position: relative;
-    flex: none;
-    width: 36px;
-    height: 36px;
-  }
-
-  .ab-hero-trust-avatar img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    display: block;
-  }
-
-  .ab-hero-trust-status {
-    position: absolute;
-    right: -1px;
-    bottom: -1px;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: #2FAE5E;
-    border: 2px solid #FBFAF7;
+  .ab-hero-stats {
+    padding-top: 14px !important;
+    gap: 16px !important;
   }
 
   .ab-hero-badge-full {
