@@ -380,6 +380,53 @@ section a[href="#materials"]:hover { color: #FF5A1F !important; }
   color: #5C574E;
 }
 
+.ab-audit-card {
+  background: #FBFAF7;
+  border: 1px solid #ECE7DE;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.ab-audit-card-toggle .ab-faq-icon {
+  margin-top: 3px;
+}
+
+.ab-audit-card.is-open .ab-faq-icon {
+  transform: rotate(45deg);
+}
+
+.ab-audit-card-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+
+.ab-audit-card-body-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.ab-audit-card.is-open .ab-audit-card-body {
+  grid-template-rows: 1fr;
+}
+
+@media (min-width: 761px) {
+  .ab-audit-cards-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 20px !important;
+  }
+  .ab-audit-card-body {
+    grid-template-rows: 1fr !important;
+  }
+  .ab-audit-card-toggle {
+    cursor: default !important;
+    pointer-events: none !important;
+  }
+  .ab-audit-card-toggle .ab-faq-icon {
+    display: none !important;
+  }
+}
+
 .ab-popup-overlay {
   display: none;
   position: fixed;

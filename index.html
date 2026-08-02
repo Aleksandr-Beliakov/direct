@@ -230,36 +230,78 @@
   </div>
 </section>
 
-<section id="audit-example" style="padding:0 0 56px;background-color:#FFFFFF;">
+<section id="audit-example" style="padding:32px 0 56px;background-color:#FFFFFF;">
   <div style="max-width:1150px;margin:0 auto;padding:0 32px;">
-    <div style="background:#181410;border-radius:18px;padding:28px 32px;">
-      <div style="font-size:14px;font-weight:700;color:#fff;margin:0 0 20px;">Пример фрагмента аудита</div>
-      <div style="display:flex;flex-direction:column;gap:16px;">
-        <div style="display:flex;gap:13px;align-items:flex-start;">
-          <span style="flex:none;margin-top:7px;width:8px;height:8px;border-radius:50%;background:#FF5A1F;"></span>
-          <span style="font-size:15px;color:#D7D2C9;line-height:1.5;">Кампания на поиске тратит 38% бюджета на запросы со словами «своими руками», «самому», «инструкция». Это люди, которые принципиально никого не наймут. За месяц на них ушло около 42 000 ₽. Первое, что я бы отключил, ещё до разговора о стратегии.</span>
-        </div>
-        <div style="display:flex;gap:13px;align-items:flex-start;">
-          <span style="flex:none;margin-top:7px;width:8px;height:8px;border-radius:50%;background:#FF5A1F;"></span>
-          <span style="font-size:15px;color:#D7D2C9;line-height:1.5;">Автостратегия оптимизируется по цели «Посещение страницы Контакты». Заявкой это не является, поэтому алгоритм честно приводит любопытных, а не покупателей. Цели на отправку формы в Метрике есть, но в стратегию не подключены. Исправляется за 15 минут, эффект виден через неделю.</span>
-        </div>
-        <div style="display:flex;gap:13px;align-items:flex-start;">
-          <span style="flex:none;margin-top:7px;width:8px;height:8px;border-radius:50%;background:#FF5A1F;"></span>
-          <span style="font-size:15px;color:#D7D2C9;line-height:1.5;">В РСЯ 60% показов идут в мобильных играх и приложениях с детской аудиторией. Клики есть, конверсий ноль за 3 месяца. Список из 47 площадок на отключение приложил отдельным файлом.</span>
-        </div>
-        <div style="display:flex;gap:13px;align-items:flex-start;">
-          <span style="flex:none;margin-top:7px;width:8px;height:8px;border-radius:50%;background:#FF5A1F;"></span>
-          <span style="font-size:15px;color:#D7D2C9;line-height:1.5;">Отдельно про сайт: форма заявки требует 6 полей, включая «должность» и «как вы о нас узнали». По данным Метрики, 70% начавших заполнение бросают на третьем поле. Это не проблема Директа, но именно здесь вы теряете больше всего оплаченных посетителей.</span>
-        </div>
-        <div style="display:flex;gap:13px;align-items:flex-start;">
-          <span style="flex:none;margin-top:7px;width:8px;height:8px;border-radius:50%;background:#FF5A1F;"></span>
-          <span style="font-size:15px;color:#D7D2C9;line-height:1.5;">Бюджет между кампаниями распределён поровну, при этом одна кампания даёт заявки по 900 ₽, другая по 4 200 ₽. Простое перераспределение без единой новой настройки снизит среднюю цену заявки примерно на четверть.</span>
-        </div>
-        <div style="display:flex;gap:13px;align-items:flex-start;">
-          <span style="flex:none;margin-top:7px;width:8px;height:8px;border-radius:50%;background:#FF5A1F;"></span>
-          <span style="font-size:15px;color:#D7D2C9;line-height:1.5;">Автотаргетинг включён во всех группах без корректировок и приносит 31% расходов. В поисковых запросах по нему: конкуренты по брендам, вакансии и «скачать бесплатно». Часть запросов целевые, поэтому не отключать, а зарезать ставкой и вычистить минус-словами. Сейчас он работает как дыра в бюджете.</span>
+
+    <div style="color:#E8480F;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin:0 0 12px;">Пример аудита</div>
+    <h2 style="font-size:34px;line-height:1.15;letter-spacing:-0.02em;font-weight:700;color:#171512;margin:0 0 32px;">Пример фрагмента аудита</h2>
+
+    <div class="ab-audit-cards-grid" style="display:grid;grid-template-columns:1fr;gap:16px;">
+
+      <div class="ab-audit-card">
+        <button type="button" class="ab-audit-card-toggle" onclick="abAuditCardToggle(this)" style="display:block;width:100%;text-align:left;background:none;border:none;padding:28px;cursor:pointer;font-family:inherit;">
+          <span style="display:inline-flex;font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#CF3E0A;background:#FFEDE3;border-radius:999px;padding:5px 12px;margin:0 0 14px;">Поиск</span>
+          <span style="display:flex;align-items:center;justify-content:space-between;gap:16px;">
+            <span style="font-size:19px;font-weight:700;color:#171512;line-height:1.35;">38% бюджета уходит на нецелевые запросы</span>
+            <span class="ab-faq-icon" style="flex:none;"></span>
+          </span>
+        </button>
+        <div class="ab-audit-card-body">
+          <div class="ab-audit-card-body-inner" style="padding:0 28px 28px;">
+            <p style="font-size:15px;color:#5C574E;line-height:1.55;margin:0 0 16px;">Кампания на поиске тратит 38% бюджета на запросы со словами «своими руками», «самому», «инструкция» — это люди, которые принципиально никого не наймут. Первое, что я бы отключил ещё до разговора о стратегии.</p>
+            <div style="font-size:20px;font-weight:700;color:#FF5A1F;">~42 000 ₽/мес впустую</div>
+          </div>
         </div>
       </div>
+
+      <div class="ab-audit-card">
+        <button type="button" class="ab-audit-card-toggle" onclick="abAuditCardToggle(this)" style="display:block;width:100%;text-align:left;background:none;border:none;padding:28px;cursor:pointer;font-family:inherit;">
+          <span style="display:inline-flex;font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#CF3E0A;background:#FFEDE3;border-radius:999px;padding:5px 12px;margin:0 0 14px;">РСЯ</span>
+          <span style="display:flex;align-items:center;justify-content:space-between;gap:16px;">
+            <span style="font-size:19px;font-weight:700;color:#171512;line-height:1.35;">60% показов идут мимо целевой аудитории</span>
+            <span class="ab-faq-icon" style="flex:none;"></span>
+          </span>
+        </button>
+        <div class="ab-audit-card-body">
+          <div class="ab-audit-card-body-inner" style="padding:0 28px 28px;">
+            <p style="font-size:15px;color:#5C574E;line-height:1.55;margin:0 0 16px;">В РСЯ 60% показов идут в мобильных играх и приложениях с детской аудиторией. Клики есть, список из 47 площадок на отключение приложил отдельным файлом.</p>
+            <div style="font-size:20px;font-weight:700;color:#FF5A1F;">0 конверсий за 3 месяца</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ab-audit-card">
+        <button type="button" class="ab-audit-card-toggle" onclick="abAuditCardToggle(this)" style="display:block;width:100%;text-align:left;background:none;border:none;padding:28px;cursor:pointer;font-family:inherit;">
+          <span style="display:inline-flex;font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#CF3E0A;background:#FFEDE3;border-radius:999px;padding:5px 12px;margin:0 0 14px;">Стратегия</span>
+          <span style="display:flex;align-items:center;justify-content:space-between;gap:16px;">
+            <span style="font-size:19px;font-weight:700;color:#171512;line-height:1.35;">Бюджет между кампаниями распределён вслепую</span>
+            <span class="ab-faq-icon" style="flex:none;"></span>
+          </span>
+        </button>
+        <div class="ab-audit-card-body">
+          <div class="ab-audit-card-body-inner" style="padding:0 28px 28px;">
+            <p style="font-size:15px;color:#5C574E;line-height:1.55;margin:0 0 16px;">Бюджет между кампаниями распределён поровну, при этом одна даёт заявки по 900 ₽, другая по 4 200 ₽. Простое перераспределение без единой новой настройки снизит среднюю цену заявки примерно на четверть.</p>
+            <div style="font-size:20px;font-weight:700;color:#FF5A1F;">900 ₽ vs 4 200 ₽ за заявку</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ab-audit-card">
+        <button type="button" class="ab-audit-card-toggle" onclick="abAuditCardToggle(this)" style="display:block;width:100%;text-align:left;background:none;border:none;padding:28px;cursor:pointer;font-family:inherit;">
+          <span style="display:inline-flex;font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#CF3E0A;background:#FFEDE3;border-radius:999px;padding:5px 12px;margin:0 0 14px;">Сайт</span>
+          <span style="display:flex;align-items:center;justify-content:space-between;gap:16px;">
+            <span style="font-size:19px;font-weight:700;color:#171512;line-height:1.35;">Форма заявки теряет оплаченных посетителей</span>
+            <span class="ab-faq-icon" style="flex:none;"></span>
+          </span>
+        </button>
+        <div class="ab-audit-card-body">
+          <div class="ab-audit-card-body-inner" style="padding:0 28px 28px;">
+            <p style="font-size:15px;color:#5C574E;line-height:1.55;margin:0 0 16px;">Форма заявки требует 6 полей, включая «должность» и «как вы о нас узнали». Это не проблема Директа, но именно здесь теряется больше всего оплаченных посетителей.</p>
+            <div style="font-size:20px;font-weight:700;color:#FF5A1F;">70% бросают на 3-м поле</div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
