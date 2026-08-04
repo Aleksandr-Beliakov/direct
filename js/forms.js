@@ -1,5 +1,12 @@
 var AB_WEB3FORMS_ACCESS_KEY = 'c0f9589b-17fa-40d7-adff-84f53ee8996a';
 var AB_EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+var AB_PHONE_CHARS_REGEX = /^[\d\s\-+()]+$/;
+
+function abIsValidPhone(value) {
+  if (!AB_PHONE_CHARS_REGEX.test(value)) return false;
+  var digits = value.replace(/\D/g, '');
+  return digits.length >= 10 && digits.length <= 11;
+}
 
 function abInitWeb3Form(form) {
   var redirectUrl = form.getAttribute('data-redirect');
@@ -18,6 +25,7 @@ function abInitWeb3Form(form) {
       var value = field.value.trim();
       if (!value) return { field: field, reason: 'empty' };
       if (field.type === 'email' && !AB_EMAIL_REGEX.test(value)) return { field: field, reason: 'format' };
+      if (field.name === 'phone' && !abIsValidPhone(value)) return { field: field, reason: 'phone' };
     }
     return null;
   }
@@ -44,7 +52,9 @@ function abInitWeb3Form(form) {
       if (requiredHint) {
         requiredHint.textContent = invalid.reason === 'format'
           ? 'Введите настоящий email, например name@mail.ru'
-          : requiredHintDefaultText;
+          : invalid.reason === 'phone'
+            ? 'Введите настоящий номер телефона, например +7 989 047-31-81'
+            : requiredHintDefaultText;
         requiredHint.style.display = 'block';
       }
       invalid.field.focus();
