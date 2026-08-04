@@ -603,6 +603,29 @@ section a[href="#materials"]:hover { color: #FF5A1F !important; }
   z-index: 1;
 }
 
+.ab-popup-messenger-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: #fff;
+  border: 1px solid #ECE7DE;
+  border-radius: 12px;
+  padding: 14px 8px;
+  text-decoration: none;
+  color: #171512;
+  font-weight: 600;
+  font-size: 13px;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.ab-popup-messenger-btn:hover {
+  border-color: #D8D2C7;
+  background: #FBFAF7;
+}
+
 .ab-consent-hint {
   display: none;
   font-size: 12px;
