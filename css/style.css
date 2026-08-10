@@ -17,7 +17,6 @@ body { margin: 0; background: #FBFAF7; font-family: 'Golos Text', -apple-system,
   to { opacity: 1; }
 }
 
-.ab-hero-title-short,
 .ab-hero-subtitle-short,
 .ab-hero-badge-short,
 .ab-header-avatar-mobile,
@@ -328,14 +327,6 @@ section a[href="#materials"]:hover { color: #FF5A1F !important; }
 
   .ab-hero-subtitle-short {
     display: inline;
-  }
-
-  .ab-hero-title-full {
-    display: inline;
-  }
-
-  .ab-hero-title-short {
-    display: none;
   }
 
   .ab-hero-cta-row {
