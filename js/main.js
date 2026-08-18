@@ -104,6 +104,13 @@ if (abRevealEls.length && 'IntersectionObserver' in window) {
   abRevealEls.forEach(function (el) { el.classList.add('is-visible'); });
 }
 
+function abReviewsSlide(btn, dir) {
+  var slider = btn.closest('.ab-reviews-slider');
+  var row = slider && slider.querySelector('.ab-reviews-row');
+  if (!row) return;
+  row.scrollBy({ left: dir * row.clientWidth, behavior: 'smooth' });
+}
+
 document.querySelectorAll('.ab-compare-tab').forEach(function (btn) {
   btn.addEventListener('click', function () {
     var list = btn.closest('.ab-compare-list');

@@ -22,7 +22,8 @@ body { margin: 0; background: #FBFAF7; font-family: 'Golos Text', -apple-system,
 .ab-header-avatar-mobile,
 .ab-hero-certs-combined,
 .ab-header-badge-mobile,
-.ab-header-tag-break {
+.ab-header-tag-break,
+.ab-reviews-arrow {
   display: none;
 }
 
@@ -382,7 +383,44 @@ section a[href="#materials"]:hover { color: #FF5A1F !important; }
   .ab-about-grid { grid-template-columns: 1fr !important; }
   .ab-pricing-row { flex-direction: column !important; }
   .ab-materials-row { flex-direction: column !important; }
-  .ab-reviews-row { flex-direction: column !important; }
+  .ab-reviews-slider { position: relative; }
+
+  .ab-reviews-row {
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .ab-reviews-row::-webkit-scrollbar { display: none; }
+
+  .ab-reviews-row > .ab-reveal {
+    flex: 0 0 100% !important;
+    min-width: 0 !important;
+    scroll-snap-align: center;
+  }
+
+  .ab-reviews-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid #ECE7DE;
+    box-shadow: 0 6px 16px rgba(23,21,18,0.14);
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .ab-reviews-arrow-prev { left: -4px; }
+  .ab-reviews-arrow-next { right: -4px; }
   .ab-certs-row { flex-direction: column !important; }
   .ab-request-grid { grid-template-columns: 1fr !important; }
   .ab-request-row { flex-direction: column !important; }
@@ -425,7 +463,7 @@ section a[href="#materials"]:hover { color: #FF5A1F !important; }
     box-shadow: 0 8px 20px rgba(255,90,31,0.26) !important;
   }
   .ab-compare-wrap { padding: 0 20px !important; }
-  .ab-pain-row > div, .ab-cases-row > div, .ab-materials-row > div, .ab-reviews-row > div, .ab-certs-row > div { flex: 1 1 100% !important; min-width: 0 !important; }
+  .ab-pain-row > div, .ab-cases-row > div, .ab-materials-row > div, .ab-certs-row > div { flex: 1 1 100% !important; min-width: 0 !important; }
   .ab-process-grid { grid-template-columns: 1fr !important; }
 }
 
