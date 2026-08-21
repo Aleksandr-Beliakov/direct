@@ -116,6 +116,13 @@ function abReviewsSlide(btn, dir) {
   row.scrollBy({ left: dir * row.clientWidth, behavior: 'smooth' });
 }
 
+function abProcessSlide(btn, dir) {
+  var slider = btn.closest('.ab-process-slider');
+  var row = slider && slider.querySelector('.ab-process-row');
+  if (!row) return;
+  row.scrollBy({ left: dir * row.clientWidth, behavior: 'smooth' });
+}
+
 document.querySelectorAll('.ab-compare-tab').forEach(function (btn) {
   btn.addEventListener('click', function () {
     var list = btn.closest('.ab-compare-list');

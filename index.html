@@ -394,7 +394,15 @@
     <div style="color:#E8480F;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin:0 0 12px;">Процесс</div>
     <h2 style="font-size:34px;line-height:1.15;letter-spacing:-0.02em;font-weight:700;color:#171512;margin:0 0 32px;">Как проходит работа</h2>
 
-    <div class="ab-process-grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;">
+    <div class="ab-process-slider">
+      <button type="button" class="ab-reviews-arrow ab-reviews-arrow-prev" aria-label="Предыдущий шаг" onclick="abProcessSlide(this,-1)">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#171512" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button type="button" class="ab-reviews-arrow ab-reviews-arrow-next" aria-label="Следующий шаг" onclick="abProcessSlide(this,1)">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#171512" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+
+    <div class="ab-process-grid ab-process-row" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;">
 
       <div class="ab-reveal" style="background:#FBFAF7;border:1px solid #ECE7DE;border-radius:16px;padding:24px;">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
@@ -450,6 +458,7 @@
         <p style="font-size:15px;color:#5C574E;line-height:1.55;margin:0;">Когда стоимость заявки устраивает — увеличиваем бюджет на работающие связки.</p>
       </div>
 
+    </div>
     </div>
   </div>
 </section>

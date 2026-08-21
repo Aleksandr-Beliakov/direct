@@ -171,6 +171,22 @@ button[style*="background:#FF5A1F"]:hover {
     cursor: pointer;
   }
 
+  .ab-header-contact-toggle {
+    position: relative;
+  }
+
+  .ab-header-contact-toggle::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    right: 5px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #FF3B30;
+    border: 1.5px solid #FBFAF7;
+  }
+
   .ab-header-burger {
     flex-direction: column;
     gap: 4px;
@@ -328,6 +344,25 @@ section a[href="#materials"]:hover { color: #FF5A1F !important; }
   span.ab-audit-intro-more.is-open { display: inline; }
   p.ab-audit-intro-more.is-open { display: block; }
   .ab-audit-intro-toggle { display: inline-flex; }
+
+  .ab-process-slider { position: relative; }
+
+  .ab-process-row {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .ab-process-row::-webkit-scrollbar { display: none; }
+
+  .ab-process-row > .ab-reveal {
+    flex: 0 0 100% !important;
+    min-width: 0 !important;
+    scroll-snap-align: center;
+  }
 
   .ab-hero-title { font-size: 34px !important; }
   .ab-hero-badge {
