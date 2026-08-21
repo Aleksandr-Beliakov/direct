@@ -5,6 +5,11 @@ function abFaqToggle(btn) {
   if (!isOpen) item.classList.add('is-open');
 }
 
+function abAuditIntroToggle(btn) {
+  btn.style.display = 'none';
+  document.querySelectorAll('.ab-audit-intro-more').forEach(function (el) { el.classList.add('is-open'); });
+}
+
 function abAuditCardToggle(btn) {
   var card = btn.closest('.ab-audit-card');
   if (card) card.classList.toggle('is-open');
