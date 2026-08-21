@@ -318,6 +318,12 @@ section a[href="#materials"]:hover { color: #FF5A1F !important; }
 }
 
 @media (max-width: 760px) {
+  .ab-pain-closing-note {
+    font-size: 17px !important;
+    line-height: 1.4 !important;
+    margin-top: 24px !important;
+  }
+
   .ab-audit-intro-more { display: none; }
   span.ab-audit-intro-more.is-open { display: inline; }
   p.ab-audit-intro-more.is-open { display: block; }
