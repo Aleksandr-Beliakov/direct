@@ -840,13 +840,13 @@ section a[href="#materials"]:hover { color: #FF5A1F !important; }
   flex: 0 0 360px;
   min-width: 0;
   scroll-snap-align: start;
-  background: #fff;
+  background: #FBFAF7;
   border: 1px solid #ECE7DE;
   border-radius: 18px;
   padding: 24px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
 }
 
 .ab-solution-card-title {
@@ -862,11 +862,17 @@ section a[href="#materials"]:hover { color: #FF5A1F !important; }
   display: flex;
   flex-direction: column;
   gap: 5px;
-  padding: 12px 14px;
-  border-radius: 12px;
+  padding: 0;
+  border-radius: 0;
 }
 
-.ab-solution-row-item-me { background: #FFEDE3; }
+.ab-solution-row-item-me {
+  background: #fff;
+  border-left: 3px solid #FF5A1F;
+  border-radius: 10px;
+  padding: 14px 16px;
+  box-shadow: 0 1px 3px rgba(23,21,18,0.04);
+}
 
 .ab-solution-row-label {
   display: inline-flex;
@@ -881,29 +887,8 @@ section a[href="#materials"]:hover { color: #FF5A1F !important; }
 
 .ab-solution-row-item-me .ab-solution-row-label { color: #CF3E0A; }
 
-.ab-solution-row-label-check {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: #FF5A1F;
-  position: relative;
-  flex: none;
-}
-
-.ab-solution-row-label-check::after {
-  content: '';
-  position: absolute;
-  left: 4px;
-  top: 2px;
-  width: 4px;
-  height: 7px;
-  border-right: 1.5px solid #fff;
-  border-bottom: 1.5px solid #fff;
-  transform: rotate(45deg);
-}
-
 .ab-solution-row-text { font-size: 14px; line-height: 1.45; color: #5C574E; }
-.ab-solution-row-item-me .ab-solution-row-text { color: #171512; }
+.ab-solution-row-item-me .ab-solution-row-text { color: #171512; font-weight: 500; }
 
 .ab-solution-arrow {
   display: flex;
