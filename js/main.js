@@ -126,6 +126,56 @@ function abProcessSlide(btn, dir) {
   row.scrollBy({ left: dir * row.clientWidth, behavior: 'smooth' });
 }
 
+function abSolutionSlide(btn, dir) {
+  var slider = btn.closest('.ab-solution-slider');
+  var row = slider && slider.querySelector('.ab-solution-row');
+  if (!row) return;
+  var card = row.querySelector('.ab-solution-card');
+  var step = card ? card.getBoundingClientRect().width + 20 : row.clientWidth;
+  row.scrollBy({ left: dir * step, behavior: 'smooth' });
+}
+
+(function () {
+  var row = document.querySelector('.ab-solution-row');
+  if (!row) return;
+
+  var isDown = false, startX = 0, startScroll = 0;
+  row.addEventListener('pointerdown', function (e) {
+    isDown = true;
+    row.classList.add('is-dragging');
+    startX = e.clientX;
+    startScroll = row.scrollLeft;
+  });
+  window.addEventListener('pointermove', function (e) {
+    if (!isDown) return;
+    row.scrollLeft = startScroll - (e.clientX - startX);
+  });
+  window.addEventListener('pointerup', function () {
+    isDown = false;
+    row.classList.remove('is-dragging');
+  });
+
+  var dotsWrap = document.querySelector('.ab-solution-dots');
+  var cards = row.querySelectorAll('.ab-solution-card');
+  if (dotsWrap && cards.length && 'IntersectionObserver' in window) {
+    cards.forEach(function (_, i) {
+      var dot = document.createElement('span');
+      dot.className = 'ab-solution-dot' + (i === 0 ? ' is-active' : '');
+      dotsWrap.appendChild(dot);
+    });
+    var dots = dotsWrap.querySelectorAll('.ab-solution-dot');
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var idx = Array.prototype.indexOf.call(cards, entry.target);
+        dots.forEach(function (d) { d.classList.remove('is-active'); });
+        if (dots[idx]) dots[idx].classList.add('is-active');
+      });
+    }, { root: row, threshold: 0.6 });
+    cards.forEach(function (c) { observer.observe(c); });
+  }
+})();
+
 document.querySelectorAll('.ab-compare-tab').forEach(function (btn) {
   btn.addEventListener('click', function () {
     var list = btn.closest('.ab-compare-list');

@@ -426,6 +426,11 @@ section a[href="#materials"]:hover { color: #FF5A1F !important; }
     gap: 16px !important;
   }
 
+  /* Scoped to the /new pilot page only — its hero-stats labels are longer ("1 человек") than the live site's */
+  body.ab-page-pilot .ab-hero-stats > div > div:first-child {
+    font-size: 22px !important;
+  }
+
   .ab-hero-badge-full {
     display: inline;
   }
@@ -812,6 +817,149 @@ section a[href="#materials"]:hover { color: #FF5A1F !important; }
 
 .ab-cookie-banner-accept:hover {
   background-color: #EA4E16;
+}
+
+/* ===== NEW (pilot /new page): Слайдер сравнения "Я / Сотрудник в штате / Агентство" ===== */
+.ab-solution-slider { position: relative; }
+
+.ab-solution-row {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  cursor: grab;
+  user-select: none;
+}
+
+.ab-solution-row::-webkit-scrollbar { display: none; }
+.ab-solution-row.is-dragging { cursor: grabbing; scroll-snap-type: none; }
+
+.ab-solution-card {
+  flex: 0 0 360px;
+  min-width: 0;
+  scroll-snap-align: start;
+  background: #fff;
+  border: 1px solid #ECE7DE;
+  border-radius: 18px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ab-solution-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #171512;
+  line-height: 1.35;
+  margin: 0 0 4px;
+  min-height: 49px;
+}
+
+.ab-solution-row-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 12px 14px;
+  border-radius: 12px;
+}
+
+.ab-solution-row-item-me { background: #FFEDE3; }
+
+.ab-solution-row-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #897F73;
+}
+
+.ab-solution-row-item-me .ab-solution-row-label { color: #CF3E0A; }
+
+.ab-solution-row-label-check {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #FF5A1F;
+  position: relative;
+  flex: none;
+}
+
+.ab-solution-row-label-check::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 2px;
+  width: 4px;
+  height: 7px;
+  border-right: 1.5px solid #fff;
+  border-bottom: 1.5px solid #fff;
+  transform: rotate(45deg);
+}
+
+.ab-solution-row-text { font-size: 14px; line-height: 1.45; color: #5C574E; }
+.ab-solution-row-item-me .ab-solution-row-text { color: #171512; }
+
+.ab-solution-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid #ECE7DE;
+  box-shadow: 0 6px 16px rgba(23,21,18,0.14);
+  padding: 0;
+  cursor: pointer;
+}
+
+.ab-solution-arrow-prev { left: -20px; }
+.ab-solution-arrow-next { right: -20px; }
+
+.ab-solution-dots {
+  display: none;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 16px;
+}
+
+.ab-solution-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #D8D2C7;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.ab-solution-dot.is-active { background: #FF5A1F; transform: scale(1.3); }
+
+@media (max-width: 760px) {
+  .ab-solution-arrow { display: none; }
+  .ab-solution-row { scroll-snap-type: x mandatory; }
+  .ab-solution-card { flex: 0 0 85%; scroll-snap-align: center; }
+  .ab-solution-card-title { min-height: 0; }
+  .ab-solution-dots { display: flex; }
+}
+
+/* ===== NEW (pilot /new page): Сетка "Зона ответственности" ===== */
+.ab-responsibility-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 760px) {
+  .ab-responsibility-grid { grid-template-columns: 1fr !important; }
 }
 
 @media (max-width: 600px) {
