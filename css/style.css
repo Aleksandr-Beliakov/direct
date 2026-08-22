@@ -20,7 +20,6 @@ body { margin: 0; background: #FBFAF7; font-family: 'Golos Text', -apple-system,
 .ab-hero-subtitle-short,
 .ab-hero-badge-short,
 .ab-header-avatar-mobile,
-.ab-hero-certs-combined,
 .ab-header-badge-mobile,
 .ab-header-tag-break,
 .ab-reviews-arrow {
@@ -435,13 +434,6 @@ section a[href="#materials"]:hover { color: #FF5A1F !important; }
     display: none;
   }
 
-  .ab-hero-certs-grid {
-    display: none !important;
-  }
-
-  .ab-hero-certs-combined {
-    display: block;
-  }
   .ab-numbers-row { flex-direction: column !important; gap: 24px; }
   .ab-numbers-col { border-left: none !important; padding-left: 0 !important; padding-right: 0 !important; }
   .ab-pain-row { flex-direction: column !important; }
