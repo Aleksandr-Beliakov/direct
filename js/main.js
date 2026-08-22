@@ -80,8 +80,7 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
-function abOpenLightbox(imgEl) {
-  var src = imgEl.currentSrc || imgEl.src;
+function abOpenLightboxSrc(src) {
   if (!src) return;
   var overlay = document.createElement('div');
   overlay.style.cssText = 'position:fixed;inset:0;background:rgba(23,21,18,0.85);z-index:9999;display:flex;align-items:center;justify-content:center;cursor:zoom-out;padding:40px;';
@@ -91,6 +90,10 @@ function abOpenLightbox(imgEl) {
   overlay.appendChild(big);
   overlay.addEventListener('click', function () { overlay.remove(); });
   document.body.appendChild(overlay);
+}
+
+function abOpenLightbox(imgEl) {
+  abOpenLightboxSrc(imgEl.currentSrc || imgEl.src);
 }
 
 var abRevealEls = document.querySelectorAll('.ab-reveal');
