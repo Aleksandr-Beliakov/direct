@@ -353,6 +353,7 @@ section a[href="#materials"]:hover { color: #FF5A1F !important; }
     scroll-snap-type: x mandatory !important;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
+    touch-action: pan-x;
   }
 
   .ab-process-row::-webkit-scrollbar { display: none; }
@@ -658,6 +659,7 @@ section a[href="#materials"]:hover { color: #FF5A1F !important; }
 
 .ab-audit-card-static .ab-audit-card-body {
   grid-template-rows: 1fr !important;
+  transition: none !important;
 }
 
 .ab-audit-card-static .ab-audit-card-toggle {
@@ -674,8 +676,24 @@ section a[href="#materials"]:hover { color: #FF5A1F !important; }
     grid-template-columns: 1fr 1fr !important;
     gap: 20px !important;
   }
+  .ab-audit-card {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100%;
+  }
   .ab-audit-card-body {
     grid-template-rows: 1fr !important;
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 1;
+  }
+  .ab-audit-card-body-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 1;
+  }
+  .ab-audit-card-body-inner > p {
+    flex: 1;
   }
   .ab-audit-card-toggle {
     cursor: default !important;
@@ -863,6 +881,7 @@ section a[href="#materials"]:hover { color: #FF5A1F !important; }
   scrollbar-width: none;
   cursor: grab;
   user-select: none;
+  touch-action: pan-x;
 }
 
 .ab-solution-row::-webkit-scrollbar { display: none; }

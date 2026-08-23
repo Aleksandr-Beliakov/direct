@@ -146,6 +146,7 @@ function abSolutionSlide(btn, dir) {
 
   var isDown = false, startX = 0, startScroll = 0;
   row.addEventListener('pointerdown', function (e) {
+    if (e.pointerType !== 'mouse') return;
     isDown = true;
     row.classList.add('is-dragging');
     startX = e.clientX;
@@ -214,6 +215,7 @@ function abSolutionSlide(btn, dir) {
 
   var isDown = false, startX = 0, startScroll = 0;
   row.addEventListener('pointerdown', function (e) {
+    if (e.pointerType !== 'mouse') return;
     isDown = true;
     row.classList.add('is-dragging');
     startX = e.clientX;
