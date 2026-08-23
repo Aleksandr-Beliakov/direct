@@ -657,6 +657,19 @@ section a[href="#materials"]:hover { color: #FF5A1F !important; }
   grid-template-rows: 1fr;
 }
 
+.ab-audit-card-static .ab-audit-card-body {
+  grid-template-rows: 1fr !important;
+}
+
+.ab-audit-card-static .ab-audit-card-toggle {
+  cursor: default !important;
+  pointer-events: none !important;
+}
+
+.ab-audit-card-static .ab-audit-card-toggle .ab-faq-icon {
+  display: none !important;
+}
+
 @media (min-width: 761px) {
   .ab-audit-cards-grid {
     grid-template-columns: 1fr 1fr !important;
@@ -882,8 +895,9 @@ section a[href="#materials"]:hover { color: #FF5A1F !important; }
   display: flex;
   flex-direction: column;
   gap: 5px;
-  padding: 0;
-  border-radius: 0;
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: #F1ECE3;
 }
 
 .ab-solution-row-item-me {
