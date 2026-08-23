@@ -123,7 +123,9 @@ function abProcessSlide(btn, dir) {
   var slider = btn.closest('.ab-process-slider');
   var row = slider && slider.querySelector('.ab-process-row');
   if (!row) return;
-  row.scrollBy({ left: dir * row.clientWidth, behavior: 'smooth' });
+  var card = row.querySelector('.ab-reveal');
+  var step = card ? card.getBoundingClientRect().width + 20 : row.clientWidth;
+  row.scrollBy({ left: dir * step, behavior: 'smooth' });
 }
 
 function abSolutionSlide(btn, dir) {
@@ -164,6 +166,47 @@ function abSolutionSlide(btn, dir) {
       dotsWrap.appendChild(dot);
     });
     var dots = dotsWrap.querySelectorAll('.ab-solution-dot');
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var idx = Array.prototype.indexOf.call(cards, entry.target);
+        dots.forEach(function (d) { d.classList.remove('is-active'); });
+        if (dots[idx]) dots[idx].classList.add('is-active');
+      });
+    }, { root: row, threshold: 0.6 });
+    cards.forEach(function (c) { observer.observe(c); });
+  }
+})();
+
+(function () {
+  var row = document.querySelector('.ab-process-row');
+  if (!row) return;
+
+  var isDown = false, startX = 0, startScroll = 0;
+  row.addEventListener('pointerdown', function (e) {
+    isDown = true;
+    row.classList.add('is-dragging');
+    startX = e.clientX;
+    startScroll = row.scrollLeft;
+  });
+  window.addEventListener('pointermove', function (e) {
+    if (!isDown) return;
+    row.scrollLeft = startScroll - (e.clientX - startX);
+  });
+  window.addEventListener('pointerup', function () {
+    isDown = false;
+    row.classList.remove('is-dragging');
+  });
+
+  var dotsWrap = document.querySelector('.ab-process-dots');
+  var cards = row.querySelectorAll('.ab-reveal');
+  if (dotsWrap && cards.length && 'IntersectionObserver' in window) {
+    cards.forEach(function (_, i) {
+      var dot = document.createElement('span');
+      dot.className = 'ab-process-dot' + (i === 0 ? ' is-active' : '');
+      dotsWrap.appendChild(dot);
+    });
+    var dots = dotsWrap.querySelectorAll('.ab-process-dot');
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;

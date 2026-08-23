@@ -22,7 +22,8 @@ body { margin: 0; background: #FBFAF7; font-family: 'Golos Text', -apple-system,
 .ab-header-avatar-mobile,
 .ab-header-badge-mobile,
 .ab-header-tag-break,
-.ab-reviews-arrow {
+.ab-reviews-arrow,
+.ab-process-dots {
   display: none;
 }
 
@@ -358,10 +359,27 @@ section a[href="#materials"]:hover { color: #FF5A1F !important; }
   .ab-process-row::-webkit-scrollbar { display: none; }
 
   .ab-process-row > .ab-reveal {
-    flex: 0 0 100% !important;
+    flex: 0 0 85% !important;
     min-width: 0 !important;
     scroll-snap-align: center;
   }
+
+  .ab-process-dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 16px;
+  }
+
+  .ab-process-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #D8D2C7;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .ab-process-dot.is-active { background: #FF5A1F; transform: scale(1.3); }
 
   .ab-hero-title { font-size: 34px !important; }
   .ab-hero-badge {
