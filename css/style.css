@@ -973,8 +973,12 @@ section a[href="#materials"]:hover { color: #FF5A1F !important; }
 /* ===== NEW (pilot /new page): Сетка "Зона ответственности" ===== */
 .ab-responsibility-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
+}
+
+@media (max-width: 1024px) {
+  .ab-responsibility-grid { grid-template-columns: 1fr 1fr !important; }
 }
 
 @media (max-width: 760px) {
