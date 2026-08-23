@@ -6,8 +6,11 @@ function abFaqToggle(btn) {
 }
 
 function abAuditIntroToggle(btn) {
+  var h2 = btn.closest('h2');
+  var wrap = h2 && h2.parentElement;
+  var text = wrap && wrap.querySelector('.ab-audit-intro-text');
+  if (text) text.classList.add('is-open');
   btn.style.display = 'none';
-  document.querySelectorAll('.ab-audit-intro-more').forEach(function (el) { el.classList.add('is-open'); });
 }
 
 function abAuditCardToggle(btn) {
