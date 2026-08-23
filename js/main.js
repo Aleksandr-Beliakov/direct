@@ -179,6 +179,33 @@ function abSolutionSlide(btn, dir) {
     }, { root: row, threshold: 0.6 });
     cards.forEach(function (c) { observer.observe(c); });
   }
+
+  function abSyncSolutionRowHeights() {
+    cards.forEach(function (c) {
+      c.querySelectorAll('.ab-solution-row-item').forEach(function (el) { el.style.minHeight = ''; });
+    });
+    var maxRows = 0;
+    cards.forEach(function (c) { maxRows = Math.max(maxRows, c.querySelectorAll('.ab-solution-row-item').length); });
+    for (var i = 0; i < maxRows; i++) {
+      var maxH = 0;
+      cards.forEach(function (c) {
+        var item = c.querySelectorAll('.ab-solution-row-item')[i];
+        if (item) maxH = Math.max(maxH, item.offsetHeight);
+      });
+      cards.forEach(function (c) {
+        var item = c.querySelectorAll('.ab-solution-row-item')[i];
+        if (item) item.style.minHeight = maxH + 'px';
+      });
+    }
+  }
+
+  if (cards.length) {
+    abSyncSolutionRowHeights();
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(abSyncSolutionRowHeights);
+    }
+    window.addEventListener('resize', abSyncSolutionRowHeights);
+  }
 })();
 
 (function () {
