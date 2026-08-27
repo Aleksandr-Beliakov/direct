@@ -52,7 +52,6 @@ body { margin: 0; background: #FBFAF7; font-family: 'Golos Text', -apple-system,
 .ab-cases-row > .ab-reveal:nth-child(2),
 .ab-pain-row > .ab-reveal:nth-child(2),
 .ab-pricing-row > .ab-reveal:nth-child(2),
-.ab-materials-row > .ab-reveal:nth-child(2),
 .ab-reviews-row > .ab-reveal:nth-child(2),
 .ab-compare-row > .ab-reveal:nth-child(2),
 .ab-process-grid > .ab-reveal:nth-child(3n+2) {
@@ -62,7 +61,6 @@ body { margin: 0; background: #FBFAF7; font-family: 'Golos Text', -apple-system,
 .ab-cases-row > .ab-reveal:nth-child(3),
 .ab-pain-row > .ab-reveal:nth-child(3),
 .ab-pricing-row > .ab-reveal:nth-child(3),
-.ab-materials-row > .ab-reveal:nth-child(3),
 .ab-reviews-row > .ab-reveal:nth-child(3),
 .ab-process-grid > .ab-reveal:nth-child(3n) {
   transition-delay: 0.3s;
@@ -315,13 +313,10 @@ button[style*="background:#FF5A1F"]:hover {
   }
 }
 
-section a[href="#materials"] { transition: color 0.15s; }
-section a[href="#materials"]:hover { color: #FF5A1F !important; }
-
 @media (max-width: 1024px) {
   .ab-hero-grid, .ab-about-grid, .ab-audit-grid, .ab-request-grid { grid-template-columns: 1fr !important; }
-  .ab-pain-row, .ab-cases-row, .ab-pricing-row, .ab-materials-row, .ab-reviews-row, .ab-certs-row { flex-wrap: wrap !important; }
-  .ab-pain-row > div, .ab-cases-row > div, .ab-pricing-row > div, .ab-materials-row > div, .ab-reviews-row > div, .ab-certs-row > div { flex: 1 1 45% !important; min-width: 280px !important; }
+  .ab-pain-row, .ab-cases-row, .ab-pricing-row, .ab-reviews-row, .ab-certs-row { flex-wrap: wrap !important; }
+  .ab-pain-row > div, .ab-cases-row > div, .ab-pricing-row > div, .ab-reviews-row > div, .ab-certs-row > div { flex: 1 1 45% !important; min-width: 280px !important; }
   .ab-process-grid { grid-template-columns: repeat(2, 1fr) !important; }
 }
 
@@ -466,7 +461,6 @@ section a[href="#materials"]:hover { color: #FF5A1F !important; }
   .ab-process-grid { grid-template-columns: 1fr !important; }
   .ab-about-grid { grid-template-columns: 1fr !important; }
   .ab-pricing-row { flex-direction: column !important; }
-  .ab-materials-row { flex-direction: column !important; }
   .ab-reviews-slider { position: relative; }
 
   .ab-reviews-row {
@@ -547,7 +541,7 @@ section a[href="#materials"]:hover { color: #FF5A1F !important; }
     box-shadow: 0 8px 20px rgba(255,90,31,0.26) !important;
   }
   .ab-compare-wrap { padding: 0 20px !important; }
-  .ab-pain-row > div, .ab-cases-row > div, .ab-materials-row > div, .ab-certs-row > div { flex: 1 1 100% !important; min-width: 0 !important; }
+  .ab-pain-row > div, .ab-cases-row > div, .ab-certs-row > div { flex: 1 1 100% !important; min-width: 0 !important; }
   .ab-process-grid { grid-template-columns: 1fr !important; }
 }
 
