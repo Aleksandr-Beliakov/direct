@@ -1,2 +1,5 @@
 User-agent: *
-Disallow: /
+Disallow: /new.html
+Disallow: /pilot.html
+
+Sitemap: https://direct.alex-belyakov.com/sitemap.xml
