@@ -19,7 +19,7 @@ function abAuditCardToggle(btn) {
 }
 
 function abToggleMobileNav(btn) {
-  var nav = document.querySelector('.ab-header-nav');
+  var nav = document.querySelector('.ab-header-nav-mobile') || document.querySelector('.ab-header-nav');
   if (!nav) return;
   var menu = document.querySelector('.ab-header-contact-menu.is-open');
   if (menu) menu.classList.remove('is-open');
@@ -30,7 +30,7 @@ function abToggleMobileNav(btn) {
 function abToggleContactMenu(btn) {
   var menu = document.querySelector('.ab-header-contact-menu');
   if (!menu) return;
-  var nav = document.querySelector('.ab-header-nav.is-open');
+  var nav = document.querySelector('.ab-header-nav-mobile.is-open') || document.querySelector('.ab-header-nav.is-open');
   if (nav) nav.classList.remove('is-open');
   var isOpen = menu.classList.toggle('is-open');
   btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
@@ -57,10 +57,10 @@ document.addEventListener('click', function (e) {
     e.target.classList.remove('is-open');
   }
 
-  var openNav = document.querySelector('.ab-header-nav.is-open');
-  if (openNav && !e.target.closest('.ab-header-nav') && !e.target.closest('.ab-header-burger')) {
+  var openNav = document.querySelector('.ab-header-nav-mobile.is-open, .ab-header-nav.is-open');
+  if (openNav && !e.target.closest('.ab-header-nav-mobile') && !e.target.closest('.ab-header-nav') && !e.target.closest('.ab-header-burger')) {
     openNav.classList.remove('is-open');
-  } else if (openNav && e.target.closest('.ab-header-nav a')) {
+  } else if (openNav && e.target.closest('.ab-header-nav-mobile a, .ab-header-nav a')) {
     openNav.classList.remove('is-open');
   }
 
@@ -76,7 +76,7 @@ document.addEventListener('keydown', function (e) {
   if (e.key === 'Escape') {
     var open = document.querySelector('.ab-popup-overlay.is-open');
     if (open) open.classList.remove('is-open');
-    var openNav = document.querySelector('.ab-header-nav.is-open');
+    var openNav = document.querySelector('.ab-header-nav-mobile.is-open, .ab-header-nav.is-open');
     if (openNav) openNav.classList.remove('is-open');
     var openMenu = document.querySelector('.ab-header-contact-menu.is-open');
     if (openMenu) openMenu.classList.remove('is-open');

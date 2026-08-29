@@ -78,6 +78,10 @@ body { margin: 0; background: #FBFAF7; font-family: 'Golos Text', -apple-system,
   display: none;
 }
 
+.ab-header-nav-mobile {
+  display: none;
+}
+
 .ab-messenger-icon {
   flex: none;
   width: 40px;
@@ -239,7 +243,7 @@ button[style*="background:#FF5A1F"]:hover {
     background: #FBFAF7;
   }
 
-  .ab-header-nav.is-open {
+  .ab-header-nav-mobile.is-open {
     display: flex !important;
     position: absolute;
     top: 100%;
@@ -257,13 +261,17 @@ button[style*="background:#FF5A1F"]:hover {
     z-index: 20;
   }
 
-  .ab-header-nav.is-open a {
+  .ab-header-nav-mobile.is-open a {
     padding: 10px 14px;
     border-radius: 10px;
     text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    color: #171512;
+    text-decoration: none;
   }
 
-  .ab-header-nav.is-open a:hover {
+  .ab-header-nav-mobile.is-open a:hover {
     background: #FBFAF7;
   }
 
