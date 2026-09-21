@@ -1051,7 +1051,6 @@ button[style*="background:#FF5A1F"]:hover {
 }
 
 @media (max-width: 600px) {
-  .ab-case-header-inner { padding: 14px 20px !important; }
   .ab-case-h1 { font-size: 30px !important; }
   .ab-case-meta { grid-template-columns: 1fr !important; }
   .ab-case-lessons { grid-template-columns: 1fr !important; }
