@@ -1047,7 +1047,12 @@ button[style*="background:#FF5A1F"]:hover {
 }
 
 @media (max-width: 900px) {
-  .ab-case-hero-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .ab-case-hero-grid { grid-template-columns: 1fr !important; gap: 0 !important; }
+  .ab-case-hero-left { display: contents; }
+  .ab-case-badge { order: 1; justify-self: start; }
+  .ab-case-hero-shot { order: 2; margin: 0 0 28px; }
+  .ab-case-h1 { order: 3; }
+  .ab-case-meta { order: 4; }
 }
 
 @media (max-width: 600px) {
@@ -1196,4 +1201,9 @@ button[style*="background:#FF5A1F"]:hover {
   .ab-case-map-modal { padding: 0; }
   .ab-case-map-card { max-height: none; border-radius: 0; }
   .ab-case-map-head { padding: 14px 16px; }
+}
+
+@media (max-width: 900px) {
+  .ab-case-kpis { grid-template-columns: 1fr !important; }
+  .ab-case-kpi-2 { border-left: none !important; border-top: 1px solid #ECE7DE; }
 }
