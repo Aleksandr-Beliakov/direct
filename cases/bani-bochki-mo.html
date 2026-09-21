@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css?v=3">
+  <link rel="stylesheet" href="../css/style.css?v=4">
 </head>
 <body>
 
@@ -121,7 +121,7 @@
       <figure style="margin:0;">
         <div class="ab-case-map-preview" role="button" tabindex="0" aria-label="Открыть структуру семантики" onclick="abOpenMap()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenMap();}">
           <div class="ab-case-map-frame">
-            <iframe src="bani-bochki-mo-map.html?preview=1" title="Структура семантики: группы запросов" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+            <iframe src="bani-bochki-mo-map.html?v=2&preview=1" title="Структура семантики: группы запросов" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
           </div>
           <div class="ab-case-map-bar">
             <span class="ab-case-map-btn">
@@ -307,11 +307,11 @@
     <div class="ab-case-map-head">
       <div>
         <div style="font-size:16px;font-weight:700;color:#171512;">Структура семантики</div>
-        <div class="ab-case-map-hint">Нажмите на кружок у группы, чтобы раскрыть запросы. Колесо мыши или щипок — масштаб, перетаскивание — перемещение.</div>
+        <div class="ab-case-map-hint">Колесо мыши или щипок — масштаб, перетаскивание — перемещение. Клик по кружку сворачивает и раскрывает группу.</div>
       </div>
       <button type="button" class="ab-case-map-close" aria-label="Закрыть" onclick="abCloseMap()">×</button>
     </div>
-    <iframe id="map-frame" title="Интерактивная структура семантики" data-src="bani-bochki-mo-map.html"></iframe>
+    <iframe id="map-frame" title="Интерактивная структура семантики" data-src="bani-bochki-mo-map.html?v=2"></iframe>
   </div>
 </div>
 
