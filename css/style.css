@@ -1158,19 +1158,12 @@ button[style*="background:#FF5A1F"]:hover {
 .ab-case-map-head {
   flex: none;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: 16px;
   padding: 18px 22px;
   background: #fff;
   border-bottom: 1px solid #ECE7DE;
-}
-
-.ab-case-map-hint {
-  font-size: 13px;
-  color: #897F73;
-  line-height: 1.45;
-  margin-top: 4px;
 }
 
 .ab-case-map-close {
