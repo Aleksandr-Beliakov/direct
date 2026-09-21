@@ -1200,3 +1200,5 @@ button[style*="background:#FF5A1F"]:hover {
   .ab-case-kpis { grid-template-columns: 1fr !important; }
   .ab-case-kpi-2 { border-left: none !important; border-top: 1px solid #ECE7DE; }
 }
+
+.ab-case-lesson-wide { grid-column: 1 / -1; }
