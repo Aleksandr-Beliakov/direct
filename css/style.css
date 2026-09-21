@@ -1029,3 +1029,30 @@ button[style*="background:#FF5A1F"]:hover {
     text-align: center;
   }
 }
+
+.ab-case-photo-ph {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  border: 2px dashed #D8D2C7;
+  border-radius: 16px;
+  background: #FBFAF7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #B5AD9F;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .ab-case-hero-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+}
+
+@media (max-width: 600px) {
+  .ab-case-header-inner { padding: 14px 20px !important; }
+  .ab-case-h1 { font-size: 30px !important; }
+  .ab-case-meta { grid-template-columns: 1fr !important; }
+  .ab-case-lessons { grid-template-columns: 1fr !important; }
+}
