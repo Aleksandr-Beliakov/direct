@@ -1345,18 +1345,15 @@ button[style*="background:#FF5A1F"]:hover {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
-  padding: 2px 2px 10px;
+  padding: 2px;
   margin: 0;
   list-style: none;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .ab-case-gallery-track::-webkit-scrollbar {
-  height: 6px;
-}
-
-.ab-case-gallery-track::-webkit-scrollbar-thumb {
-  background: #D8D2C7;
-  border-radius: 3px;
+  display: none;
 }
 
 .ab-case-gallery-slide {
