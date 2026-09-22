@@ -276,7 +276,9 @@ document.querySelectorAll('.ab-case-gallery').forEach(function (wrap) {
   }
 
   cloneSet().forEach(function (c) { track.appendChild(c); });
-  cloneSet().forEach(function (c) { track.insertBefore(c, track.firstChild); });
+  var prependFrag = document.createDocumentFragment();
+  cloneSet().forEach(function (c) { prependFrag.appendChild(c); });
+  track.insertBefore(prependFrag, track.firstChild);
 
   var setWidth = 0;
   function measure() {
