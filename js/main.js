@@ -140,6 +140,16 @@ function abSolutionSlide(btn, dir) {
   row.scrollBy({ left: dir * step, behavior: 'smooth' });
 }
 
+function abCaseGallerySlide(btn, dir) {
+  var wrap = btn.closest('.ab-case-gallery');
+  var track = wrap && wrap.querySelector('.ab-case-gallery-track');
+  if (!track) return;
+  var card = track.querySelector('.ab-case-gallery-slide');
+  var gap = parseFloat(getComputedStyle(track).columnGap) || 16;
+  var step = card ? card.getBoundingClientRect().width + gap : track.clientWidth;
+  track.scrollBy({ left: dir * step, behavior: 'smooth' });
+}
+
 (function () {
   var row = document.querySelector('.ab-solution-row');
   if (!row) return;
@@ -250,6 +260,21 @@ function abSolutionSlide(btn, dir) {
     cards.forEach(function (c) { observer.observe(c); });
   }
 })();
+
+document.querySelectorAll('.ab-case-gallery').forEach(function (wrap) {
+  var track = wrap.querySelector('.ab-case-gallery-track');
+  var prev = wrap.querySelector('.ab-case-gallery-arrow-prev');
+  var next = wrap.querySelector('.ab-case-gallery-arrow-next');
+  if (!track) return;
+  function update() {
+    var max = track.scrollWidth - track.clientWidth;
+    if (prev) prev.disabled = track.scrollLeft <= 2;
+    if (next) next.disabled = track.scrollLeft >= max - 2;
+  }
+  track.addEventListener('scroll', update);
+  window.addEventListener('resize', update);
+  update();
+});
 
 document.querySelectorAll('.ab-compare-tab').forEach(function (btn) {
   btn.addEventListener('click', function () {
