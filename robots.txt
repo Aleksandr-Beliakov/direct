@@ -1,6 +1,5 @@
 User-agent: *
-Disallow: /new.html
-Disallow: /pilot.html
+Allow: /
 
 User-agent: OAI-SearchBot
 Allow: /
