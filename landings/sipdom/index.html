@@ -1,0 +1,896 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="SIPDOM — демо-пример посадочной страницы для ниши домов из СИП-панелей под ключ: честная смета в калькуляторе, реальные этапы стройки, портфолио проектов. Макет из портфолио Александра Белякова.">
+<title>SIPDOM — дома из СИП-панелей под ключ с честной сметой (пример лендинга)</title>
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:url" content="https://direct.alex-belyakov.com/landings/sipdom/">
+<meta property="og:title" content="SIPDOM — дома из СИП-панелей под ключ с честной сметой">
+<meta property="og:description" content="Пример посадочной страницы из портфолио Александра Белякова: честная смета в калькуляторе, реальные этапы стройки, портфолио проектов.">
+<meta property="og:image" content="https://direct.alex-belyakov.com/landings/sipdom/img/hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+:root{
+  --paper:#f3f1ea;--paper-raised:#ffffff;--paper-sunken:#e7e4da;
+  --ink:#15191c;--ink-muted:#545b60;--line:#d6d2c6;--line-strong:#83898d;
+  --blueprint:#1f3fbf;--blueprint-hover:#17309a;--blueprint-tint:#e3e8fa;--on-blueprint:#ffffff;
+  --grid:#d3daf3;--osb:#b8864b;--osb-deep:#7a5320;--success:#1e6b4f;--danger:#b3261e;
+  --footer-bg:#15191c;--footer-ink:#ece9e0;--footer-muted:#a3a9ad;
+  --shadow-sheet:0 1px 0 #d6d2c6,0 12px 32px rgba(21,25,28,.08);
+  --sans:"Onest","Segoe UI",system-ui,sans-serif;
+  --mono:"JetBrains Mono",Consolas,ui-monospace,monospace;
+  --gutter:24px;--section:112px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --paper:#121517;--paper-raised:#1b1f22;--paper-sunken:#0d0f11;
+    --ink:#ece9e0;--ink-muted:#a3a9ad;--line:#2e3438;--line-strong:#6b7378;
+    --blueprint:#8fa6ff;--blueprint-hover:#a9baff;--blueprint-tint:#1d2750;--on-blueprint:#0b1440;
+    --grid:#1e2742;--osb:#c99a5e;--osb-deep:#d9ae75;--success:#6fcfa6;--danger:#ff8a80;
+    --footer-bg:#0d0f11;--footer-ink:#ece9e0;--footer-muted:#a3a9ad;
+    --shadow-sheet:0 1px 0 #2e3438,0 12px 32px rgba(0,0,0,.4);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --paper:#121517;--paper-raised:#1b1f22;--paper-sunken:#0d0f11;
+  --ink:#ece9e0;--ink-muted:#a3a9ad;--line:#2e3438;--line-strong:#6b7378;
+  --blueprint:#8fa6ff;--blueprint-hover:#a9baff;--blueprint-tint:#1d2750;--on-blueprint:#0b1440;
+  --grid:#1e2742;--osb:#c99a5e;--osb-deep:#d9ae75;--success:#6fcfa6;--danger:#ff8a80;
+  --footer-bg:#0d0f11;--footer-ink:#ece9e0;--footer-muted:#a3a9ad;
+  --shadow-sheet:0 1px 0 #2e3438,0 12px 32px rgba(0,0,0,.4);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:24px;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+[hidden]{display:none!important}
+a{color:var(--blueprint)}a:hover{color:var(--blueprint-hover)}
+h1,h2,h3{margin:0;text-wrap:balance}
+p{margin:0}
+:focus-visible{outline:3px solid var(--blueprint);outline-offset:2px}
+.wrap{max-width:1200px;margin-inline:auto;padding-inline:var(--gutter)}
+.mono{font-family:var(--mono);font-weight:500;font-variant-numeric:tabular-nums}
+.label{font-size:12px;line-height:16px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.spec{font-family:var(--mono);font-size:13px;line-height:18px;font-weight:500;color:var(--ink-muted);font-variant-numeric:tabular-nums}
+.muted{color:var(--ink-muted)}
+.lead{font-size:19px;line-height:28px}
+.mm{background-color:var(--paper);background-image:
+  linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px),
+  linear-gradient(color-mix(in srgb,var(--grid) 45%,transparent) 1px,transparent 1px),
+  linear-gradient(90deg,color-mix(in srgb,var(--grid) 45%,transparent) 1px,transparent 1px);
+  background-size:40px 40px,40px 40px,8px 8px,8px 8px}
+section{padding-block:var(--section)}
+.sunken{background:var(--paper-sunken)}
+.bordered{border-block:1px solid var(--line)}
+
+/* кнопки */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:56px;padding:0 28px;border-radius:2px;font:600 17px/1.2 var(--sans);text-decoration:none;cursor:pointer;border:0;transition:background-color .15s,border-color .15s,color .15s}
+.btn svg{flex-shrink:0}
+.btn-primary{background:var(--blueprint);color:var(--on-blueprint)}
+.btn-primary:hover{background:var(--blueprint-hover);color:var(--on-blueprint)}
+.btn-secondary{min-height:44px;padding:0 18px;font-size:15px;border:1px solid var(--line-strong);color:var(--ink);background:transparent}
+.btn-secondary:hover{border-color:var(--ink);color:var(--ink)}
+.link-arrow{display:inline-flex;align-items:center;gap:8px;font-weight:600;text-decoration:none}
+.link-arrow:hover{text-decoration:underline;text-underline-offset:4px}
+.stamp{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border:2px solid var(--blueprint);border-radius:2px;color:var(--blueprint)}
+
+/* размерная линия */
+.dim{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.dim::before,.dim::after{content:"";width:2px;height:12px;background:var(--line-strong);flex-shrink:0}
+.dim span{order:0}
+.dim i{flex:1;height:1px;background:var(--line-strong)}
+.dim::after{order:2}
+.sec-head{display:flex;flex-direction:column;gap:16px;margin-bottom:48px}
+.h-display{font-size:44px;line-height:50px;font-weight:700;letter-spacing:-.02em}
+.h2{font-size:32px;line-height:38px;font-weight:600;letter-spacing:-.01em}
+.h3{font-size:22px;line-height:28px;font-weight:600}
+
+/* шапка */
+.site-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--paper);border-bottom:1px solid var(--line)}
+.site-header .wrap{height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{font-size:20px;font-weight:700;letter-spacing:-.01em;color:var(--ink);text-decoration:none}
+.logo:hover{color:var(--ink)}
+.nav{display:flex;gap:28px;font-size:15px;font-weight:500}
+.nav a{color:var(--ink);text-decoration:none}
+.nav a:hover{color:var(--blueprint)}
+.header-right{display:flex;align-items:center;gap:16px}
+.menu-btn{display:none;width:44px;height:44px;align-items:center;justify-content:center;background:none;border:0;color:var(--ink);cursor:pointer}
+.mobile-nav{border-top:1px solid var(--line);background:var(--paper)}
+.mobile-nav a{display:block;padding:14px var(--gutter);border-bottom:1px solid var(--line);color:var(--ink);text-decoration:none;font-weight:500}
+
+/* первый экран */
+.hero{padding-block:56px 96px}
+.hero-top{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.hero-badge{background:var(--paper);font-family:var(--mono);font-size:13px;line-height:18px;font-weight:500;transform:rotate(-1.5deg)}
+.hero h1{margin-top:24px;max-width:1080px;font-size:64px;line-height:68px;font-weight:700;letter-spacing:-.025em}
+.hero h1 em{font-style:normal;color:var(--blueprint)}
+.hero-grid{margin-top:48px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);grid-template-areas:"text photo" "utp photo";column-gap:48px;row-gap:32px;align-items:start}
+.hero-text{grid-area:text;display:flex;flex-direction:column;gap:28px}
+.hero-ctas{display:flex;flex-direction:column;align-items:flex-start;gap:18px}
+.hero-ctas .link-arrow{font-weight:500;text-decoration:underline;text-underline-offset:4px}
+.utp{grid-area:utp;display:flex;flex-direction:column;gap:8px}
+.utp-item{display:flex;align-items:center;gap:16px;padding:14px 16px;background:var(--paper-raised);border:1px solid var(--line);border-radius:2px}
+.utp-ico{width:40px;height:40px;flex-shrink:0;display:grid;place-items:center;background:var(--blueprint-tint);border-radius:2px;color:var(--blueprint)}
+.utp-item b{font-weight:600}
+.utp-item .mono{font-size:18px;color:var(--blueprint);margin-left:6px}
+.utp-item small{display:block;font-size:14px;line-height:20px;color:var(--ink-muted)}
+.hero-photo{grid-area:photo;margin:0;display:flex;flex-direction:column;gap:12px}
+.hero-photo img{width:100%;aspect-ratio:688/560;object-fit:cover}
+.caption-row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.caption-row .stamp{font-size:12px;line-height:16px;font-weight:600;letter-spacing:.08em;padding:3px 8px}
+
+/* преимущества */
+.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px}
+.card{display:flex;flex-direction:column;gap:16px;padding:24px;background:var(--paper-raised);border:1px solid var(--line)}
+.card-ico{color:var(--blueprint)}
+
+/* калькулятор */
+.calc-intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,520px);gap:64px;align-items:end}
+.sheet{background:var(--paper-raised);box-shadow:var(--shadow-sheet)}
+.calc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.calc-inputs{padding:40px;display:flex;flex-direction:column;gap:36px;border-right:1px solid var(--line)}
+.calc-result{padding:40px;display:flex;flex-direction:column;gap:20px}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+legend,.field-label{padding:0;margin-bottom:14px;color:var(--ink-muted)}
+.step-n{font-family:var(--mono);color:var(--blueprint);margin-right:8px}
+.opts{display:grid;gap:8px}
+.opts-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.opts-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.opt{position:relative}
+.opt input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.opt span{display:flex;flex-direction:column;justify-content:center;gap:4px;min-height:52px;padding:14px 16px;border:1px solid var(--line-strong);border-radius:2px;background:var(--paper-raised);color:var(--ink);transition:background-color .15s,border-color .15s}
+.opts-4 .opt span{align-items:center;font-family:var(--mono);font-weight:500}
+.opt input:checked+span{background:var(--blueprint-tint);border-color:var(--blueprint);box-shadow:inset 0 0 0 1px var(--blueprint)}
+.opt input:focus-visible+span{outline:3px solid var(--blueprint);outline-offset:2px}
+.opt input:hover+span{border-color:var(--ink)}
+.opt-name{font-size:18px;line-height:24px;font-weight:600}
+.opt-note{font-size:14px;line-height:20px;color:var(--ink-muted)}
+.opt-term{font-family:var(--mono);font-size:13px;font-weight:500;color:var(--blueprint)}
+.input{width:100%;height:52px;padding:0 16px;border:1px solid var(--line-strong);border-radius:2px;background:var(--paper-sunken);color:var(--ink);font:400 16px var(--sans)}
+.input:focus{border-color:var(--blueprint);border-width:2px;padding:0 15px;outline:none;background:var(--paper-raised)}
+.input::placeholder{color:var(--line-strong)}
+.input.mono{font-family:var(--mono)}
+.note-ok{display:flex;align-items:center;gap:8px;margin-top:12px;font-size:14px;line-height:20px;color:var(--success)}
+.smeta-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.smeta-row{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line)}
+.smeta-row .mono{font-size:18px;line-height:26px;text-align:right;white-space:nowrap}
+.total{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:20px;background:var(--blueprint-tint);border:2px solid var(--blueprint);border-radius:2px}
+.total .mono{font-size:40px;line-height:44px;letter-spacing:-.02em}
+.calc-result .btn{width:100%}
+
+/* проекты */
+.projects{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px 24px}
+.project{display:flex;flex-direction:column;gap:10px}
+.project img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.project-tag{color:var(--ink-muted)}
+.project h3{font-size:18px;line-height:24px;font-weight:600}
+.project-price{display:flex;align-items:baseline;justify-content:space-between;gap:8px;padding-top:10px;border-top:1px solid var(--line)}
+.project-price .mono{font-size:16px}
+
+/* этапы */
+.stages{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:24px;list-style:none;margin:0;padding:0}
+.stage{display:flex;flex-direction:column;gap:14px}
+.stage-line{display:flex;align-items:center;gap:8px}
+.stage-line::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--blueprint);flex-shrink:0}
+.stage-line::after{content:"";flex:1;height:1px;background:var(--line-strong)}
+.stage .label{color:var(--blueprint)}
+.stage img,.stage .doc{width:100%;aspect-ratio:4/3;object-fit:cover}
+.stage .doc{background:var(--paper-raised);border:1px solid var(--line);padding:16px;display:flex;flex-direction:column;justify-content:space-between;font-size:13px}
+.doc-row{display:flex;justify-content:space-between;gap:8px;padding:5px 0;border-bottom:1px solid var(--line)}
+.doc-row:last-child{border-bottom:0;font-weight:600;color:var(--blueprint)}
+.stage h3{font-size:20px;line-height:26px;font-weight:600}
+.stage p{font-size:15px;line-height:22px}
+
+/* отзыв */
+.review{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:48px;align-items:stretch}
+.review figure{margin:0;display:flex;flex-direction:column;gap:12px}
+.review figure img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.quote{padding:32px;display:flex;flex-direction:column;gap:24px;background:var(--paper-raised);border:1px solid var(--line)}
+.quote blockquote{margin:0;flex:1;font-size:19px;line-height:28px}
+.author{display:flex;align-items:center;gap:16px;padding-top:20px;border-top:1px solid var(--line)}
+.avatar{width:56px;height:56px;flex-shrink:0;background:var(--paper-sunken);border:1px dashed var(--line-strong)}
+
+/* что входит */
+.incl{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);background:var(--paper-raised);border:1px solid var(--line)}
+.incl-col{padding:32px 40px}
+.incl-col+.incl-col{border-left:1px solid var(--line);background:color-mix(in srgb,var(--paper-raised) 55%,var(--paper))}
+.incl-head{display:flex;align-items:center;gap:10px;padding-bottom:16px;border-bottom:2px solid var(--ink)}
+.incl ul{list-style:none;margin:0;padding:0}
+.incl li{display:flex;align-items:baseline;justify-content:space-between;gap:24px;padding:14px 0;border-bottom:1px solid var(--line)}
+.incl li>span:first-child{display:flex;align-items:center;gap:12px}
+.incl li svg{flex-shrink:0;position:relative;top:2px}
+.ok{color:var(--success)}
+
+/* вопросы */
+.faq-grid{display:grid;grid-template-columns:minmax(0,400px) minmax(0,1fr);gap:96px;align-items:start}
+.faq-side{display:flex;flex-direction:column;gap:20px}
+.faq-side figure{margin:8px 0 0;display:flex;flex-direction:column;gap:10px}
+.faq-side img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.faq-side figcaption{color:var(--osb-deep)}
+.faq{border-top:2px solid var(--ink)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:24px 0;cursor:pointer}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .q{display:flex;align-items:baseline;gap:20px}
+.faq summary .q .mono{font-size:13px;color:var(--blueprint)}
+.faq .pm{flex-shrink:0;color:var(--ink)}
+.faq .pm .v{transition:opacity .15s}
+.faq details[open] .pm .v{opacity:0}
+.faq details[open] .pm{color:var(--blueprint)}
+.faq details p{padding:0 48px 28px 44px;max-width:640px}
+
+/* гарантия + ипотека */
+.band{padding-block:72px}
+.band-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+.band-grid>div{display:flex;flex-direction:column;gap:14px}
+.band-grid>div:first-child{padding-right:56px;border-right:1px solid var(--line-strong)}
+.band-grid>div:last-child{padding-left:56px}
+
+/* форма */
+.final{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,520px);gap:96px;align-items:center}
+.final h2{font-size:64px;line-height:68px;font-weight:700;letter-spacing:-.025em}
+.form{padding:40px;display:flex;flex-direction:column;gap:20px}
+.field{display:flex;flex-direction:column;gap:8px}
+.field label{font-size:14px;line-height:20px;font-weight:500}
+.field-err{font-size:14px;line-height:20px;color:var(--danger)}
+.input[aria-invalid="true"]{border-color:var(--danger)}
+.form .btn{width:100%;margin-top:4px}
+.form-done{display:flex;flex-direction:column;gap:12px;padding:8px 0}
+.small{font-size:13px;line-height:18px}
+
+/* подвал */
+.site-footer{background:var(--footer-bg);color:var(--footer-ink);padding-block:56px}
+.site-footer a{color:var(--footer-ink);text-decoration:none}
+.site-footer a:hover{text-decoration:underline}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px}
+.foot-grid>div{display:flex;flex-direction:column;gap:10px;font-size:14px}
+.foot-grid .label,.foot-muted{color:var(--footer-muted)}
+.foot-bottom{margin-top:48px;padding-top:20px;border-top:1px solid color-mix(in srgb,var(--footer-muted) 30%,transparent);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--footer-muted)}
+
+/* адаптив */
+@media (max-width:1100px){
+  .nav{display:none}.menu-btn{display:inline-flex}
+  .hero h1{font-size:52px;line-height:56px}
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .projects{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stages{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .faq-grid,.final,.calc-intro{grid-template-columns:minmax(0,1fr);gap:40px}
+  .faq-side figure{max-width:480px}
+}
+@media (max-width:860px){
+  :root{--section:72px}
+  .hero-grid{grid-template-columns:minmax(0,1fr);grid-template-areas:"text" "photo" "utp"}
+  .calc{grid-template-columns:minmax(0,1fr)}
+  .calc-inputs{border-right:0;border-bottom:1px solid var(--line)}
+  .review,.incl,.band-grid{grid-template-columns:minmax(0,1fr)}
+  .incl-col+.incl-col{border-left:0;border-top:1px solid var(--line)}
+  .band-grid>div:first-child{padding:0 0 32px;border-right:0;border-bottom:1px solid var(--line-strong)}
+  .band-grid>div:last-child{padding:32px 0 0}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .final h2{font-size:44px;line-height:50px}
+}
+@media (max-width:600px){
+  :root{--gutter:16px}
+  .header-right .btn-secondary{display:none}
+  .hero{padding-block:32px 72px}
+  .hero h1{font-size:40px;line-height:44px}
+  .hero-badge{transform:none}
+  .hero-grid{margin-top:28px}
+  .h-display{font-size:32px;line-height:38px}
+  .btn{width:100%}
+  .hero-ctas{align-items:stretch}
+  .cards,.projects,.stages{grid-template-columns:minmax(0,1fr)}
+  .opts-4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .opts-2{grid-template-columns:minmax(0,1fr)}
+  .calc-inputs,.calc-result,.form{padding:24px}
+  .incl-col{padding:24px}
+  .incl li{flex-direction:column;gap:4px}
+  .incl li .spec{padding-left:28px}
+  .total .mono{font-size:32px;line-height:36px}
+  .faq details p{padding:0 0 24px}
+  .faq summary .q{gap:12px}
+  .h3{font-size:20px;line-height:26px}
+  .final h2{font-size:36px;line-height:42px}
+  .foot-grid{grid-template-columns:minmax(0,1fr)}
+}
+</style>
+</head>
+<body>
+
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="#top">SIPDOM</a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#calc">Цена</a>
+      <a href="#projects">Проекты</a>
+      <a href="#stages">Этапы</a>
+      <a href="#included">Что входит</a>
+      <a href="#faq">Вопросы</a>
+      <a href="#warranty">Гарантия</a>
+    </nav>
+    <div class="header-right">
+      <a class="btn btn-secondary" href="#calc">Рассчитать цену</a>
+      <button class="menu-btn" id="menu-btn" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-nav">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Разделы" hidden>
+    <a href="#calc">Цена</a>
+    <a href="#projects">Проекты</a>
+    <a href="#stages">Этапы</a>
+    <a href="#included">Что входит</a>
+    <a href="#faq">Вопросы</a>
+    <a href="#warranty">Гарантия</a>
+  </nav>
+</header>
+
+<main>
+<!-- Первый экран -->
+<section class="hero mm bordered" id="top" style="border-top:0">
+  <div class="wrap">
+    <div class="hero-top">
+      <div class="label" style="color:var(--blueprint)">Дома из СИП-панелей под ключ · Москва и область</div>
+      <div class="stamp hero-badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        50+ построенных домов · работаем с 2022 года
+      </div>
+    </div>
+    <h1>Дом из СИП-панелей под ключ <em>с честной сметой</em> еще до звонка менеджеру</h1>
+
+    <div class="hero-grid">
+      <div class="hero-text">
+        <p class="lead">Собственное производство, доставка и монтаж по Москве и области. Рассчитайте точную цену «под ключ» за 2 минуты, без звонка менеджеру.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#calc">Рассчитать точную стоимость дома
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a class="link-arrow" href="#included">Посмотреть, что входит в цену «под ключ»</a>
+        </div>
+      </div>
+
+      <figure class="hero-photo">
+        <img src="img/hero.jpg" alt="Двухэтажный дом из СИП-панелей с гаражом и мощеным въездом" width="1400" height="764" fetchpriority="high">
+        <figcaption class="caption-row">
+          <span class="spec">март 2026 · Истринский р-н, д. Лешково · 118 м²</span>
+          <span class="stamp">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            Построенный объект</span>
+        </figcaption>
+      </figure>
+
+      <div class="utp">
+        <div class="utp-item">
+          <div class="utp-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <div><b>Гарантия</b><span class="mono">10 лет</span><small>на домокомплект и монтаж</small></div>
+        </div>
+        <div class="utp-item">
+          <div class="utp-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <div><b>Коробка за</b><span class="mono">21 день</span><small>под ключ от 2 месяцев, срок в договоре</small></div>
+        </div>
+        <div class="utp-item">
+          <div class="utp-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></div>
+          <div><b>Доставка и монтаж до</b><span class="mono">100 км</span><small>от МКАД включены в цену</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Что вы получаете -->
+<section id="benefits">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="dim"><span class="spec">Что вы получаете</span><i></i></div>
+      <h2 class="h-display">Что вы получаете, кроме дома</h2>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <svg class="card-ico" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 17.5v-11"/></svg>
+        <h3 class="h3">Честная цена без сюрпризов</h3>
+        <p>Считаем стоимость сразу с доставкой, монтажом и фундаментом: не «от», а точная сумма в договоре. Дополнительных счетов после подписания не будет.</p>
+      </article>
+      <article class="card">
+        <svg class="card-ico" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+        <h3 class="h3">Гарантия <span class="mono">10 лет</span></h3>
+        <p>На домокомплект и монтажные работы. После окончания гарантии остаемся на связи: сервисное обслуживание и диагностика дома по запросу.</p>
+      </article>
+      <article class="card">
+        <svg class="card-ico" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <h3 class="h3">Коробка за <span class="mono">21 день</span></h3>
+        <p>От заключения договора до готовой коробки дома 21 день. Полностью под ключ, с отделкой и инженерией, от 2 месяцев. Срок фиксируется в договоре.</p>
+      </article>
+      <article class="card">
+        <svg class="card-ico" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
+        <h3 class="h3">Доставка и монтаж включены</h3>
+        <p>В пределах 100 км от МКАД доставка панелей и работа монтажной бригады уже в цене. Доплаты за расстояние нет.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Калькулятор -->
+<section id="calc" class="mm bordered">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="dim"><span class="spec">Калькулятор</span><i></i></div>
+      <div class="calc-intro">
+        <h2 class="h-display">Узнайте точную цену за 2 минуты, без звонка менеджеру</h2>
+        <p>Большинство компаний в этой нише называют цену «от» и просят оставить заявку, чтобы узнать реальную сумму. Мы считаем иначе: калькулятор сразу учитывает площадь, комплектацию, доставку и монтаж. Вы видите итоговую цену, а не ориентир.</p>
+      </div>
+    </div>
+
+    <form class="sheet calc" id="calc-form" onsubmit="return false">
+      <div class="calc-inputs">
+        <fieldset>
+          <legend class="label"><span class="step-n">01</span>Площадь дома</legend>
+          <div class="opts opts-4">
+            <label class="opt"><input type="radio" name="area" id="area-80" value="80"><span>80 м²</span></label>
+            <label class="opt"><input type="radio" name="area" id="area-100" value="100"><span>100 м²</span></label>
+            <label class="opt"><input type="radio" name="area" id="area-120" value="120" checked><span>120 м²</span></label>
+            <label class="opt"><input type="radio" name="area" id="area-150" value="150"><span>150 м²</span></label>
+          </div>
+          <p class="small muted" style="margin-top:12px">Нужна другая площадь? Укажите ее в заявке, посчитаем по тем же ставкам.</p>
+        </fieldset>
+
+        <fieldset>
+          <legend class="label"><span class="step-n">02</span>Комплектация</legend>
+          <div class="opts opts-2">
+            <label class="opt"><input type="radio" name="kit" id="kit-box" value="box"><span>
+              <span class="opt-name">Коробка</span>
+              <span class="opt-note">Фундамент, стены, перекрытия, кровля</span>
+              <span class="opt-term">срок: 21 день</span></span></label>
+            <label class="opt"><input type="radio" name="kit" id="kit-turnkey" value="turnkey" checked><span>
+              <span class="opt-name">Под ключ</span>
+              <span class="opt-note">Плюс инженерия и отделка</span>
+              <span class="opt-term">срок: от 2 месяцев</span></span></label>
+          </div>
+        </fieldset>
+
+        <div>
+          <label class="label field-label" for="calc-addr" style="display:block"><span class="step-n">03</span>Адрес участка</label>
+          <input class="input" id="calc-addr" type="text" autocomplete="street-address" placeholder="Например: Истринский р-н, д. Лешково">
+          <div class="note-ok">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            До 100 км от МКАД доставка и монтаж без доплаты
+          </div>
+        </div>
+      </div>
+
+      <div class="calc-result" aria-live="polite">
+        <div class="smeta-head">
+          <span class="label" style="color:var(--blueprint)">Ваша смета</span>
+          <span class="spec" id="smeta-spec">120 м² · под ключ</span>
+        </div>
+        <div>
+          <div class="smeta-row"><span>Домокомплект из СИП-панелей</span><span class="mono" data-line="kit">[сумма] ₽</span></div>
+          <div class="smeta-row"><span>Фундамент</span><span class="mono" data-line="foundation">[сумма] ₽</span></div>
+          <div class="smeta-row"><span>Монтаж</span><span class="mono" data-line="assembly">[сумма] ₽</span></div>
+          <div class="smeta-row"><span>Доставка</span><span class="mono" data-line="delivery">[сумма] ₽</span></div>
+          <div class="smeta-row" id="row-finish"><span>Инженерия и отделка</span><span class="mono" data-line="finish">[сумма] ₽</span></div>
+        </div>
+        <div class="total">
+          <div>
+            <div class="label" style="color:var(--blueprint)">Итого</div>
+            <div class="small">Сумма фиксируется в договоре</div>
+          </div>
+          <span class="mono" id="total">[итог] ₽</span>
+        </div>
+        <a class="btn btn-primary" href="#form">Обсудить проект с архитектором
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- Проекты -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="dim"><span class="spec">Проекты</span><i></i></div>
+      <h2 class="h-display">Проекты, которые мы строим</h2>
+      <p class="lead muted" style="max-width:680px">Любой проект можно изменить под ваш участок. Цена под ключ указана полной суммой, как в калькуляторе.</p>
+    </div>
+    <div class="projects">
+      <article class="project">
+        <img src="img/p-veranda.jpg" alt="Двухэтажный дом с открытой верандой" loading="lazy" width="1400" height="764">
+        <span class="label project-tag">Проект, визуализация</span>
+        <h3>Проект «Горизонт»</h3>
+        <span class="spec">140 м² · 2 этажа · веранда</span>
+        <div class="project-price"><span class="small muted">Под ключ</span><span class="mono">4&nbsp;220&nbsp;000 ₽</span></div>
+        <a class="link-arrow" href="#calc">Рассчитать этот проект <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </article>
+      <article class="project">
+        <img src="img/p-nord.jpg" alt="Двухэтажный дом с темным фасадом и деревянной вставкой" loading="lazy" width="1400" height="764">
+        <span class="label project-tag">Проект, визуализация</span>
+        <h3>Проект «Норд»</h3>
+        <span class="spec">130 м² · 2 этажа</span>
+        <div class="project-price"><span class="small muted">Под ключ</span><span class="mono">3&nbsp;920&nbsp;000 ₽</span></div>
+        <a class="link-arrow" href="#calc">Рассчитать этот проект <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </article>
+      <article class="project">
+        <img src="img/p-barn.jpg" alt="Дом в стиле барнхаус с панорамными окнами и террасой" loading="lazy" width="1400" height="764">
+        <span class="label project-tag">Проект, визуализация</span>
+        <h3>Проект «Лофт»</h3>
+        <span class="spec">160 м² · барнхаус · терраса</span>
+        <div class="project-price"><span class="small muted">Под ключ</span><span class="mono">4&nbsp;820&nbsp;000 ₽</span></div>
+        <a class="link-arrow" href="#calc">Рассчитать этот проект <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </article>
+      <article class="project">
+        <img src="img/p-flat.jpg" alt="Одноэтажный дом с темным фасадом и панорамным остеклением" loading="lazy" width="1400" height="764">
+        <span class="label project-tag">Проект, визуализация</span>
+        <h3>Проект «Флэт»</h3>
+        <span class="spec">90 м² · 1 этаж</span>
+        <div class="project-price"><span class="small muted">Под ключ</span><span class="mono">2&nbsp;720&nbsp;000 ₽</span></div>
+        <a class="link-arrow" href="#calc">Рассчитать этот проект <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </article>
+      <article class="project">
+        <img src="img/p-timber.jpg" alt="Дом с мансардой и крыльцом, фасад под дерево" loading="lazy" width="1400" height="764">
+        <span class="label project-tag">Проект, визуализация</span>
+        <h3>Проект «Шале»</h3>
+        <span class="spec">110 м² · 1 этаж + мансарда</span>
+        <div class="project-price"><span class="small muted">Под ключ</span><span class="mono">3&nbsp;320&nbsp;000 ₽</span></div>
+        <a class="link-arrow" href="#calc">Рассчитать этот проект <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </article>
+      <article class="project">
+        <img src="img/p-stucco.jpg" alt="Двухэтажный дом со штукатурным фасадом и балконом" loading="lazy" width="1400" height="764">
+        <span class="label project-tag">Проект, визуализация</span>
+        <h3>Проект «Классика»</h3>
+        <span class="spec">145 м² · 2 этажа · балкон</span>
+        <div class="project-price"><span class="small muted">Под ключ</span><span class="mono">4&nbsp;370&nbsp;000 ₽</span></div>
+        <a class="link-arrow" href="#calc">Рассчитать этот проект <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </article>
+      <article class="project">
+        <img src="img/p-cottage.jpg" alt="Небольшой дом с мансардой и крыльцом" loading="lazy" width="1400" height="764">
+        <span class="label project-tag">Проект, визуализация</span>
+        <h3>Проект «Дачный»</h3>
+        <span class="spec">75 м² · 1 этаж + мансарда</span>
+        <div class="project-price"><span class="small muted">Под ключ</span><span class="mono">2&nbsp;270&nbsp;000 ₽</span></div>
+        <a class="link-arrow" href="#calc">Рассчитать этот проект <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </article>
+      <article class="project">
+        <img src="img/p-grey.jpg" alt="Дом с крытой верандой и серым фасадом" loading="lazy" width="1400" height="764">
+        <span class="label project-tag">Проект, визуализация</span>
+        <h3>Проект «Компакт»</h3>
+        <span class="spec">95 м² · 1 этаж · веранда</span>
+        <div class="project-price"><span class="small muted">Под ключ</span><span class="mono">2&nbsp;870&nbsp;000 ₽</span></div>
+        <a class="link-arrow" href="#calc">Рассчитать этот проект <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Этапы -->
+<section id="stages" class="bordered">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="dim"><span class="spec">Этапы стройки</span><i></i></div>
+      <h2 class="h-display">От договора до заселения: пять этапов</h2>
+      <p class="lead muted" style="max-width:640px">Публикуем реальные фото с каждого объекта, а не типовые рендеры из каталога.</p>
+    </div>
+    <ol class="stages">
+      <li class="stage">
+        <div class="stage-line"></div>
+        <div class="label">Этап <span class="mono">01</span></div>
+        <div class="doc" aria-hidden="true">
+          <div class="label muted">Смета к договору</div>
+          <div>
+            <div class="doc-row"><span>Домокомплект</span><span class="mono">1&nbsp;770&nbsp;000</span></div>
+            <div class="doc-row"><span>Монтаж</span><span class="mono">354&nbsp;000</span></div>
+            <div class="doc-row"><span>Итого</span><span class="mono">3&nbsp;560&nbsp;000 ₽</span></div>
+          </div>
+        </div>
+        <span class="spec">12 февраля 2026 · объект в Истринском р-не</span>
+        <h3>Договор и расчет</h3>
+        <p>Фиксируем итоговую цену и сроки.</p>
+      </li>
+      <li class="stage">
+        <div class="stage-line"></div>
+        <div class="label">Этап <span class="mono">02</span></div>
+        <img src="img/stage-2.jpg" alt="Готовый фундамент под СИП-коробку" loading="lazy" width="760" height="415">
+        <span class="spec">неделя 1 · Истринский р-н</span>
+        <h3>Фундамент</h3>
+        <p>Подготовка площадки и заливка.</p>
+      </li>
+      <li class="stage">
+        <div class="stage-line"></div>
+        <div class="label">Этап <span class="mono">03</span></div>
+        <img src="img/stage-3.jpg" alt="Коробка дома из СИП-панелей на участке" loading="lazy" width="1400" height="764">
+        <span class="spec">неделя 4 · Истринский р-н</span>
+        <h3>Коробка</h3>
+        <p>Монтаж СИП-панелей, 21 день.</p>
+      </li>
+      <li class="stage">
+        <div class="stage-line"></div>
+        <div class="label">Этап <span class="mono">04</span></div>
+        <img src="img/stage-4.jpg" alt="Отделка фасада, дом в лесах" loading="lazy" width="1400" height="764">
+        <span class="spec">неделя 9 · Истринский р-н</span>
+        <h3>Инженерия и отделка</h3>
+        <p>Электрика, утепление, финишная отделка.</p>
+      </li>
+      <li class="stage">
+        <div class="stage-line"></div>
+        <div class="label">Этап <span class="mono">05</span></div>
+        <img src="img/stage-5.jpg" alt="Сданный одноэтажный дом" loading="lazy" width="1400" height="764">
+        <span class="spec">14 мая 2026 · Истринский р-н</span>
+        <h3>Сдача объекта</h3>
+        <p>Приемка дома, документы, гарантия на руки.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- Отзыв -->
+<section class="sunken">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="dim"><span class="spec">Отзыв</span><i></i></div>
+      <h2 class="h-display">Что говорят те, кто уже живет в своем доме</h2>
+    </div>
+    <div class="review">
+      <figure>
+        <img src="img/review.jpg" alt="Дом клиента после сдачи" loading="lazy" width="1400" height="764">
+        <figcaption class="spec">Сдан в мае 2026 · д. Лешково, Истринский р-н · 118 м²</figcaption>
+      </figure>
+      <div class="quote">
+        <div class="label muted">Отзыв владельца · этап <span class="mono">05</span> · сдача</div>
+        <blockquote>Смету посчитали сразу с доставкой и монтажом — итоговая сумма в договоре не изменилась ни разу за всю стройку. Коробку собрали за 21 день, как и обещали, на отделку ушло чуть больше двух месяцев из-за наших правок по планировке.</blockquote>
+        <div class="author">
+          <div class="avatar" aria-hidden="true"></div>
+          <div>
+            <div style="font-weight:600">Дмитрий Котов</div>
+            <div class="spec">Истринский р-н · 118 м²</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Что входит -->
+<section id="included">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="dim"><span class="spec">Состав цены</span><i></i></div>
+      <h2 class="h-display">Что входит в стоимость, без мелкого шрифта</h2>
+      <p class="lead muted" style="max-width:640px">Указываем состав комплектации до подписания договора, а не после первого платежа.</p>
+    </div>
+    <div class="incl">
+      <div class="incl-col">
+        <div class="incl-head ok">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          <span class="label">Входит в цену</span>
+        </div>
+        <ul>
+          <li><span><svg class="ok" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Домокомплект из СИП-панелей</span><span class="spec">174 мм</span></li>
+          <li><span><svg class="ok" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Монтаж</span><span class="spec">бригада производителя</span></li>
+          <li><span><svg class="ok" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Доставка</span><span class="spec">до 100 км от МКАД</span></li>
+          <li><span><svg class="ok" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Фундамент</span><span class="spec">свайно-винтовой</span></li>
+          <li><span><svg class="ok" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Утепление</span><span class="spec">пенополистирол ПСБ-С-25, 150 мм</span></li>
+          <li><span><svg class="ok" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Окна</span><span class="spec">ПВХ, двухкамерный стеклопакет</span></li>
+          <li><span><svg class="ok" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Кровля</span><span class="spec">металлочерепица</span></li>
+          <li><span><svg class="ok" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Отделка</span><span class="spec">чистовая: обои под покраску, ламинат</span></li>
+        </ul>
+      </div>
+      <div class="incl-col">
+        <div class="incl-head muted">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14"/></svg>
+          <span class="label">Не входит</span>
+        </div>
+        <ul class="muted">
+          <li><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14"/></svg>Земельный участок</span></li>
+          <li><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14"/></svg>Подключение к сетям за границей участка</span></li>
+          <li><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14"/></svg>Мебель и бытовая техника</span></li>
+        </ul>
+        <p class="small muted" style="margin-top:24px">Если что-то из этого нужно, посчитаем отдельной строкой сметы до подписания договора.</p>
+        <a class="link-arrow" href="#calc" style="margin-top:20px">Рассчитать с этим составом <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Вопросы -->
+<section id="faq" class="bordered">
+  <div class="wrap">
+    <div class="dim"><span class="spec">Честно о СИП-панелях</span><i></i></div>
+    <div class="faq-grid" style="margin-top:28px">
+      <div class="faq-side">
+        <h2 class="h-display">Отвечаем на вопросы, которые обычно замалчивают</h2>
+        <p class="muted">На рынке принято рассказывать только о плюсах СИП-технологии. Мы рассказываем и о том, на что стоит обратить внимание, и как мы это решаем.</p>
+        <figure>
+          <img src="img/panel.jpg" alt="Стык СИП-панелей: OSB-плита и утеплитель" loading="lazy" width="1400" height="764">
+          <figcaption class="spec">Стык панелей: OSB · утеплитель · OSB</figcaption>
+        </figure>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary><span class="q"><span class="mono">01</span><span class="h3">А как же пар и вентиляция?</span></span>
+            <svg class="pm" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14"/><path class="v" d="M12 5v14"/></svg></summary>
+          <p>У СИП-панелей низкая паропроницаемость: без продуманной вентиляции в доме может расти влажность. Мы закладываем приточно-вытяжную вентиляцию в проект на этапе инженерии — вместе с электрикой и отоплением, а не отдельной доработкой после сдачи.</p>
+        </details>
+        <details>
+          <summary><span class="q"><span class="mono">02</span><span class="h3">Что с шумоизоляцией?</span></span>
+            <svg class="pm" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14"/><path class="v" d="M12 5v14"/></svg></summary>
+          <p>СИП-панель тише кирпича на низких частотах, но требует отдельного решения для мест с высоким внешним шумом. Для участков у дороги предлагаем усиленное остекление и увеличенную обшивку стены — считаем это отдельной строкой сметы, а не молчим о проблеме.</p>
+        </details>
+        <details>
+          <summary><span class="q"><span class="mono">03</span><span class="h3">Сколько прослужит утеплитель внутри панели?</span></span>
+            <svg class="pm" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14"/><path class="v" d="M12 5v14"/></svg></summary>
+          <p>Срок службы зависит от условий эксплуатации и качества панели. Мы используем пенополистирол ПСБ-С-25 по ГОСТ и даем гарантию 10 лет на домокомплект.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Гарантия и ипотека -->
+<section id="warranty" class="band sunken">
+  <div class="wrap band-grid">
+    <div>
+      <div class="label muted">Гарантия</div>
+      <h2 class="h2">Гарантия <span class="mono" style="color:var(--blueprint)">10 лет</span> и что дальше</h2>
+      <p style="max-width:600px">Дом из СИП-панелей при правильной эксплуатации служит десятилетиями. Мы даем 10 лет гарантии на домокомплект и монтаж, а после ее окончания остаемся на связи: диагностика дома, консультации по обслуживанию, ремонт по запросу.</p>
+    </div>
+    <div>
+      <div class="label muted" style="display:flex;align-items:center;gap:10px">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--blueprint)" stroke-width="1.5" aria-hidden="true"><path d="M3 22h18M6 18v-7M10 18v-7M14 18v-7M18 18v-7"/><path d="M12 2l8 5H4z"/></svg>
+        Ипотека
+      </div>
+      <h3 class="h3">Можно с ипотекой и материнским капиталом</h3>
+      <p>Работаем с ипотечными программами и маткапиталом, поможем подготовить документы для банка.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Заявка -->
+<section id="form" class="mm">
+  <div class="wrap final">
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <div class="dim" style="margin:0"><span class="spec">Заявка</span><i></i></div>
+      <h2>Узнайте точную цену вашего дома</h2>
+      <p class="lead" style="max-width:520px">Оставьте заявку: рассчитаем стоимость с доставкой и монтажом и пришлем в течение <span class="mono">1 рабочего дня</span>.</p>
+    </div>
+    <div class="sheet">
+      <form class="form" id="lead-form" novalidate>
+        <input type="hidden" name="subject" value="Заявка с демо-лендинга SIPDOM (портфолио direct.alex-belyakov.com)">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+        <div class="label" style="color:var(--blueprint)">Заявка на расчет</div>
+        <div class="field">
+          <label for="f-name">Имя</label>
+          <input class="input" id="f-name" name="name" type="text" autocomplete="name" placeholder="Как к вам обращаться" required aria-describedby="f-name-err">
+          <span class="field-err" id="f-name-err" hidden>Укажите имя, чтобы мы знали, как к вам обращаться</span>
+        </div>
+        <div class="field">
+          <label for="f-phone">Телефон</label>
+          <input class="input mono" id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+7 ___ ___-__-__" required aria-describedby="f-phone-err">
+          <span class="field-err" id="f-phone-err" hidden>Введите номер из 11 цифр, например +7 916 123-45-67</span>
+        </div>
+        <div class="field">
+          <label for="f-area">Площадь дома, примерно</label>
+          <input class="input mono" id="f-area" name="area" type="text" inputmode="numeric" placeholder="Например, 120 м²">
+        </div>
+        <button class="btn btn-primary" type="submit">Получить расчет</button>
+        <p class="small muted">Нажимая кнопку, вы соглашаетесь с <a href="https://direct.alex-belyakov.com/privacy.html" target="_blank" rel="noopener noreferrer" class="muted">политикой обработки персональных данных</a>.</p>
+      </form>
+      <div class="form form-done" id="form-done" hidden>
+        <div class="stamp" style="align-self:flex-start">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          <span class="label">Заявка принята</span>
+        </div>
+        <p class="h3" id="done-title">Спасибо!</p>
+        <p class="muted">Рассчитаем стоимость с доставкой и монтажом и пришлем в течение <span class="mono">1 рабочего дня</span>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <span style="font-size:20px;font-weight:700">SIPDOM</span>
+        <span class="foot-muted" style="max-width:320px">Дома из СИП-панелей под ключ. Собственное производство, доставка и монтаж по Москве и области.</span>
+      </div>
+      <div>
+        <span class="label">Разделы</span>
+        <a href="#calc">Калькулятор</a>
+        <a href="#projects">Проекты</a>
+        <a href="#stages">Этапы стройки</a>
+        <a href="#included">Что входит в цену</a>
+      </div>
+      <div>
+        <span class="label">Контакты</span>
+        <a href="mailto:me@alex-belyakov.com">me@alex-belyakov.com</a>
+        <a href="https://t.me/a_beliakov" target="_blank" rel="noopener noreferrer">t.me/a_beliakov</a>
+      </div>
+      <div>
+        <span class="label">Производство</span>
+        <span>Московская область</span>
+        <span class="foot-muted">Собственное производство панелей</span>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 SIPDOM</span>
+      <span class="foot-muted">Демо-лендинг из портфолио — дизайн и вёрстка <a href="https://direct.alex-belyakov.com/" style="color:inherit">Александра Белякова</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Мобильное меню
+  var btn=document.getElementById('menu-btn'),nav=document.getElementById('mobile-nav');
+  btn.addEventListener('click',function(){
+    var open=nav.hidden; nav.hidden=!open; btn.setAttribute('aria-expanded',String(open));
+    btn.setAttribute('aria-label',open?'Закрыть меню':'Открыть меню');
+  });
+  nav.addEventListener('click',function(e){ if(e.target.tagName==='A'){ nav.hidden=true; btn.setAttribute('aria-expanded','false'); } });
+
+  // Калькулятор. Ставки откалиброваны по конкурентному анализу рынка СИП-домостроения
+  // Москвы и области (13 конкурентов) — не факт реального прайса, пример для демо-лендинга.
+  var RATES={
+    kitPerM2:15000,        // домокомплект, ₽ за м²
+    foundationPerM2:4000,  // фундамент, ₽ за м²
+    assemblyPerM2:3000,    // монтаж, ₽ за м²
+    delivery:20000,        // доставка до 100 км от МКАД, ₽
+    finishPerM2:8000       // инженерия и отделка (под ключ), ₽ за м²
+  };
+  var form=document.getElementById('calc-form');
+  var fmt=function(n){return Math.round(n).toLocaleString('ru-RU').replace(/,/g,' ')+' ₽';};
+  function line(key,val){var el=form.querySelector('[data-line="'+key+'"]'); el.textContent=val==null?'[сумма] ₽':fmt(val); return val;}
+  function update(){
+    var area=+form.querySelector('input[name="area"]:checked').value;
+    var kit=form.querySelector('input[name="kit"]:checked').value;
+    var turnkey=kit==='turnkey';
+    document.getElementById('smeta-spec').textContent=area+' м² · '+(turnkey?'под ключ':'коробка');
+    document.getElementById('row-finish').hidden=!turnkey;
+    var per=function(r){return r==null?null:r*area;};
+    var parts=[line('kit',per(RATES.kitPerM2)),line('foundation',per(RATES.foundationPerM2)),line('assembly',per(RATES.assemblyPerM2)),line('delivery',RATES.delivery)];
+    if(turnkey) parts.push(line('finish',per(RATES.finishPerM2)));
+    var ready=parts.every(function(v){return v!=null;});
+    document.getElementById('total').textContent=ready?fmt(parts.reduce(function(a,b){return a+b;},0)):'[итог] ₽';
+  }
+  form.addEventListener('change',update); update();
+
+  // Форма заявки. Реальная отправка через Web3Forms (тот же сервис, что и на основном
+  // сайте direct.alex-belyakov.com) — полностью самостоятельный вызов, без подключения
+  // общих файлов основного сайта, чтобы правки здесь никак не затрагивали его.
+  var lead=document.getElementById('lead-form'),done=document.getElementById('form-done');
+  var leadBtn=lead.querySelector('button[type="submit"]'), leadBtnLabel=leadBtn.textContent;
+  function setErr(input,errId,bad){input.setAttribute('aria-invalid',bad?'true':'false');document.getElementById(errId).hidden=!bad;}
+  lead.addEventListener('submit',function(e){
+    e.preventDefault();
+    var name=document.getElementById('f-name'),phone=document.getElementById('f-phone');
+    var badName=!name.value.trim(), digits=phone.value.replace(/\D/g,''), badPhone=digits.length!==11;
+    setErr(name,'f-name-err',badName); setErr(phone,'f-phone-err',badPhone);
+    if(badName){name.focus();return;} if(badPhone){phone.focus();return;}
+    leadBtn.disabled=true; leadBtn.textContent='Отправка...';
+    var formData=new FormData(lead);
+    formData.append('access_key','c0f9589b-17fa-40d7-adff-84f53ee8996a');
+    fetch('https://api.web3forms.com/submit',{method:'POST',headers:{Accept:'application/json'},body:formData})
+      .then(function(res){return res.json();})
+      .then(function(data){
+        if(!data||!data.success) throw new Error('web3forms error');
+        document.getElementById('done-title').textContent='Спасибо, '+name.value.trim()+'!';
+        lead.hidden=true; done.hidden=false;
+      })
+      .catch(function(){
+        leadBtn.disabled=false; leadBtn.textContent=leadBtnLabel;
+        alert('Не получилось отправить заявку. Попробуйте еще раз или напишите в Telegram: t.me/a_beliakov');
+      });
+  });
+})();
+</script>
+
+</body>
+</html>
