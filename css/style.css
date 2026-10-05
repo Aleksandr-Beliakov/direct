@@ -1140,9 +1140,36 @@ button[style*="background:#FF5A1F"]:hover {
   .ab-case-map-head { padding: 14px 16px; }
 }
 
+.ab-case-kpi-primary {
+  border: 1.5px solid #D8D2C7;
+  border-radius: 14px;
+  margin: 10px;
+}
+
+.ab-case-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.ab-case-chip-green {
+  background: #E3F3EA;
+  color: #1F8A47;
+}
+
+.ab-case-chip-neutral {
+  background: #F2EFE6;
+  color: #75706A;
+}
+
 @media (max-width: 900px) {
   .ab-case-kpis { grid-template-columns: 1fr !important; }
-  .ab-case-kpi-2 { border-left: none !important; border-top: 1px solid #ECE7DE; }
+  .ab-case-kpi-2, .ab-case-kpi-3 { border-left: none !important; border-top: 1px solid #ECE7DE; }
+  .ab-case-kpi-primary { margin: 0; border-width: 1px; }
 }
 
 .ab-case-lesson-wide { grid-column: 1 / -1; }
