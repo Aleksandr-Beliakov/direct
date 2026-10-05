@@ -140,16 +140,6 @@ function abSolutionSlide(btn, dir) {
   row.scrollBy({ left: dir * step, behavior: 'smooth' });
 }
 
-function abCaseGallerySlide(btn, dir) {
-  var wrap = btn.closest('.ab-case-gallery');
-  var track = wrap && wrap.querySelector('.ab-case-gallery-track');
-  if (!track) return;
-  var card = track.querySelector('.ab-case-gallery-slide');
-  var gap = parseFloat(getComputedStyle(track).columnGap) || 16;
-  var step = card ? card.getBoundingClientRect().width + gap : track.clientWidth;
-  track.scrollBy({ left: dir * step, behavior: 'smooth' });
-}
-
 (function () {
   var row = document.querySelector('.ab-solution-row');
   if (!row) return;
@@ -260,58 +250,6 @@ function abCaseGallerySlide(btn, dir) {
     cards.forEach(function (c) { observer.observe(c); });
   }
 })();
-
-document.querySelectorAll('.ab-case-gallery').forEach(function (wrap) {
-  var track = wrap.querySelector('.ab-case-gallery-track');
-  if (!track) return;
-  var originals = Array.prototype.slice.call(track.children);
-  if (originals.length < 2) return;
-
-  function cloneSet() {
-    return originals.map(function (el) {
-      var c = el.cloneNode(true);
-      c.setAttribute('aria-hidden', 'true');
-      return c;
-    });
-  }
-
-  cloneSet().forEach(function (c) { track.appendChild(c); });
-  var prependFrag = document.createDocumentFragment();
-  cloneSet().forEach(function (c) { prependFrag.appendChild(c); });
-  track.insertBefore(prependFrag, track.firstChild);
-
-  var setWidth = 0;
-  function measure() {
-    setWidth = track.scrollWidth / 3;
-  }
-  measure();
-  track.scrollLeft = setWidth;
-
-  var normTimer = null;
-  function normalize() {
-    if (!setWidth) return;
-    if (track.scrollLeft < setWidth * 0.5) {
-      track.style.scrollBehavior = 'auto';
-      track.scrollLeft += setWidth;
-      track.style.scrollBehavior = '';
-    } else if (track.scrollLeft > setWidth * 1.5) {
-      track.style.scrollBehavior = 'auto';
-      track.scrollLeft -= setWidth;
-      track.style.scrollBehavior = '';
-    }
-  }
-  track.addEventListener('scroll', function () {
-    clearTimeout(normTimer);
-    normTimer = setTimeout(normalize, 120);
-  });
-
-  window.addEventListener('resize', function () {
-    measure();
-    track.style.scrollBehavior = 'auto';
-    track.scrollLeft = setWidth;
-    track.style.scrollBehavior = '';
-  });
-});
 
 document.querySelectorAll('.ab-compare-tab').forEach(function (btn) {
   btn.addEventListener('click', function () {
