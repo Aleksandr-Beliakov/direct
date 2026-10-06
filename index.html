@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=5">
+  <link rel="stylesheet" href="css/style.css?v=6">
 </head>
 <body class="ab-page-pilot">
 
@@ -594,56 +594,34 @@
 <section id="cases" style="padding:32px 0 56px;background-color:#FBFAF7;">
   <div style="max-width:1150px;margin:0 auto;padding:0 32px;">
 
-    <div style="color:#E8480F;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin:0 0 12px;">Результаты</div>
-    <h2 style="font-size:34px;line-height:1.15;letter-spacing:-0.02em;font-weight:700;color:#171512;margin:0 0 32px;">Результаты в цифрах</h2>
-
-    <div class="ab-cases-row" style="display:flex;gap:20px;margin:0 0 32px;">
-
-      <div class="ab-reveal" style="flex:1;background:#fff;border:1px solid #ECE7DE;border-radius:16px;padding:26px;">
-        <div style="font-size:15px;font-weight:700;color:#171512;margin:0 0 14px;">Окна ПВХ · Екатеринбург</div>
-        <div style="display:inline-flex;font-size:13px;font-weight:600;color:#CF3E0A;background:#FFEDE3;border-radius:999px;padding:6px 12px;margin:0 0 20px;">Снижение цены заявки</div>
-        <div style="border-top:1px solid #ECE7DE;padding-top:20px;margin-bottom:20px;display:flex;align-items:baseline;gap:10px;">
-          <span style="font-size:20px;color:#9A9286;text-decoration:line-through;">1 800 ₽</span>
-          <span style="color:#9A9286;">→</span>
-          <span style="font-size:28px;font-weight:700;color:#FF5A1F;">650 ₽</span>
-        </div>
-        <p style="font-size:15px;color:#5C574E;line-height:1.55;margin:0 0 20px;">Почистил семантику, убрал нецелевые площадки РСЯ, настроил цели в Метрике.</p>
-        <div style="border-top:1px solid #ECE7DE;padding-top:16px;display:flex;align-items:center;justify-content:space-between;">
-          <span style="font-size:13px;color:#897F73;">Период: 30 дней</span>
+    <div class="ab-cases-head" style="display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin:0 0 32px;">
+      <div>
+        <div style="color:#E8480F;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin:0 0 12px;">Результаты</div>
+        <h2 class="ab-cases-title" style="font-size:36px;line-height:1.15;letter-spacing:-0.02em;font-weight:800;color:#171512;margin:0;">Результаты в цифрах</h2>
+      </div>
+      <div class="ab-cases-head-actions" style="display:flex;align-items:center;gap:18px;">
+        <a href="cases/bani-bochki-mo.html" style="font-size:15px;font-weight:600;color:#171512;text-decoration:none;">Все кейсы →</a>
+        <div class="ab-cases-arrows" style="display:flex;gap:10px;">
+          <button type="button" class="ab-cases-arrow ab-cases-arrow-prev" aria-label="Предыдущие кейсы" onclick="abCasesSlide(-1)">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#171512" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button type="button" class="ab-cases-arrow ab-cases-arrow-next" aria-label="Следующие кейсы" onclick="abCasesSlide(1)">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#171512" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
         </div>
       </div>
-
-      <div class="ab-reveal" style="flex:1;background:#fff;border:1px solid #ECE7DE;border-radius:16px;padding:26px;">
-        <div style="font-size:15px;font-weight:700;color:#171512;margin:0 0 14px;">Доставка цветов · Казань</div>
-        <div style="display:inline-flex;font-size:13px;font-weight:600;color:#CF3E0A;background:#FFEDE3;border-radius:999px;padding:6px 12px;margin:0 0 20px;">Рост числа заявок</div>
-        <div style="border-top:1px solid #ECE7DE;padding-top:20px;margin-bottom:20px;display:flex;align-items:baseline;gap:10px;">
-          <span style="font-size:20px;color:#9A9286;text-decoration:line-through;">8/мес</span>
-          <span style="color:#9A9286;">→</span>
-          <span style="font-size:28px;font-weight:700;color:#FF5A1F;">34/мес</span>
-        </div>
-        <p style="font-size:15px;color:#5C574E;line-height:1.55;margin:0 0 20px;">Запуск с нуля, A/B-тест объявлений, оптимизация под мобильный трафик.</p>
-        <div style="border-top:1px solid #ECE7DE;padding-top:16px;display:flex;align-items:center;justify-content:space-between;">
-          <span style="font-size:13px;color:#897F73;">Период: 45 дней</span>
-        </div>
-      </div>
-
-      <div class="ab-reveal" style="flex:1;background:#fff;border:1px solid #ECE7DE;border-radius:16px;padding:26px;">
-        <div style="font-size:15px;font-weight:700;color:#171512;margin:0 0 14px;">Дома из бруса · Краснодар</div>
-        <div style="display:inline-flex;font-size:13px;font-weight:600;color:#CF3E0A;background:#FFEDE3;border-radius:999px;padding:6px 12px;margin:0 0 20px;">Запуск с нуля</div>
-        <div style="border-top:1px solid #ECE7DE;padding-top:20px;margin-bottom:20px;">
-          <div style="font-size:28px;font-weight:700;color:#FF5A1F;">26 заявок</div>
-          <div style="font-size:15px;color:#171512;margin-top:4px;">по 4 500 ₽ за 30 дней</div>
-        </div>
-        <p style="font-size:15px;color:#5C574E;line-height:1.55;margin:0 0 20px;">Почистил семантику, убрал нецелевые площадки РСЯ, настроил цели в Метрике.</p>
-        <div style="border-top:1px solid #ECE7DE;padding-top:16px;display:flex;align-items:center;justify-content:space-between;">
-          <span style="font-size:13px;color:#897F73;">Период: 30 дней</span>
-        </div>
-      </div>
-
     </div>
 
-    <div style="text-align:center;">
+    <div class="ab-cases-track" id="ab-cases-track"></div>
+    <div class="ab-cases-dots" id="ab-cases-dots"></div>
+
+    <div class="ab-cases-cta-desktop" style="text-align:center;margin-top:32px;">
       <a href="#request" data-popup="audit" style="display:inline-flex;align-items:center;gap:8px;background:#FF5A1F;color:#fff;font-weight:600;font-size:16px;padding:15px 32px;border-radius:12px;text-decoration:none;box-shadow:0 8px 20px rgba(255,90,31,0.26);">Узнать цену заявки в моей нише</a>
+    </div>
+
+    <div class="ab-cases-cta-mobile">
+      <a href="#request" data-popup="audit" class="ab-cases-cta-mobile-btn">Узнать цену заявки в моей нише</a>
+      <a href="cases/bani-bochki-mo.html" class="ab-cases-cta-mobile-link">Все кейсы →</a>
     </div>
 
   </div>
@@ -1340,6 +1318,54 @@
   </div>
 </div>
 
+<script>
+window.AB_CASES = [
+  {
+    place: 'Бани-бочки · МО',
+    period: '8 месяцев',
+    title: 'Бани-бочки в Московской области: договор от 30 тыс. ₽',
+    metricLabel: 'Цена целевого обращения',
+    metricWas: '12 500 ₽',
+    metricNow: '3 185 ₽',
+    channels: 'Поиск, РСЯ, ретаргетинг',
+    screenshot: 'images/cases/bani-bochki/site-first-screen.jpg',
+    url: 'cases/bani-bochki-mo.html'
+  },
+  {
+    place: 'Окна ПВХ · Екатеринбург',
+    period: '30 дней',
+    title: 'Окна ПВХ в Екатеринбурге: цена заявки упала почти в 3 раза',
+    metricLabel: 'Цена заявки',
+    metricWas: '1 800 ₽',
+    metricNow: '650 ₽',
+    channels: 'Поиск, РСЯ',
+    screenshot: '',
+    url: ''
+  },
+  {
+    place: 'Доставка цветов · Казань',
+    period: '45 дней',
+    title: 'Доставка цветов в Казани: заявок стало больше чем в 4 раза',
+    metricLabel: 'Заявок в месяц',
+    metricWas: '8',
+    metricNow: '34',
+    channels: 'Поиск, РСЯ',
+    screenshot: '',
+    url: ''
+  },
+  {
+    place: 'Дома из бруса · Краснодар',
+    period: '30 дней',
+    title: 'Дома из бруса в Краснодаре: запуск с нуля, 26 заявок за первый месяц',
+    metricLabel: 'Цена заявки',
+    metricWas: '',
+    metricNow: '4 500 ₽',
+    channels: 'Поиск, РСЯ',
+    screenshot: '',
+    url: ''
+  }
+];
+</script>
 <script src="js/main.js"></script>
 <script src="js/forms.js"></script>
 <script src="/js/cookie-consent.js" defer></script>

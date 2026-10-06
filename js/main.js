@@ -264,3 +264,104 @@ document.querySelectorAll('.ab-compare-tab').forEach(function (btn) {
     });
   });
 });
+
+function abCasesSlide(dir) {
+  var track = document.getElementById('ab-cases-track');
+  if (!track) return;
+  var card = track.querySelector('.ab-cases-card');
+  var gap = parseFloat(getComputedStyle(track).columnGap) || 20;
+  var step = card ? card.getBoundingClientRect().width + gap : track.clientWidth;
+  track.scrollBy({ left: dir * step, behavior: 'smooth' });
+}
+
+(function () {
+  var track = document.getElementById('ab-cases-track');
+  var cases = window.AB_CASES;
+  if (!track || !cases || !cases.length) return;
+
+  track.innerHTML = cases.map(function (item) {
+    var tag = item.url ? 'a' : 'div';
+    var hrefAttr = item.url ? ' href="' + item.url + '"' : '';
+
+    var shot = item.screenshot
+      ? '<div class="ab-cases-card-shot-frame">'
+        + '<div class="ab-cases-card-shot-dots"><span></span><span></span><span></span></div>'
+        + '<img src="' + item.screenshot + '" alt="Первый экран сайта клиента" loading="lazy">'
+        + '</div>'
+      : '<div class="ab-cases-card-shot-frame"><div class="ab-cases-card-shot-empty">Скриншот сайта клиента</div></div>';
+
+    var metricRow = item.metricWas
+      ? '<span class="ab-cases-metric-was">' + item.metricWas + '</span>'
+        + '<span class="ab-cases-metric-arrow">→</span>'
+        + '<span class="ab-cases-metric-now">' + item.metricNow + '</span>'
+      : '<span class="ab-cases-metric-now">' + item.metricNow + '</span>';
+
+    var footLink = item.url ? '<span class="ab-cases-card-link">Читать кейс →</span>' : '';
+
+    return '<' + tag + ' class="ab-cases-card"' + hrefAttr + '>'
+      + '<div class="ab-cases-card-shot">' + shot + '</div>'
+      + '<div class="ab-cases-card-body">'
+      + '<div class="ab-cases-tags-full"><span class="ab-cases-tag">' + item.place + '</span><span class="ab-cases-tag">' + item.period + '</span></div>'
+      + '<div class="ab-cases-tags-compact">' + item.place + ' · ' + item.period + '</div>'
+      + '<h3 class="ab-cases-card-title">' + item.title + '</h3>'
+      + '<div class="ab-cases-metric"><div class="ab-cases-metric-label">' + item.metricLabel + '</div><div class="ab-cases-metric-row">' + metricRow + '</div></div>'
+      + '<div class="ab-cases-card-foot"><span class="ab-cases-card-channels">' + item.channels + '</span>' + footLink + '</div>'
+      + '</div>'
+      + '</' + tag + '>';
+  }).join('');
+
+  track.style.setProperty('--ab-cases-count', cases.length);
+
+  var arrowsWrap = document.querySelector('.ab-cases-arrows');
+  var prevBtn = document.querySelector('.ab-cases-arrow-prev');
+  var nextBtn = document.querySelector('.ab-cases-arrow-next');
+
+  if (cases.length <= 3) {
+    track.classList.add('is-compact');
+    if (arrowsWrap) arrowsWrap.style.display = 'none';
+  } else if (prevBtn && nextBtn) {
+    function updateArrows() {
+      prevBtn.disabled = track.scrollLeft <= 2;
+      nextBtn.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+    }
+    updateArrows();
+    track.addEventListener('scroll', function () {
+      clearTimeout(track._abArrowsTimer);
+      track._abArrowsTimer = setTimeout(updateArrows, 100);
+    });
+    window.addEventListener('resize', updateArrows);
+  }
+
+  var isDown = false, startX = 0, startScroll = 0;
+  track.addEventListener('pointerdown', function (e) {
+    if (e.pointerType !== 'mouse') return;
+    isDown = true;
+    startX = e.clientX;
+    startScroll = track.scrollLeft;
+  });
+  window.addEventListener('pointermove', function (e) {
+    if (!isDown) return;
+    track.scrollLeft = startScroll - (e.clientX - startX);
+  });
+  window.addEventListener('pointerup', function () { isDown = false; });
+
+  var dotsWrap = document.getElementById('ab-cases-dots');
+  var cards = track.querySelectorAll('.ab-cases-card');
+  if (dotsWrap && cards.length && 'IntersectionObserver' in window) {
+    cards.forEach(function (_, i) {
+      var dot = document.createElement('span');
+      dot.className = 'ab-cases-dot' + (i === 0 ? ' is-active' : '');
+      dotsWrap.appendChild(dot);
+    });
+    var dots = dotsWrap.querySelectorAll('.ab-cases-dot');
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var idx = Array.prototype.indexOf.call(cards, entry.target);
+        dots.forEach(function (d) { d.classList.remove('is-active'); });
+        if (dots[idx]) dots[idx].classList.add('is-active');
+      });
+    }, { root: track, threshold: 0.6 });
+    cards.forEach(function (c) { observer.observe(c); });
+  }
+})();
