@@ -1201,11 +1201,6 @@ button[style*="background:#FF5A1F"]:hover {
   white-space: nowrap;
 }
 
-.ab-case-chip-green {
-  background: #E5F5EA;
-  color: #1F8A4C;
-}
-
 .ab-case-results {
   display: flex;
   flex-direction: column;
