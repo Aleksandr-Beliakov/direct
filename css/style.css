@@ -1214,6 +1214,7 @@ button[style*="background:#FF5A1F"]:hover {
 .ab-case-chip {
   display: inline-flex;
   align-items: center;
+  gap: 4px;
   padding: 5px 12px;
   border-radius: 999px;
   font-size: 13px;
