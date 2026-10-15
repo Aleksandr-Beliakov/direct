@@ -1749,7 +1749,7 @@ button[style*="background:#FF5A1F"]:hover {
   .ab-cases-track {
     display: flex !important;
     gap: 12px;
-    overflow-x: auto;
+    overflow-x: auto !important;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
   }
