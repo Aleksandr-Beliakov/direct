@@ -24,6 +24,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://direct.alex-belyakov.com/cases/klinika-dubai.html</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
   <!-- Временно скрыт по просьбе пользователя, вернуть запись, когда скажет
   <url>
     <loc>https://direct.alex-belyakov.com/cases/manicure-salon-msk.html</loc>
