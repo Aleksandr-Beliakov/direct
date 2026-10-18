@@ -1345,10 +1345,15 @@ window.AB_CASES = [
   {
     place: 'Клиника · Дубай, ОАЭ',
     period: '1 месяц',
-    title: 'Запуск Директа и Google Ads с нуля для клиники в Дубае',
-    metricLabel: 'Цена конверсии в Директе',
+    title: 'Клиника в Дубае: Директ и Google Ads с нуля, конверсия от 3,78 $',
+    metricLabel: 'Цена конверсии',
     metricWas: '',
     metricNow: '3,78 $',
+    metricSplit: {
+      label: 'Цена конверсии',
+      left: { sub: 'Яндекс Директ', value: '3,78 $', note: '30 конверсий' },
+      right: { sub: 'Google Ads', value: '9,98 $', note: '20 конверсий' }
+    },
     channels: 'Поиск Яндекса, Google Ads',
     screenshot: 'images/cases/klinika-dubai/site-first-screen.jpg',
     url: 'cases/klinika-dubai.html'
@@ -1401,7 +1406,7 @@ window.AB_CASES = [
   }
 ];
 </script>
-<script src="js/main.js?v=1"></script>
+<script src="js/main.js?v=2"></script>
 <script src="js/forms.js"></script>
 <script src="/js/cookie-consent.js" defer></script>
 

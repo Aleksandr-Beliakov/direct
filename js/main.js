@@ -290,11 +290,28 @@ function abCasesSlide(dir) {
         + '</div>'
       : '<div class="ab-cases-card-shot-frame"><div class="ab-cases-card-shot-empty">Скриншот сайта клиента</div></div>';
 
-    var metricRow = item.metricWas
-      ? '<span class="ab-cases-metric-was">' + item.metricWas + '</span>'
-        + '<span class="ab-cases-metric-arrow">→</span>'
-        + '<span class="ab-cases-metric-now">' + item.metricNow + '</span>'
-      : '<span class="ab-cases-metric-now">' + item.metricNow + '</span>';
+    var metricBox;
+    if (item.metricSplit) {
+      var s = item.metricSplit;
+      var col = function (c) {
+        return '<div style="min-width:0;">'
+          + '<div style="font-size:12px;color:#2F7A4C;margin:0 0 2px;">' + c.sub + '</div>'
+          + '<div style="font-size:26px;font-weight:800;color:#1A7A44;line-height:1.2;">' + c.value + '</div>'
+          + '<div style="font-size:12px;color:#7A9483;margin-top:2px;">' + c.note + '</div>'
+          + '</div>';
+      };
+      metricBox = '<div class="ab-cases-metric">'
+        + '<div class="ab-cases-metric-label">' + s.label + '</div>'
+        + '<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">' + col(s.left) + col(s.right) + '</div>'
+        + '</div>';
+    } else {
+      var metricRow = item.metricWas
+        ? '<span class="ab-cases-metric-was">' + item.metricWas + '</span>'
+          + '<span class="ab-cases-metric-arrow">→</span>'
+          + '<span class="ab-cases-metric-now">' + item.metricNow + '</span>'
+        : '<span class="ab-cases-metric-now">' + item.metricNow + '</span>';
+      metricBox = '<div class="ab-cases-metric"><div class="ab-cases-metric-label">' + item.metricLabel + '</div><div class="ab-cases-metric-row">' + metricRow + '</div></div>';
+    }
 
     var footLink = item.url ? '<span class="ab-cases-card-link">Читать кейс →</span>' : '';
 
@@ -304,7 +321,7 @@ function abCasesSlide(dir) {
       + '<div class="ab-cases-tags-full"><span class="ab-cases-tag">' + item.place + '</span><span class="ab-cases-tag">' + item.period + '</span></div>'
       + '<div class="ab-cases-tags-compact">' + item.place + ' · ' + item.period + '</div>'
       + '<h3 class="ab-cases-card-title">' + item.title + '</h3>'
-      + '<div class="ab-cases-metric"><div class="ab-cases-metric-label">' + item.metricLabel + '</div><div class="ab-cases-metric-row">' + metricRow + '</div></div>'
+      + metricBox
       + '<div class="ab-cases-card-foot"><span class="ab-cases-card-channels">' + item.channels + '</span>' + footLink + '</div>'
       + '</div>'
       + '</' + tag + '>';
