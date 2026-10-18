@@ -10,6 +10,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css?v=21">
+  <style>
+    .kd-stats-strip { display:grid; grid-template-columns:repeat(2,1fr); }
+    .kd-stats-strip > div { padding:24px 20px; border-top:1px solid #E6E0D7; }
+    .kd-stats-strip > div:nth-child(1), .kd-stats-strip > div:nth-child(2) { border-top:none; }
+    @media (min-width:900px) {
+      .kd-stats-strip { grid-template-columns:repeat(4,1fr); }
+      .kd-stats-strip > div { border-top:none; border-left:1px solid #E6E0D7; }
+      .kd-stats-strip > div:first-child { border-left:none; }
+    }
+  </style>
 </head>
 <body>
 
@@ -115,29 +125,27 @@
   </div>
 
   <div style="max-width:1200px;margin:0 auto;padding:0 32px 88px;">
-    <div class="ab-case-kpis" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;">
-
-      <div style="background:#fff;border:1px solid #ECE7DF;border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:10px;">
-        <b style="font-size:clamp(28px,4vw,44px);line-height:1.1;letter-spacing:-0.02em;color:#1A1612;text-wrap:balance;">С нуля</b>
-        <span style="font-size:14px;line-height:1.5;color:#6B645C;">рекламы раньше не было</span>
+    <div style="border-top:1px solid #E6E0D7;border-bottom:1px solid #E6E0D7;">
+      <div class="kd-stats-strip">
+        <div>
+          <b style="display:block;font-size:44px;line-height:1.1;letter-spacing:-0.02em;font-weight:800;color:#171512;">30</b>
+          <span style="display:block;margin-top:6px;font-size:15px;line-height:1.4;color:#6B645C;">конверсий в Яндекс Директе</span>
+        </div>
+        <div>
+          <b style="display:block;font-size:44px;line-height:1.1;letter-spacing:-0.02em;font-weight:800;color:#171512;">3,78 $</b>
+          <span style="display:block;margin-top:6px;font-size:15px;line-height:1.4;color:#6B645C;">цена конверсии в Директе</span>
+        </div>
+        <div>
+          <b style="display:block;font-size:44px;line-height:1.1;letter-spacing:-0.02em;font-weight:800;color:#171512;">20</b>
+          <span style="display:block;margin-top:6px;font-size:15px;line-height:1.4;color:#6B645C;">конверсий в Google Ads</span>
+        </div>
+        <div>
+          <b style="display:block;font-size:44px;line-height:1.1;letter-spacing:-0.02em;font-weight:800;color:#171512;">9,98 $</b>
+          <span style="display:block;margin-top:6px;font-size:15px;line-height:1.4;color:#6B645C;">цена конверсии в Google Ads</span>
+        </div>
       </div>
-
-      <div style="background:#fff;border:1px solid #ECE7DF;border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:10px;">
-        <b style="font-size:clamp(28px,4vw,44px);line-height:1.1;letter-spacing:-0.02em;color:#1A1612;text-wrap:balance;">2 канала</b>
-        <span style="font-size:14px;line-height:1.5;color:#6B645C;">Яндекс Директ и Google Ads</span>
-      </div>
-
-      <div style="background:#fff;border:1px solid #ECE7DF;border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:10px;">
-        <b style="font-size:clamp(28px,4vw,44px);line-height:1.1;letter-spacing:-0.02em;color:#1A1612;text-wrap:balance;">5 целей</b>
-        <span style="font-size:14px;line-height:1.5;color:#6B645C;">звонок, WhatsApp, Telegram, форма, запись</span>
-      </div>
-
-      <div style="background:#fff;border:1px solid #ECE7DF;border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:10px;">
-        <b style="font-size:clamp(28px,4vw,44px);line-height:1.1;letter-spacing:-0.02em;color:#1A1612;text-wrap:balance;">Узкое гео</b>
-        <span style="font-size:14px;line-height:1.5;color:#6B645C;">русский язык в ОАЭ, спрос оказался выше прогноза</span>
-      </div>
-
     </div>
+    <p style="margin:14px 0 0;font-size:13px;color:#8A8278;">Октябрь-ноябрь 2023, по данным кабинетов</p>
   </div>
 </section>
 
