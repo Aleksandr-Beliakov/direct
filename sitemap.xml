@@ -30,14 +30,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  <!-- Временно скрыт по просьбе пользователя, вернуть запись, когда скажет
-  <url>
-    <loc>https://direct.alex-belyakov.com/cases/manicure-salon-msk.html</loc>
-    <lastmod>2026-10-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  -->
+  <!-- manicure-salon-msk.html и fulfillment-msk.html намеренно вне sitemap и закрыты noindex -->
   <url>
     <loc>https://direct.alex-belyakov.com/cases/</loc>
     <lastmod>2026-10-15</lastmod>

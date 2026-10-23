@@ -1,5 +1,4 @@
 User-agent: *
-Disallow: /landings/
 Allow: /
 
 User-agent: OAI-SearchBot
