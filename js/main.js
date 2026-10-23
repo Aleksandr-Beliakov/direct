@@ -1,3 +1,10 @@
+function abPainToggle(btn) {
+  var item = btn.closest('.ab-pain-item');
+  var isOpen = item.classList.toggle('is-open');
+  var label = btn.querySelector('span');
+  if (label) label.textContent = isOpen ? 'Свернуть' : 'Подробнее';
+}
+
 function abFaqToggle(btn) {
   var item = btn.closest('.ab-faq-item');
   var isOpen = item.classList.contains('is-open');

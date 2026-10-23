@@ -495,6 +495,43 @@ button[style*="background:#FF5A1F"]:hover {
   .ab-numbers-row { flex-direction: column !important; gap: 24px; }
   .ab-numbers-col { border-left: none !important; padding-left: 0 !important; padding-right: 0 !important; }
   .ab-pain-row { flex-direction: column !important; }
+
+  .ab-pain-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+    background: none;
+    border: none;
+    padding: 0 0 14px;
+    margin: 0;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    color: #FF5A1F;
+    text-align: left;
+  }
+
+  .ab-pain-answer {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease;
+  }
+
+  .ab-pain-answer-inner {
+    overflow: hidden;
+    min-height: 0;
+  }
+
+  .ab-pain-item.is-open .ab-pain-answer {
+    grid-template-rows: 1fr;
+  }
+
+  .ab-pain-item.is-open .ab-pain-toggle .ab-faq-icon {
+    transform: rotate(45deg);
+  }
   .ab-process-grid { grid-template-columns: 1fr !important; }
   .ab-about-grid { grid-template-columns: 1fr !important; }
   .ab-pricing-row { flex-direction: column !important; }
@@ -586,6 +623,10 @@ button[style*="background:#FF5A1F"]:hover {
   background: #fff;
   border: 1px solid #ECE7DE;
   border-radius: 16px;
+}
+
+.ab-pain-toggle {
+  display: none;
 }
 
 .ab-faq-question {
