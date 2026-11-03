@@ -216,46 +216,55 @@
           </figure>
 
           <style>.tat-ad-gallery::-webkit-scrollbar{display:none;}</style>
+          <script>
+            function abSetupInfiniteGallery(id) {
+              var g = document.getElementById(id);
+              if (!g || g.dataset.infiniteReady) return;
+              g.dataset.infiniteReady = '1';
+              var originals = Array.prototype.slice.call(g.children);
+              originals.forEach(function (el) { g.appendChild(el.cloneNode(true)); });
+              originals.forEach(function (el) { g.appendChild(el.cloneNode(true)); });
+              function copyWidth() { return g.scrollWidth / 3; }
+              function center() { g.scrollLeft = copyWidth(); }
+              function reposition() {
+                var w = copyWidth();
+                if (g.scrollLeft < w * 0.5) g.scrollLeft += w;
+                else if (g.scrollLeft > w * 1.5) g.scrollLeft -= w;
+              }
+              var t;
+              g.addEventListener('scroll', function () {
+                clearTimeout(t);
+                t = setTimeout(reposition, 120);
+              });
+              if (document.readyState === 'complete') center();
+              else window.addEventListener('load', center);
+            }
+            function abGalleryNav(id, dir) {
+              var g = document.getElementById(id);
+              var item = g.children[0];
+              var itemWidth = item.getBoundingClientRect().width + 12;
+              g.scrollBy({ left: dir * itemWidth, behavior: 'smooth' });
+            }
+            document.addEventListener('DOMContentLoaded', function () { abSetupInfiniteGallery('tat-ad-gallery'); });
+          </script>
           <figure class="ab-case-step-figure" style="margin:0;">
-            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px;">
-              <figcaption style="margin:0;">Примеры объявлений на поиске</figcaption>
-              <div style="display:flex;gap:8px;flex:none;">
-                <button type="button" class="ab-cases-arrow" style="width:36px;height:36px;" aria-label="Предыдущее объявление" onclick="this.closest('figure').querySelector('.tat-ad-gallery').scrollBy({left:-280,behavior:'smooth'})">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#171512" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
-                </button>
-                <button type="button" class="ab-cases-arrow" style="width:36px;height:36px;" aria-label="Следующее объявление" onclick="this.closest('figure').querySelector('.tat-ad-gallery').scrollBy({left:280,behavior:'smooth'})">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#171512" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-                </button>
+            <div class="ab-case-step-image" style="padding:16px;position:relative;">
+              <div class="tat-ad-gallery" id="tat-ad-gallery" style="display:flex;align-items:flex-start;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none;">
+                <img src="../images/cases/tatu-studiya-msk/case-tat-ad-minimalism.jpg" alt="Объявление в поиске: тату-минимализм" width="856" height="686" style="flex:0 0 min(78%,300px);scroll-snap-align:start;border-radius:10px;border:1px solid #ECE7DF;display:block;width:100%;height:auto;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
+                <img src="../images/cases/tatu-studiya-msk/case-tat-ad-blackwork.jpg" alt="Объявление в поиске: тату-блэкворк" width="843" height="671" style="flex:0 0 min(78%,300px);scroll-snap-align:start;border-radius:10px;border:1px solid #ECE7DF;display:block;width:100%;height:auto;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
+                <img src="../images/cases/tatu-studiya-msk/case-tat-ad-chikano.jpg" alt="Объявление в поиске: тату в стиле чикано" width="855" height="691" style="flex:0 0 min(78%,300px);scroll-snap-align:start;border-radius:10px;border:1px solid #ECE7DF;display:block;width:100%;height:auto;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
+                <img src="../images/cases/tatu-studiya-msk/case-tat-ad-anime.jpg" alt="Объявление в поиске: тату-аниме" width="860" height="691" style="flex:0 0 min(78%,300px);scroll-snap-align:start;border-radius:10px;border:1px solid #ECE7DF;display:block;width:100%;height:auto;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
+                <img src="../images/cases/tatu-studiya-msk/case-tat-ad-maori.jpg" alt="Объявление в поиске: тату-маори" width="851" height="684" style="flex:0 0 min(78%,300px);scroll-snap-align:start;border-radius:10px;border:1px solid #ECE7DF;display:block;width:100%;height:auto;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
+                <img src="../images/cases/tatu-studiya-msk/case-tat-ad-cyberpunk.jpg" alt="Объявление в поиске: тату-киберпанк" width="861" height="690" style="flex:0 0 min(78%,300px);scroll-snap-align:start;border-radius:10px;border:1px solid #ECE7DF;display:block;width:100%;height:auto;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
               </div>
+              <button type="button" class="ab-cases-arrow" style="position:absolute;left:24px;top:50%;transform:translateY(-50%);width:40px;height:40px;box-shadow:0 4px 14px rgba(23,21,18,0.16);" aria-label="Предыдущее объявление" onclick="abGalleryNav('tat-ad-gallery',-1)">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#171512" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="ab-cases-arrow" style="position:absolute;right:24px;top:50%;transform:translateY(-50%);width:40px;height:40px;box-shadow:0 4px 14px rgba(23,21,18,0.16);" aria-label="Следующее объявление" onclick="abGalleryNav('tat-ad-gallery',1)">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#171512" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
             </div>
-            <div class="ab-case-step-image" style="padding:16px;">
-              <div class="tat-ad-gallery" style="display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none;">
-                <div style="flex:0 0 min(78%,300px);scroll-snap-align:start;display:flex;flex-direction:column;gap:8px;">
-                  <img src="../images/cases/tatu-studiya-msk/case-tat-ad-minimalism.jpg" alt="Объявление в поиске: тату-минимализм" width="856" height="686" style="border-radius:10px;border:1px solid #ECE7DF;display:block;width:100%;height:auto;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
-                  <span style="font-size:13px;font-weight:600;color:#8A8278;text-align:center;">Минимализм</span>
-                </div>
-                <div style="flex:0 0 min(78%,300px);scroll-snap-align:start;display:flex;flex-direction:column;gap:8px;">
-                  <img src="../images/cases/tatu-studiya-msk/case-tat-ad-blackwork.jpg" alt="Объявление в поиске: тату-блэкворк" width="843" height="671" style="border-radius:10px;border:1px solid #ECE7DF;display:block;width:100%;height:auto;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
-                  <span style="font-size:13px;font-weight:600;color:#8A8278;text-align:center;">Блэкворк</span>
-                </div>
-                <div style="flex:0 0 min(78%,300px);scroll-snap-align:start;display:flex;flex-direction:column;gap:8px;">
-                  <img src="../images/cases/tatu-studiya-msk/case-tat-ad-chikano.jpg" alt="Объявление в поиске: тату в стиле чикано" width="855" height="691" style="border-radius:10px;border:1px solid #ECE7DF;display:block;width:100%;height:auto;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
-                  <span style="font-size:13px;font-weight:600;color:#8A8278;text-align:center;">Чикано</span>
-                </div>
-                <div style="flex:0 0 min(78%,300px);scroll-snap-align:start;display:flex;flex-direction:column;gap:8px;">
-                  <img src="../images/cases/tatu-studiya-msk/case-tat-ad-anime.jpg" alt="Объявление в поиске: тату-аниме" width="860" height="691" style="border-radius:10px;border:1px solid #ECE7DF;display:block;width:100%;height:auto;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
-                  <span style="font-size:13px;font-weight:600;color:#8A8278;text-align:center;">Аниме</span>
-                </div>
-                <div style="flex:0 0 min(78%,300px);scroll-snap-align:start;display:flex;flex-direction:column;gap:8px;">
-                  <img src="../images/cases/tatu-studiya-msk/case-tat-ad-maori.jpg" alt="Объявление в поиске: тату-маори" width="851" height="684" style="border-radius:10px;border:1px solid #ECE7DF;display:block;width:100%;height:auto;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
-                  <span style="font-size:13px;font-weight:600;color:#8A8278;text-align:center;">Маори</span>
-                </div>
-                <div style="flex:0 0 min(78%,300px);scroll-snap-align:start;display:flex;flex-direction:column;gap:8px;">
-                  <img src="../images/cases/tatu-studiya-msk/case-tat-ad-cyberpunk.jpg" alt="Объявление в поиске: тату-киберпанк" width="861" height="690" style="border-radius:10px;border:1px solid #ECE7DF;display:block;width:100%;height:auto;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
-                  <span style="font-size:13px;font-weight:600;color:#8A8278;text-align:center;">Киберпанк</span>
-                </div>
-              </div>
-            </div>
+            <figcaption>Примеры объявлений на поиске</figcaption>
           </figure>
         </div>
       </div>
@@ -269,7 +278,7 @@
           <figure class="ab-case-step-figure" style="margin:0;">
             <div class="ab-case-step-image" style="padding:16px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;">
               <img src="../images/cases/tatu-studiya-msk/case-tat-autotarget-by-day.jpg" alt="Автотаргетинг по дням, разброс цены заявки, 21.09-01.10.2026" width="1467" height="584" style="display:block;width:100%;height:auto;border-radius:8px;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
-              <img src="../images/cases/tatu-studiya-msk/case-tat-autotarget-by-week.jpg" alt="Автотаргетинг по неделям: 7, 8, 4 заявки, 14.09-04.10.2026" width="1502" height="463" style="display:block;width:100%;height:auto;border-radius:8px;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
+              <img src="../images/cases/tatu-studiya-msk/case-tat-autotarget-by-week.jpg" alt="Автотаргетинг по неделям: 7, 8, 4 заявки, 14.09-04.10.2026" width="1499" height="463" style="display:block;width:100%;height:auto;border-radius:8px;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
             </div>
             <figcaption>Автотаргетинг в «Студии» по дням и по неделям, сентябрь-начало октября 2026</figcaption>
           </figure>
@@ -413,7 +422,7 @@
 
       <figure class="ab-case-step-figure">
         <div class="ab-case-step-image" style="padding:16px;">
-          <img src="../images/cases/tatu-studiya-msk/case-tat-autotarget-sep.jpg" alt="Автотаргетинг, сентябрь 2026: 16 заявок, 4 663 ₽" width="1544" height="197" style="display:block;width:100%;height:auto;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
+          <img src="../images/cases/tatu-studiya-msk/case-tat-autotarget-sep.jpg" alt="Автотаргетинг, сентябрь 2026: 16 заявок, 4 663 ₽" width="1539" height="197" style="display:block;width:100%;height:auto;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
         </div>
         <figcaption>Автотаргетинг, сентябрь 2026</figcaption>
       </figure>
@@ -434,7 +443,7 @@
 
       <figure class="ab-case-step-figure">
         <div class="ab-case-step-image" style="padding:16px;">
-          <img src="../images/cases/tatu-studiya-msk/case-tat-keys-oct.jpg" alt="Ключи, октябрь 2026" width="1538" height="271" style="display:block;width:100%;height:auto;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
+          <img src="../images/cases/tatu-studiya-msk/case-tat-keys-oct.jpg" alt="Ключи, октябрь 2026" width="1529" height="271" style="display:block;width:100%;height:auto;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
         </div>
         <figcaption>Ключи, октябрь 2026</figcaption>
       </figure>
