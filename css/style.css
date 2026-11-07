@@ -1111,7 +1111,7 @@ button[style*="background:#FF5A1F"]:hover {
 .ab-case-section-grid {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 88px 32px;
+  padding: 44px 32px;
   display: flex;
   flex-wrap: wrap;
   gap: 24px 64px;
@@ -1192,6 +1192,9 @@ button[style*="background:#FF5A1F"]:hover {
   .ab-case-meta { grid-template-columns: 1fr !important; }
   .ab-case-rsya-grid { grid-template-columns: repeat(2, 1fr); }
   .ab-case-chip { white-space: normal !important; flex-wrap: wrap; row-gap: 0; }
+  .ab-case-section-grid { padding: 28px 20px; }
+  .ab-case-step { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+  .ab-case-step-num { display: none; }
 }
 
 .ab-case-map-modal {
@@ -1310,9 +1313,10 @@ button[style*="background:#FF5A1F"]:hover {
 }
 
 @media (max-width: 640px) {
-  .ab-case-results-row { grid-template-columns: 1fr; gap: 4px; padding: 14px 0; }
-  .ab-case-results-head { display: none; }
+  .ab-case-results-row { grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.8fr) minmax(0, 1fr); gap: 8px; padding: 12px 0; font-size: 14px; }
+  .ab-case-results-head { font-size: 10px; }
   .ab-case-results-total { margin: 8px 0 0; }
+  .ab-case-results-total b { font-size: 18px !important; }
 }
 
 .ab-case-channels {

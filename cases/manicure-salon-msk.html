@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css?v=19">
+<link rel="stylesheet" href="../css/style.css?v=24">
 <style>
 body{margin:0}
 *{box-sizing:border-box}
@@ -146,11 +146,15 @@ a{color:#171512}a:hover{color:#CF3E0A}
 <h2 class="h2" style="margin:56px 0 16px;font-size:30px;line-height:1.2;font-weight:700;letter-spacing:-0.018em">Конкурентный анализ и УТП</h2>
 <p style="margin:0 0 16px;font-size:18px;line-height:1.62;color:#46413A">Изучил салоны вокруг метро: цены, акции, программы лояльности, подачу на сайтах. Выяснилось, что у ближайших конкурентов цены ниже на 300-1 100 ₽, а сетевые сильнее в маркетинге. Базовое УТП у клиента уже было, мы улучшили его подачу и предложили новые. Разработал клиенту готовые варианты акций на основе того, что работает у конкурентов, и клиент выбрал подходящие.</p>
 <figure style="margin:24px 0 8px">
-<div id="competitors-slider" style="position:relative;border-radius:16px;overflow:hidden;border:1px solid #E3DDD2;background:#FFFFFF">
-<img src="../images/cases/manicure-salon-msk/competitors-1.jpg" alt="Таблица цен конкурентов, лист 1" style="display:block;width:100%;height:auto;cursor:zoom-in" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
-<img src="../images/cases/manicure-salon-msk/competitors-2.jpg" alt="Таблица цен конкурентов, лист 2" style="display:none;width:100%;height:auto;cursor:zoom-in" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
-<button type="button" aria-label="Предыдущий скрин" onclick="abSlide('competitors-slider',-1)" style="position:absolute;left:10px;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;border:none;background:rgba(23,21,18,0.55);color:#FFFFFF;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center">‹</button>
-<button type="button" aria-label="Следующий скрин" onclick="abSlide('competitors-slider',1)" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;border:none;background:rgba(23,21,18,0.55);color:#FFFFFF;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center">›</button>
+<div id="competitors-slider" style="position:relative;border-radius:16px;overflow:hidden;border:1px solid #E3DDD2;background:#FFFFFF;aspect-ratio:1469/453">
+<img src="../images/cases/manicure-salon-msk/competitors-1.jpg" alt="Таблица цен конкурентов, лист 1" style="display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:contain;cursor:zoom-in" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
+<img src="../images/cases/manicure-salon-msk/competitors-2.jpg" alt="Таблица цен конкурентов, лист 2" style="display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:contain;cursor:zoom-in" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
+<button type="button" class="ab-cases-arrow" aria-label="Предыдущий скрин" onclick="abSlide('competitors-slider',-1)" style="position:absolute;left:10px;top:50%;transform:translateY(-50%);width:40px;height:40px;box-shadow:0 4px 14px rgba(23,21,18,0.16)">
+<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#171512" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+</button>
+<button type="button" class="ab-cases-arrow" aria-label="Следующий скрин" onclick="abSlide('competitors-slider',1)" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);width:40px;height:40px;box-shadow:0 4px 14px rgba(23,21,18,0.16)">
+<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#171512" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+</button>
 <div class="ab-slide-counter" style="position:absolute;right:12px;bottom:10px;background:rgba(23,21,18,0.6);color:#FFFFFF;font-size:12px;padding:3px 10px;border-radius:999px">1 / 2</div>
 </div>
 </figure>
@@ -293,7 +297,7 @@ function abSlide(id, dir) {
   if (counter) counter.textContent = (idx + 1) + ' / ' + imgs.length;
 }
 </script>
-<script src="../js/main.js?v=2"></script>
+<script src="../js/main.js?v=3"></script>
 <script src="../js/forms.js"></script>
 <script src="/js/cookie-consent.js" defer></script>
 

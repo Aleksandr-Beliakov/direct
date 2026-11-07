@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css?v=21">
+  <link rel="stylesheet" href="../css/style.css?v=24">
 </head>
 <body>
 
@@ -101,9 +101,10 @@
         <span style="padding:7px 12px;border-radius:999px;background:#F1EDE6;color:#5E574F;">Январь-август 2026</span>
       </div>
 
-      <h1 class="ab-case-h1" style="margin:0;font-size:clamp(34px,4.4vw,56px);line-height:1.04;letter-spacing:-0.025em;font-weight:800;color:#1A1612;text-wrap:balance;"><span style="color:#FF5A1F;">26 заявок в месяц по 4 622 ₽</span> для DBS-доставки селлеров маркетплейсов, запуск с нуля</h1>
+      <h1 class="ab-case-h1" style="margin:0;font-size:clamp(34px,4.4vw,56px);line-height:1.04;letter-spacing:-0.025em;font-weight:800;color:#1A1612;text-wrap:balance;"><span style="color:#FF5A1F;">26 заявок в месяц по 4 622 ₽</span> для <span style="color:#05B43C;">DBS-доставки селлеров маркетплейсов</span></h1>
 
-      <dl class="ab-case-meta" style="margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:20px 28px;padding-top:24px;border-top:1px solid #E6E0D7;">
+      <style>@media (max-width:640px){#dbs-meta{display:none !important;}}</style>
+      <dl class="ab-case-meta" id="dbs-meta" style="margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:20px 28px;padding-top:24px;border-top:1px solid #E6E0D7;">
         <div style="display:flex;flex-direction:column;gap:6px;">
           <dt style="font-size:13px;color:#8A8278;">Ниша</dt>
           <dd style="margin:0;font-size:15px;font-weight:600;color:#1A1612;line-height:1.35;">Доставка и фулфилмент для селлеров маркетплейсов по схеме DBS</dd>
@@ -148,7 +149,7 @@
   <div class="ab-case-section-grid">
     <div class="ab-case-section-label">01 · О проекте и задача</div>
     <div class="ab-case-section-content" style="gap:24px;">
-      <p style="margin:0;font-size:22px;line-height:1.5;font-weight:500;color:#1A1612;text-wrap:pretty;">Сервис помогает селлерам маркетплейсов отправлять заказы со своего склада по схеме DBS, а не через склад маркетплейса. Для продавца это дешевле по доставке и по комиссии. Рекламы раньше не было, задача была запустить Директ с нуля и получать заявки на подключение.</p>
+      <p style="margin:0;font-size:22px;line-height:1.5;font-weight:500;color:#1A1612;text-wrap:pretty;">Сервис помогает селлерам маркетплейсов отправлять заказы со своего склада по схеме DBS, минуя склад маркетплейса. Для продавца это дешевле по доставке и по комиссии. Рекламы раньше не было, задача была запустить Директ с нуля и получать заявки на подключение.</p>
       <p style="margin:0;font-size:17px;line-height:1.7;color:#3F3933;text-wrap:pretty;">Проект стартовал в конце января 2026 года на фоне растущего спроса на услуги для селлеров. Конкуренты тоже активизировались, поэтому ситуация менялась каждую неделю, и приходилось постоянно адаптировать рекламу под меняющуюся обстановку.</p>
     </div>
   </div>
@@ -178,12 +179,12 @@
         </div>
       </div>
       <figure class="ab-case-step-figure">
-        <div class="ab-case-step-image" style="padding:16px;">
+        <div class="ab-case-step-image">
           <div id="offer-hypotheses-slider" style="position:relative;border-radius:12px;overflow:hidden;border:1px solid #ECE7DF;background:#fff;aspect-ratio:1101/407;">
-            <img src="../images/cases/dbs-dostavka/case-dbs-offer-hypothesis-1.jpg" alt="Гипотезы оффера: рекомендация по блоку с цифрами" style="display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:contain;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
-            <img src="../images/cases/dbs-dostavka/case-dbs-offer-hypothesis-2.jpg" alt="Гипотеза 1: акцент на экономию и понятность услуги" style="display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:contain;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
+            <img src="../images/cases/dbs-dostavka/case-dbs-offer-hypothesis-2.jpg" alt="Гипотеза 1: акцент на экономию и понятность услуги" style="display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:contain;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
             <img src="../images/cases/dbs-dostavka/case-dbs-offer-hypothesis-3.jpg" alt="Гипотеза 2: фокус на действие и результат" style="display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:contain;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
             <img src="../images/cases/dbs-dostavka/case-dbs-offer-hypothesis-4.jpg" alt="Гипотеза 3: прямота и польза для бизнеса" style="display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:contain;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
+            <img src="../images/cases/dbs-dostavka/case-dbs-offer-hypothesis-1.jpg" alt="Гипотезы оффера: рекомендация по блоку с цифрами" style="display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:contain;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
             <button type="button" class="ab-cases-arrow" aria-label="Предыдущий скрин" onclick="abSlide('offer-hypotheses-slider',-1)" style="position:absolute;left:10px;top:50%;transform:translateY(-50%);width:40px;height:40px;box-shadow:0 4px 14px rgba(23,21,18,0.16);">
               <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#171512" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
             </button>
@@ -203,14 +204,14 @@
           <p style="margin:0;font-size:17px;line-height:1.7;color:#3F3933;text-wrap:pretty;">На запуске я создал четыре поисковые кампании и ретаргетинг в РСЯ. Позже добавил основную РСЯ и поиск по доставке для селлеров и по крупногабаритным товарам. На старте кампании работали по будням, с середины марта перешли на ежедневный режим.</p>
 
           <figure class="ab-case-step-figure" style="margin:0;">
-            <div class="ab-case-step-image" style="padding:16px;">
+            <div class="ab-case-step-image">
               <img src="../images/cases/dbs-dostavka/case-dbs-campaigns-launch.jpg" alt="Структура кампаний на запуске" width="869" height="675" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
             </div>
             <figcaption>Структура кампаний на запуске, январь 2026</figcaption>
           </figure>
 
           <figure class="ab-case-step-figure" style="margin:0;">
-            <div class="ab-case-step-image" style="padding:16px;">
+            <div class="ab-case-step-image">
               <div id="search-ads-slider" style="position:relative;border-radius:12px;overflow:hidden;border:1px solid #ECE7DF;background:#fff;aspect-ratio:862/693;">
                 <img src="../images/cases/dbs-dostavka/case-dbs-search-ad-1.jpg" alt="Объявление в поиске, вариант 1" style="display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:contain;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
                 <img src="../images/cases/dbs-dostavka/case-dbs-search-ad-2.jpg" alt="Объявление в поиске, вариант 2" style="display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:contain;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
@@ -238,7 +239,7 @@
           <p style="margin:0;font-size:17px;line-height:1.7;color:#3F3933;text-wrap:pretty;">Креативы для РСЯ я строил вокруг сильных формулировок оффера: экономия до 8&nbsp;000&nbsp;₽, снижение комиссии.</p>
 
           <figure class="ab-case-step-figure" style="margin:0;">
-            <div class="ab-case-step-image" style="padding:16px;">
+            <div class="ab-case-step-image">
               <div id="creatives1-slider" style="position:relative;border-radius:12px;overflow:hidden;border:1px solid #ECE7DF;background:#fff;aspect-ratio:1280/853;">
                 <img src="../images/cases/dbs-dostavka/case-dbs-creative1-delivery.jpg" alt="Первые креативы РСЯ, февраль 2026, вариант 1" style="display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:contain;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
                 <img src="../images/cases/dbs-dostavka/case-dbs-creative1-profit.jpg" alt="Первые креативы РСЯ, февраль 2026, вариант 2" style="display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:contain;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
@@ -258,7 +259,7 @@
           <p style="margin:0;font-size:17px;line-height:1.7;color:#3F3933;text-wrap:pretty;">В порядке тестирования гипотез офферов сайт был переработан, вместе с ним и офферы в изображениях РСЯ. В мае запустил новую серию под обновленный оффер. Нейросети прекрасно справились с передачей идеи на креативы.</p>
 
           <figure class="ab-case-step-figure" style="margin:0;">
-            <div class="ab-case-step-image" style="padding:16px;">
+            <div class="ab-case-step-image">
               <div id="creatives2-slider" style="position:relative;border-radius:12px;overflow:hidden;border:1px solid #ECE7DF;background:#fff;aspect-ratio:1693/929;">
                 <img src="../images/cases/dbs-dostavka/case-dbs-creative2-01.jpg" alt="Серия креативов под обновленный оффер, май 2026, вариант 1" style="display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:contain;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
                 <img src="../images/cases/dbs-dostavka/case-dbs-creative2-02.jpg" alt="Серия креативов под обновленный оффер, май 2026, вариант 2" style="display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:contain;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
@@ -288,7 +289,7 @@
         </div>
       </div>
       <figure class="ab-case-step-figure">
-        <div class="ab-case-step-image" style="padding:16px;">
+        <div class="ab-case-step-image">
           <img src="../images/cases/dbs-dostavka/case-dbs-semantics-groups.jpg" alt="Группировка семантики по кластерам, апрель 2026" width="1500" height="792" style="display:block;width:100%;height:auto;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
         </div>
         <figcaption>Группировка семантики по кластерам, апрель 2026</figcaption>
@@ -304,13 +305,13 @@
         </div>
       </div>
       <figure class="ab-case-step-figure">
-        <div class="ab-case-step-image" style="padding:16px;">
+        <div class="ab-case-step-image">
           <img src="../images/cases/dbs-dostavka/case-dbs-rsya-before.jpg" alt="Площадки РСЯ до чистки, июнь 2026" width="1618" height="404" style="display:block;width:100%;height:auto;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
         </div>
         <figcaption>Чистка площадок РСЯ, июнь 2026</figcaption>
       </figure>
       <figure class="ab-case-step-figure">
-        <div class="ab-case-step-image" style="padding:16px;">
+        <div class="ab-case-step-image">
           <img src="../images/cases/dbs-dostavka/case-dbs-bot-traffic.jpg" alt="Сегменты по версиям браузера, июнь 2026" width="646" height="448" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
         </div>
         <figcaption>Бот-визиты по версиям браузера, июнь 2026</figcaption>
@@ -332,7 +333,7 @@
           <p style="margin:0;font-size:17px;line-height:1.7;color:#3F3933;text-wrap:pretty;">В марте на главной заменили заголовок: вместо расплывчатого «Сравниваем тарифы» поставили ранее предложенный прямолинейный оффер про доставку для селлеров с цифрами выгоды.</p>
 
           <figure class="ab-case-step-figure" style="margin:0;">
-            <div class="ab-case-step-image" style="padding:16px;">
+            <div class="ab-case-step-image">
               <img src="../images/cases/dbs-dostavka/site-before.jpg" alt="Первый экран сайта, февраль 2026, до смены оффера" width="1257" height="753" style="display:block;width:100%;height:auto;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
             </div>
             <div style="margin:0 16px 16px;padding:14px 16px;background:#F1EDE6;border-radius:12px;">
@@ -341,7 +342,7 @@
           </figure>
 
           <figure class="ab-case-step-figure" style="margin:0;">
-            <div class="ab-case-step-image" style="padding:16px;">
+            <div class="ab-case-step-image">
               <img src="../images/cases/dbs-dostavka/site-after.jpg" alt="Первый экран сайта, март 2026, после смены оффера" width="1131" height="771" style="display:block;width:100%;height:auto;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
             </div>
             <div style="margin:0 16px 16px;padding:14px 16px;background:#F1EDE6;border-radius:12px;">
@@ -352,7 +353,7 @@
           <p style="margin:0;font-size:17px;line-height:1.7;color:#3F3933;text-wrap:pretty;">Дальше на базе конкурентного анализа выработал идеи для повторного улучшения посадки: предложил вынести цифры экономии в главный заголовок, добавить пересчет выгоды в месяц в кейсы, встроить квиз, а также добавить на сайт телефон и мессенджеры.</p>
 
           <figure class="ab-case-step-figure" style="margin:0;">
-            <div class="ab-case-step-image" style="padding:16px;">
+            <div class="ab-case-step-image">
               <img src="../images/cases/dbs-dostavka/case-dbs-landing-full.jpg" alt="Посадочная страница после глобальной переработки" width="1547" height="1049" style="display:block;width:100%;height:auto;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
             </div>
             <div style="margin:0 16px 16px;padding:14px 16px;background:#F1EDE6;border-radius:12px;">
@@ -384,7 +385,7 @@
       </div>
 
       <figure class="ab-case-step-figure">
-        <div class="ab-case-step-image" style="padding:16px;">
+        <div class="ab-case-step-image">
           <img src="../images/cases/dbs-dostavka/case-dbs-monthly-dynamics.jpg" alt="Динамика заявок и цены заявки, февраль-август 2026" width="3056" height="1108" style="display:block;width:100%;height:auto;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
         </div>
         <figcaption>Динамика заявок и цены заявки, февраль-август 2026</figcaption>
@@ -393,7 +394,7 @@
       <p style="margin:0;font-size:17px;line-height:1.7;color:#3F3933;text-wrap:pretty;">С июля весь объем заявок дал поиск.</p>
 
       <figure class="ab-case-step-figure">
-        <div class="ab-case-step-image" style="padding:16px;">
+        <div class="ab-case-step-image">
           <img src="../images/cases/dbs-dostavka/case-dbs-search-results-aug.jpg" alt="Результаты поисковых кампаний, август 2026" width="1603" height="390" style="display:block;width:100%;height:auto;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
         </div>
         <figcaption>Результаты поисковых кампаний, август 2026</figcaption>
@@ -510,7 +511,7 @@ function abSlide(id, dir) {
 }
 </script>
 
-<script src="../js/main.js?v=2"></script>
+<script src="../js/main.js?v=3"></script>
 <script src="../js/forms.js"></script>
 <script src="/js/cookie-consent.js" defer></script>
 
