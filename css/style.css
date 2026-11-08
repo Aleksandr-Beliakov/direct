@@ -1130,6 +1130,7 @@ button[style*="background:#FF5A1F"]:hover {
 .ab-case-section-content {
   flex: 1 1 560px;
   max-width: 760px;
+  min-width: 0;
   display: flex;
   flex-direction: column;
 }
