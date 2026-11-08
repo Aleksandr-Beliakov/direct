@@ -1164,6 +1164,7 @@ button[style*="background:#FF5A1F"]:hover {
   background: #fff;
   border: 1px solid #ECE7DF;
   border-radius: 16px;
+  overflow: hidden;
 }
 
 .ab-case-step-image img { display: block; }

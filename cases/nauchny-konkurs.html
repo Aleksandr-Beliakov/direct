@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css?v=24">
+  <link rel="stylesheet" href="../css/style.css?v=25">
 </head>
 <body>
 
@@ -165,7 +165,7 @@
         <div style="display:flex;flex-direction:column;gap:14px;">
           <h3 style="margin:0;font-size:21px;font-weight:700;color:#1A1612;">Проверка сайта, целей и аналитики</h3>
           <p style="margin:0;font-size:17px;line-height:1.7;color:#3F3933;text-wrap:pretty;">В 2025 году я подготовил код тега для GTM, команда клиента поставила его на лендинги, а аналитику GA4 клиент настраивал отдельным тегом на каждую локализацию. Мне нужен был доступ аккаунта рекламы к аналитике, чтобы импортировать цели, я запросил его через менеджера проекта.</p>
-          <p style="margin:0;font-size:17px;line-height:1.7;color:#3F3933;text-wrap:pretty;">Перед запуском 2026 года я проверил, какие домены работают: на 28 февраля жил только основной сайт, лендинги включались по мере готовности. Запуск 2 марта 2026 года я сделал на работающие домены, остальные добавлял по мере готовности. Когда в кабинете появилось предупреждение про тег, аналитик клиента подтвердил, что код стоит на страницах.</p>
+          <p style="margin:0;font-size:17px;line-height:1.7;color:#3F3933;text-wrap:pretty;">Перед запуском 2026 года я проверил, какие домены работают: на 28 февраля жил только основной сайт, лендинги включались по мере готовности. Запуск 2 марта 2026 года я сделал на работающие домены, остальные добавлял по мере готовности.</p>
         </div>
       </div>
 
@@ -177,7 +177,7 @@
         </div>
       </div>
       <figure class="ab-case-step-figure">
-        <div class="ab-case-step-image" style="padding:16px;">
+        <div class="ab-case-step-image">
           <img src="../images/cases/nauchny-konkurs/case-sc-priorities.jpg" alt="Приоритеты по странам от клиента: высокий, средний, низкий, стоп" width="368" height="1046" style="display:block;width:100%;max-width:360px;height:auto;margin:0 auto;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
         </div>
         <figcaption>Приоритеты по странам от клиента: высокий, средний, низкий, стоп</figcaption>
@@ -190,7 +190,7 @@
           <p style="margin:0;font-size:17px;line-height:1.7;color:#3F3933;text-wrap:pretty;">В 2025 году лендингов было восемь. Я собирал кампании по языкам и регионам, а не «одна страна, одна кампания»: при ограниченном бюджете отдельные кампании на каждую страну не успели бы обучиться. Тексты и креативы под форматы Performance Max согласовал клиент. Модерация затянулась, я разбирал возможные причины (тема благородного металла, конкурс с крупным призовым фондом) и упрощал формулировки.</p>
 
           <figure class="ab-case-step-figure" style="margin:0;">
-            <div class="ab-case-step-image" style="padding:16px;">
+            <div class="ab-case-step-image">
               <img src="../images/cases/nauchny-konkurs/case-sc-campaigns-2025.jpg" alt="Структура кампаний Performance Max по языкам и странам, май 2025" width="878" height="573" style="display:block;width:100%;height:auto;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
             </div>
             <figcaption>Структура кампаний 2025 года: языки и страны, май 2025</figcaption>
@@ -199,7 +199,7 @@
           <p style="margin:0;font-size:17px;line-height:1.7;color:#3F3933;text-wrap:pretty;">В 2026 году перезапуск шел на той же базе: заменил год в текстах и пересобрал пять языковых кампаний Performance Max (немецкий, английский, испанский, французский, португальский) под список стран клиента. Запуск был 2 марта 2026 года, 15 марта добавил базовые поисковые кампании.</p>
 
           <figure class="ab-case-step-figure" style="margin:0;">
-            <div class="ab-case-step-image" style="padding:16px;">
+            <div class="ab-case-step-image">
               <img src="../images/cases/nauchny-konkurs/case-sc-campaigns-2026.jpg" alt="Кампании 2026 года по странам, 22-28 июня 2026" width="1005" height="696" style="display:block;width:100%;height:auto;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
             </div>
             <figcaption>Кампании 2026 года по странам, 22-28 июня 2026</figcaption>
@@ -214,18 +214,24 @@
           <p style="margin:0;font-size:17px;line-height:1.7;color:#3F3933;text-wrap:pretty;"><b>Египет и Индия.</b> В первую неделю клиент прислал статистику посещений: на Египет приходилось 22% визитов, на Индию 13%. В кабинете по этим странам расхода не было. Я проверил GA4 и увидел, что Египет приходил как google / cpc из моей кампании Performance Max. Алгоритм сам расширил показы за пределы таргетинга.</p>
 
           <figure class="ab-case-step-figure" style="margin:0;">
-            <div class="ab-case-step-image" style="padding:16px;display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-              <img src="../images/cases/nauchny-konkurs/case-sc-egypt-india-visits.jpg" alt="Статистика посещений по странам, 2-8 марта 2026: Египет 22%, Индия 13%" width="604" height="720" style="display:block;width:100%;height:auto;border-radius:8px;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
-              <img src="../images/cases/nauchny-konkurs/case-sc-ga4-egypt.jpg" alt="GA4: трафик из Египта шел как google / cpc из кампании Performance Max" width="1260" height="416" style="display:block;width:100%;height:auto;border-radius:8px;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
+            <div class="ab-case-step-image">
+              <img src="../images/cases/nauchny-konkurs/case-sc-egypt-india-visits.jpg" alt="Статистика посещений по странам, 2-8 марта 2026: Египет 22%, Индия 13%" width="604" height="720" style="display:block;width:100%;height:auto;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
             </div>
-            <figcaption>Статистика посещений и отчет GA4 по Египту, 2-8 марта 2026</figcaption>
+            <figcaption>Статистика посещений по странам, 2-8 марта 2026</figcaption>
+          </figure>
+
+          <figure class="ab-case-step-figure" style="margin:0;">
+            <div class="ab-case-step-image">
+              <img src="../images/cases/nauchny-konkurs/case-sc-ga4-egypt.jpg" alt="GA4: трафик из Египта шел как google / cpc из кампании Performance Max" width="1260" height="416" style="display:block;width:100%;height:auto;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
+            </div>
+            <figcaption>Отчет GA4 по трафику из Египта, 2-8 марта 2026</figcaption>
           </figure>
 
           <p style="margin:0;font-size:17px;line-height:1.7;color:#3F3933;text-wrap:pretty;">Единственный способ остановить это в Performance Max: исключить страны явно. Я исключил Египет и Индию во всех кампаниях, затем добавил Нигерию и Словакию и составил превентивный список исключений. По накопительной статистике на апрель Египет дал около 1&nbsp;170 визитов против 1&nbsp;141 в первую неделю, то есть рост остановился.</p>
           <p style="margin:0;font-size:17px;line-height:1.7;color:#3F3933;text-wrap:pretty;"><b>Приоритеты клиента.</b> Для малоприоритетных стран я собрал отдельные кампании с минимальным бюджетом, чтобы присутствие было, но основной бюджет шел в приоритетные страны. В апреле сделал таблицу «целевая доля трафика против фактической» и записал действие по каждой стране: сократил бюджет французской кампании с 50 до 20 в день, урезал гео Бразилии, Аргентины и Мексики до крупных городов, убрал Катар, в странах с недобором увеличил лимиты. Для Китая я объяснил, что реклама Google там не работает, а переходы в аналитике из Китая это ошибка атрибуции.</p>
 
           <figure class="ab-case-step-figure" style="margin:0;">
-            <div class="ab-case-step-image" style="padding:16px;">
+            <div class="ab-case-step-image">
               <img src="../images/cases/nauchny-konkurs/case-sc-actions-table.jpg" alt="Целевая доля трафика, факт и действие по каждой стране, апрель 2026" width="1126" height="506" style="display:block;width:100%;height:auto;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
             </div>
             <figcaption>Целевая доля трафика, факт и действие по каждой стране, апрель 2026</figcaption>
@@ -235,7 +241,7 @@
         </div>
       </div>
       <figure class="ab-case-step-figure">
-        <div class="ab-case-step-image" style="padding:16px;display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div class="ab-case-step-image" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
           <div style="display:flex;flex-direction:column;gap:8px;">
             <span style="font-size:13px;font-weight:600;color:#8A8278;">16-22 июня 2026</span>
             <img src="../images/cases/nauchny-konkurs/case-sc-korea-before.jpg" alt="Показы по странам, 16-22 июня 2026: Южная Корея 119 652 показа" width="1188" height="363" style="display:block;width:100%;height:auto;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
@@ -248,7 +254,7 @@
         <figcaption>Показы по странам до и после выноса Кореи в отдельную кампанию</figcaption>
       </figure>
       <figure class="ab-case-step-figure">
-        <div class="ab-case-step-image" style="padding:16px;">
+        <div class="ab-case-step-image">
           <img src="../images/cases/nauchny-konkurs/case-sc-korea-chart.jpg" alt="Доля Кореи в показах: 88,8% и 7,3%" width="1800" height="720" style="display:block;width:100%;height:auto;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
         </div>
         <figcaption>Доля Кореи в показах: 88,8% и 7,3%</figcaption>
@@ -263,7 +269,7 @@
         </div>
       </div>
       <figure class="ab-case-step-figure">
-        <div class="ab-case-step-image" style="padding:16px;">
+        <div class="ab-case-step-image">
           <img src="../images/cases/nauchny-konkurs/case-sc-weekly-dynamics.jpg" alt="Клики и расход по неделям, март-апрель 2026" width="1950" height="780" style="display:block;width:100%;height:auto;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
         </div>
         <figcaption>Клики и расход по неделям, март-апрель 2026</figcaption>
@@ -298,7 +304,7 @@
       </div>
 
       <figure class="ab-case-step-figure">
-        <div class="ab-case-step-image" style="padding:16px;">
+        <div class="ab-case-step-image">
           <img src="../images/cases/nauchny-konkurs/case-sc-season-2026.jpg" alt="Клики, расход и цена клика по месяцам, март-июль 2026" width="2250" height="780" style="display:block;width:100%;height:auto;cursor:zoom-in;" role="button" tabindex="0" onclick="abOpenLightbox(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abOpenLightbox(this);}">
         </div>
         <figcaption>Клики, расход и цена клика по месяцам, март-июль 2026</figcaption>
