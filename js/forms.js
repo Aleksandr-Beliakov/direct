@@ -89,11 +89,19 @@ function abInitWeb3Form(form) {
         if (data && data.success) {
           window.dataLayer = window.dataLayer || [];
           window.dataLayer.push({ event: 'form_sent', form_id: form.id });
-          console.log('form_sent', form.id);
+          var redirected = false;
+          var go = function () {
+            if (redirected) return;
+            redirected = true;
+            window.location.href = redirectUrl;
+          };
           if (typeof ym === 'function') {
-            ym(111606163, 'reachGoal', 'form_sent');
+            // Ждем отправку цели, иначе редирект обрывает запрос и конверсия теряется.
+            ym(111606163, 'reachGoal', 'form_sent', {}, go);
+            setTimeout(go, 1000);
+          } else {
+            go();
           }
-          window.location.href = redirectUrl;
         } else {
           throw new Error('web3forms error');
         }
