@@ -1,5 +1,22 @@
 # GitHub Pages прогоняет сайт через Jekyll. Страницы публикуются как есть
 # (общие блоки в них заранее вставляет _tools/sync_includes.py, см. README, раздел 1.1).
 # README.md - внутренняя документация с реальными именами клиентов, на сайт не публикуется.
+#
+# Ниже - кейсы, которые ещё не разрешено публиковать (клиент/автор не дал добро).
+# Файлы остаются в git как обычно (бэкап, история, пуш), но Jekyll не копирует
+# их в собранный сайт, поэтому с direct.alex-belyakov.com они не открываются.
+# Локально (Live Server) эти файлы видны как есть - exclude действует только
+# при сборке на GitHub. Список и причина - README.md, раздел 6.5.
 exclude:
   - README.md
+  - cases-add/
+  - cases/manicure-salon-msk.html
+  - cases/fulfillment-msk.html
+  - cases/dbs-dostavka.html
+  - cases/prokat-lyzh.html
+  - cases/tatu-studiya-msk.html
+  - images/cases/manicure-salon-msk/
+  - images/cases/fulfillment-msk/
+  - images/cases/dbs-dostavka/
+  - images/cases/prokat-lyzh/
+  - images/cases/tatu-studiya-msk/
